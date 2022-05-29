@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+* {
+    margin: 0 auto;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+    width: 200px;
+    display: table;
+    padding: 10px;
+    text-align: center;
+}
+
+header {
+    height: 80px;
+}
