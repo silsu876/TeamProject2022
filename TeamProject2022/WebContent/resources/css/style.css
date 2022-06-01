@@ -146,3 +146,19 @@ footer {
     background-color: rgb(65, 65, 65);
     color: white;
 }
+/* 로그인 */
+#login, #join {
+    background-color: black;
+    color: white;
+    height: 100vh;
+}
+.login_container {
+    border: 1px solid white;
+    padding: 100px;
+    width: 650px;
+}
+.join_container {
+    border: 1px solid white;
+    padding: 100px 160px;
+    width: 850px;
+}

@@ -3,12 +3,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>방탈출 게임</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>방탈출 게임</title>
     <script src="https://kit.fontawesome.com/2371ef8b46.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="../resources/js/script.js"></script>
+    <link rel="stylesheet" href="../resources/css/style.css">
+    
 </head>
 
 <body>
@@ -22,14 +27,20 @@
                     </div>
                     <nav class="col-md-auto m-0">
                         <ul class="menu d-flex justify-content-end align-items-center m-0">
-                            <li class="p-2">Login
+                          <li class="p-2">
+                                <a href="./login.jsp" class="text-white">
+                                Login
                                 <i class="fa fa-sign-in"></i>
+                                </a>
                             </li>
                             <li class="p-2">
                                 <span class="d-flex justify-content-center align-items-center ">|</span>
                             </li>
-                            <li class="p-2">Rank
+                            <li class="p-2">
+                                <a href="./rank.jsp" class="text-white">
+                                Rank
                                 <i class="fa fa-crown"></i>
+                            </a>
                             </li>
                         </ul>
                     </nav>
@@ -156,7 +167,7 @@
         <section id="final_body">
             <div class="final_body_container position-absolute w-100 h-100" style="left: 0; top: 0;">
                 <div class=" d-flex justify-content-center align-items-center w-100 h-100">
-                    <a href="#">Start!</a>
+                    <a href="../game/floor1/mainHall.jsp">Start!</a>
                 </div>
             </div>
             <div class="final_img h-100">

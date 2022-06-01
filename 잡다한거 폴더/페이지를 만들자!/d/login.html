@@ -24,45 +24,53 @@
                     </div>
                     <nav class="col-md-auto m-0">
                         <ul class="menu d-flex justify-content-end align-items-center m-0">
-                            <li class="p-2">Login
+                            <li class="p-2">
+                                <a href="./login.html" class="text-white">
+                                Login
                                 <i class="fa fa-sign-in"></i>
+                                </a>
                             </li>
                             <li class="p-2">
                                 <span class="d-flex justify-content-center align-items-center ">|</span>
                             </li>
-                            <li class="p-2">Rank
+                            <li class="p-2">
+                                <a href="./rank.html" class="text-white">
+                                Rank
                                 <i class="fa fa-crown"></i>
+                            </a>
                             </li>
                         </ul>
                     </nav>
                 </div>
             </div>
-            <hr/>
+            <hr />
         </header>
         <section id="login" class="w-100">
             <div class="d-flex align-items-center justify-content-center w-100 h-100">
-                <form action="./game.html" method="post">
-                    <div class="container login_container">
+                <form action="./index.html" method="post">
+                    <div class="container login_container ">
+                        <h1 class="mb-4 text-center"><b>로그인</b></h1>
                         <div class="mb-3 row">
-                        <label for="id" class="col-sm-2 col-form-label">ID</label>
-                        <div class="col-sm-10">
-                            <input type="password" class="form-control" name="id" placeholder="이곳에 ID를 작성해주세요" id="id">
+                            <label for="id" class="col-sm-2 col-form-label">ID</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control border border-light bg-black text-white" placeholder="아이디"
+                                    name="id" id="id">
+                            </div>
+                        </div>
+                        <div class="row" style="margin-bottom: 35px;">
+                            <label for="pw" class="col-sm-2 col-form-label">PW</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control border border-light bg-black text-white" placeholder="비밀번호"
+                                    name="pw" id="pw">
+                            </div>
+                        </div>
+                        <div class="m-0 d-flex align-items-center justify-content-center w-100 ">
+                            <a href="./join.html" class="btn border border-light text-white mx-1"
+                                style="width: 110px;">회원가입</a>
+                            <input type="submit" class="btn btn-light mx-1" value="확인" style="width: 110px;">
                         </div>
                     </div>
-                    <div class="mb-3 row">
-                        <label for="pw" class="col-sm-2 col-form-label">Password</label>
-                        <div class="col-sm-10">
-                            <input type="password" class="form-control" name="pw" placeholder="이곳에 비밀번호를 작성해주세요"
-                            id="pw">
-                        </div>
-                    </div>
-                    <div class="row m-0 d-flex align-items-center justify-content-center w-100 ">
-                        <div class="col-12">
-                            <input type="submit" class="btn btn-light w-50" value="확인">
-                        </div>
-                    </div>
-                </div>
-            </form>
+                </form>
             </div>
         </section>
 
