@@ -1,0 +1,188 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>방탈출 게임</title>
+    <script src="https://kit.fontawesome.com/2371ef8b46.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <!--헤더 섹션-->
+        <header>
+            <div class="container  h-100 w-100">
+                <div class="row d-flex align-items-center h-100 w-100 m-0 justify-content-between">
+                    <div class="logo_box col-md-auto m-0">
+                        <img class="logoStart" src="images/#" alt="LOGO" />
+                    </div>
+                    <nav class="col-md-auto m-0">
+                        <ul class="menu d-flex justify-content-end align-items-center m-0">
+                            <li class="p-2">Login
+                                <i class="fa fa-sign-in"></i>
+                            </li>
+                            <li class="p-2">
+                                <span class="d-flex justify-content-center align-items-center ">|</span>
+                            </li>
+                            <li class="p-2">Rank
+                                <i class="fa fa-crown"></i>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <!--비주얼 섹션-->
+        <section id="visual">
+            <hr color="#fff" />
+            <div class="d-flex align-items-center w-100 h-100">
+                <div class="visual_container container d-flex w-100 justify-content-between">
+                    <div class="visual_content">
+                        <p class="small_title f-14">THE BANGTALCHUL GAME</p>
+                        <h2 class="title1">방탈출</h2>
+                        <h2 class="title2">게임</h2>
+                        <div class="short_line"></div>
+                        <p class="visual_text">
+                            이 게임은 학교 프로젝트로 단순한 방탈출 게임입니다. <br>
+                            여러 이스터에그도 찾아보세요!
+                        </p>
+                    </div>
+                    <img class="blackWolf" src="images/#" alt="blackWolf" />
+                </div>
+            </div>
+        </section>
+
+        <!--서브비주얼 섹션-->
+        <section id="serve_visual">
+            <div class="serve_visual_container container w-100 h-100">
+                <img class="sky position-absolute" src="images/#" />
+                <div class="row w-100 h-100">
+                    <div class="col-12 d-flex align-items-center justify-content-end w-100 h-100 text-end">
+                        <div class="serve_visual_text">
+                            <h3 class="fw-bold">story</h3>
+                            <div class="short_line"></div>
+                            <i class="fa fa-quote-left"></i>
+                            <p class="f-14">
+                                내 이름은 김아무개, 17살이지!<br />
+                                앗 눈부셔! 오늘도 화려한 햇빛이 나를 감싸<br />
+                                는구나! 지저귀는 새소리도 너무 아름다워!<br>
+                            </p>
+                            <i class="fa fa-quote-right"></i>
+                            <p class="f-14"> 김아무개씨는 아무것도 모른채 신나있다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--스토리 섹션-->
+        <section id="story">
+            <div class="container story_container w-100 h-100">
+
+                <div class="long_line m-auto"></div>
+                <h2 class="text-center fw-bold">어라? 새소리? 지각이야!!!!!</h2>
+                <div class="row d-flex align-items-center w-100 justify-content-between" style="height: 85vh;">
+                    <div class="left_story_container col-md-auto">
+                        <i class="fa fa-quote-left"></i>
+                        <h2 class="fw-bold m-0">지고쿠! 지고쿠!</h2>
+                        <p class="f-14">
+                            젠장! 새학기 첫날부터 지각이라니!<br />
+                            나답지 못한 실수를 했군!<br />
+                        </p>
+                        <i class="fa fa-quote-right"></i>
+                        <p class="f-14">김아무개씨는 첫날부터 지각할 위기에 놓이는데..</p>
+                    </div>
+                    <div class="right_story_container col-md-auto w-50 h-50 d-flex justify-content-end">
+                        <img class="images" src="images/#" />
+                    </div>
+                </div>
+                <div class="text-center bottom">
+
+                    <p class="m-0 f-14">하지만 연회할 기회는 있었고, 열심히 달린 김아무개씨</p>
+                    <h3 class="fw-bold" style="margin-bottom: 2%;">이 앞 코너만 돌면 정문이다!!</h3>
+                    <div class="long_line m-auto"></div>
+                </div>
+            </div>
+        </section>
+        <!-- 메인 섹션 -->
+        <section id="main">
+            <div class="main_img" style="height: 80vh;">
+                <img class="images" src="images/#" />
+            </div>
+            <div class="main_container container" style="height: 30vh;">
+                <div class="text_box text-center py-5 h-100">
+                    <p>으으... 여기가 어디지?</p>
+                    <p>트럭에 치인 후로 기억이 없어..</p>
+                    <p>설마?! 이세계 트럭???</p>
+                    <h3 class="fw-bold m-0">나도 드디어 이세카이로??</h3>
+                </div>
+            </div>
+        </section>
+
+        <!--사이드바디 섹션-->
+        <section id="side_body">
+            <div class="side_body_container" style="height: 80vh;">
+                <img class="images" src="images/#" />
+            </div>
+
+            <div class="row d-flex align-items-center w-100 justify-content-between">
+                <div class="left_side_body_container col-md-auto w-50" style="height: 50vh;">
+                    <img class="images" src="images/#" />
+                </div>
+                <div class="right_side_body_container col-md-auto w-50">
+                    <div class="right_text text-end">
+                        <h3 class="fw-bold">라는 망상을 한 김아무개씨였다</h3>
+                        <p class="f-14">김아무개씨가 정신을 차린 곳은 백화점이였다.</p>
+                        <div class="short_line"></div>
+                        <i class="fa fa-quote-left"></i>
+                        <p class="m-0">
+                            뭐야? 백화점이잖아? 일단 이 백화<br />
+                            점에서 탈출하고 생각하자!
+                        </p>
+                        <i class="fa fa-quote-right"></i>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+
+        <!--파이널바디 섹션-->
+        <section id="final_body">
+            <div class="final_body_container position-absolute w-100 h-100" style="left: 0; top: 0;">
+                <div class=" d-flex justify-content-center align-items-center w-100 h-100">
+                    <a href="#">Start!</a>
+                </div>
+            </div>
+            <div class="final_img h-100">
+                <img class="images" src="images/#" />
+            </div>
+        </section>
+
+        <!--바닥글-->
+        <footer>
+            <div class="container w-100 h-100">
+                <div class="row  d-flex align-items-center justify-content-between w-100 h-100">
+                    <div class="footer_text col-md-auto">
+                        <p class="fw-bold">
+                            양영디지털고등학교 2022 응용프로그램 실습 프로젝트
+                        </p>
+                        <p class="f-14 m-0"><i class="fa fa-map-marker" style="margin-right: 10px;"></i>경기도 성남시 분당구
+                            불정로386번길 35</p>
+                        <p class="f-14 m-0"><i class="fa fa-phone" style="margin-right: 10px;"></i>031-778-2300</p>
+                        <p class="f-14 m-0">Copyrightⓒ2022 All rights reserved. Software development department 2nd year
+                            2nd class 2nd team.</p>
+                    </div>
+                    <img class="logoEnd col-md-auto" src="images/#" alt="LOGO" />
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
