@@ -21,7 +21,9 @@
             <div class="container  h-100 w-100">
                 <div class="row d-flex align-items-center h-100 w-100 m-0 justify-content-between">
                     <div class="logo_box col-md-auto m-0">
+                         <a href="./index.jsp" class="text-white">
                         <img class="logoStart" src="images/#" alt="LOGO" />
+                    </a>
                     </div>
                     <nav class="col-md-auto m-0">
                         <ul class="menu d-flex justify-content-end align-items-center m-0">
@@ -49,7 +51,7 @@
         <section id="join" class="w-100">
             <div class="d-flex align-items-center justify-content-center w-100 h-100">
                 <form action="./login.jsp" method="post">
-                    <div class="container join_container ">
+                    <div class="container join_container mt-5">
                         <h1 class="mb-4 text-center"><b>회원가입</b></h1>
                         <div class="mb-3 row">
                             <label for="id" class="col-sm-2 col-form-label">ID</label>
@@ -82,7 +84,7 @@
                 </form>
             </div>
         </section>
-
+  </div>
 </body>
 
 </html>

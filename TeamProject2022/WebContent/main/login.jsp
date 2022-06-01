@@ -21,7 +21,9 @@
             <div class="container  h-100 w-100">
                 <div class="row d-flex align-items-center h-100 w-100 m-0 justify-content-between">
                     <div class="logo_box col-md-auto m-0">
+                         <a href="./index.jsp" class="text-white">
                         <img class="logoStart" src="images/#" alt="LOGO" />
+                    </a>
                     </div>
                     <nav class="col-md-auto m-0">
                         <ul class="menu d-flex justify-content-end align-items-center m-0">
@@ -74,7 +76,7 @@
                 </form>
             </div>
         </section>
-
+  </div>
 </body>
 
 </html>

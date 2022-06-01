@@ -13,7 +13,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="../resources/js/script.js"></script>
     <link rel="stylesheet" href="../resources/css/style.css">
-    
+    <style type="text/css">
+    body::-webkit-scrollbar { display: none; }
+    </style>
 </head>
 
 <body>
@@ -23,7 +25,9 @@
             <div class="container  h-100 w-100">
                 <div class="row d-flex align-items-center h-100 w-100 m-0 justify-content-between">
                     <div class="logo_box col-md-auto m-0">
+                         <a href="./index.jsp" class="text-white">
                         <img class="logoStart" src="images/#" alt="LOGO" />
+                    </a>
                     </div>
                     <nav class="col-md-auto m-0">
                         <ul class="menu d-flex justify-content-end align-items-center m-0">
@@ -189,7 +193,9 @@
                         <p class="f-14 m-0">Copyrightⓒ2022 All rights reserved. Software development department 2nd year
                             2nd class 2nd team.</p>
                     </div>
-                    <img class="logoEnd col-md-auto" src="images/#" alt="LOGO" />
+                   <a href="./index.jsp" class="text-white col-md-auto">
+                        <img class="logoStart" src="images/#" alt="LOGO" />
+                    </a>
                 </div>
             </div>
         </footer>
