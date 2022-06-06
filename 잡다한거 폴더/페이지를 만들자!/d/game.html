@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="https://kit.fontawesome.com/2371ef8b46.js" crossorigin="anonymous"></script>
+     -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+        integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.2.0/css/all.min.css" integrity="sha512-6c4nX2tn5KbzeBJo9Ywpa0Gkt+mzCzJBrE1RB6fmpcsoN+b/w/euwIMuQKNyUoU/nToKN3a8SgNOtPrbW12fug==" crossorigin="anonymous" /> -->
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- 배경 -->
+        <img src="" alt="" class="back_img">
+        <!-- 이벤트 -->
+        <div class="event_box">
+            <a href="" class="event1 border border-black position-absolute event"
+                style="width: 200px; height: 200px; top:30%; left:10%"></a>
+            <a href="" class="event2 border border-black position-absolute event"
+                style="width: 200px; height: 200px; top:30%; left:40%"></a>
+            <a href="" class="event3 border border-black position-absolute event"
+                style="width: 200px; height: 200px; top:30%; left:80%"></a>
+        </div>
+        <a href="" class="small_event"></a>
+        <!-- 템창 -->
+        <div class="items position-absolute" style="top: 0; left: 0;">
+            <div class="check mx-1">
+                <img src="" alt="">
+            </div>
+            <div class="item mx-1">
+                <img src="" alt="">
+            </div>
+            <div class="item mx-1">
+                <img src="" alt="">
+            </div>
+            <div class="item mx-1">
+                <img src="" alt="">
+            </div>
+        </div>
+        <!-- 말상자 -->
+        <div class="text_box position-absolute">
+            <div class="w-100 h-100 d-flex align-items-center justify-content-center">
+                <h2 class="m-0 text-white">여기에 글씨</h2>
+            </div>
+        </div>
+        <!-- 화살표 -->
+        <div class="arrow_left arrow">
+            <i class="fa-solid fa-chevron-left"></i>
+        </div>
+        <div class="arrow_bottom arrow">
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="arrow_right arrow">
+            <i class="fa-solid fa-chevron-right"></i>
+        </div>
+    </div>
+    <script>
+
+        const EVENT1 = $('.event1');
+        const EVENT2 = $('.event2');
+        const EVENT3 = $('.event3');
+        const EVENTS = $('.event');
+        const SMALL_EVENT = $('.small_event');
+        const BACK_IMG = $('.back_img');
+        const LEFT_ARROW = $('.arrow_left');
+        const RIGHT_ARROW = $('.arrow_right');
+        const DOWN_ARROW = $('.arrow_bottom');
+        const ARROWS = $('.arrow');
+        const CHECK_ITEM = $('.check > img');
+        let floor = "floor2";
+        let room = "clothingStore";
+        let event = "";
+        let item = [];
+
+        if (floor == "floor2") {
+            ARROWS.hide();
+            DOWN_ARROW.show();
+            if (room == "clothingStore") {
+                EVENT1.css({ 'left': 0, 'top': 0 });
+                EVENT2.css({ 'left': 0, 'top': 0 });
+                EVENT3.css({ 'left': 0, 'top': 0 });
+                SMALL_EVENT.css({ 'left': 0, 'top': 0 });
+                SMALL_EVENT.hide();
+                // BACK_IMG.attr('src','clothingStore.png');
+
+                EVENT1.click(function () {
+                    EVENTS.hide();
+                    SMALL_EVENT.show();
+                    // BACK_IMG.attr('src','여기에 해당 이벤트 아이템 이미지.png');
+                    event = "유성준";
+                });
+                EVENT2.click(function () {
+                    EVENTS.hide();
+                    SMALL_EVENT.show();
+                    // BACK_IMG.attr('src','여기에 해당 이벤트 아이템 이미지.png');
+                    event = "마네킹";
+                });
+                EVENT3.click(function () {
+                    EVENTS.hide();
+                    SMALL_EVENT.show();
+                    // BACK_IMG.attr('src','여기에 해당 이벤트 아이템 이미지.png');
+                    event = "옷";
+                });
+                if (event == "유성준") {
+                    SMALL_EVENT.click(function () {
+                        // BACK_IMG.attr('src','여기에 해당 이벤트 아이템 바뀔 이미지.png');
+                        //아이템들어감
+                        DOWN_ARROW.show();
+                    });
+                    DOWN_ARROW.click(function () {
+                        downEvent('clothingStore');
+                    });
+                }
+                DOWN_ARROW.click(function () {
+                    room = "floor2Hall";
+                    // BACK_IMG.attr('src','floor2Hall.png');
+                    ARROWS.show();
+                    DOWN_ARROW.hide();
+                });
+            } else if (room == "floor2Hall") {
+                EVENT1.css({ 'left': 0, 'top': 0 });
+                EVENT2.css({ 'left': 0, 'top': 0 });
+                EVENT3.css({ 'left': 0, 'top': 0 });
+                SMALL_EVENT.css({ 'left': 0, 'top': 0 });
+                SMALL_EVENT.hide();
+
+                EVENT1.click(function () {
+                    room = "clothingStore";
+                    // BACK_IMG.attr('src','clothingStore.png');
+                    ARROWS.hide();
+                    DOWN_ARROW.show();
+                });
+                EVENT2.click(function () {
+                    if (CHECK_ITEM.attr('alt') == '유성준') {
+                        room = "toilet";
+                        // BACK_IMG.attr('src','toilet.png');
+                        ARROWS.hide();
+                        DOWN_ARROW.show();
+                    }
+                });
+            }
+
+
+        }
+
+
+        function downEvent(back_img) {
+            event = "";
+            // BACK_IMG.attr('src',back_img);
+            EVENTS.show();
+            SMALL_EVENT.hide();
+            DOWN_ARROW.hide();
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        let bool = false;
+        $('.check').click(function () {
+            $('.check').addClass('item');
+            $('.check').removeClass('check');
+            $(this).addClass('check');
+            $(this).removeClass('item');
+            toggleCheck();
+        });
+        $('.item').click(function () {
+            $('.check').addClass('item');
+            $('.check').removeClass('check');
+            $(this).addClass('check');
+            $(this).removeClass('item');
+            toggleCheck();
+        })
+        function toggleCheck() {
+            if (!bool) {
+                $('.item').show();
+                bool = true;
+            } else {
+                $('.item').hide();
+                bool = false;
+            }
+        }
+
+        let firstChat = true;
+        let txt = []; // 텍스트 배열
+        const TXTBOX = $(".text_box"); // 텍스트 박스
+        TXTBOX.click(() => {
+            nextChat();
+        });
+        function nextChat() {
+            if (!txt.length) {
+                TXTBOX.hide();
+                firstChat = true;
+            } else {
+                TXTBOX.show();
+                $(".text_box h2").text(txt[0].msg);
+                txt.splice(0, 1);
+            }
+        }
+        function txtAdd(msg) {
+            if (!msg) {
+                console.log("메세지 오류!");
+                return;
+            }
+            if (firstChat) {
+                TXTBOX.show();
+                $(".text_box h2").text(msg);
+                firstChat = false;
+            } else {
+                txt.push({ "msg": msg });
+            }
+        }
+    </script>
+</body>
+
+</html>
