@@ -1,3 +1,5 @@
+
+<%@page import="dao.MemberDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -15,8 +17,8 @@
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="<%= request.getContextPath()%>/resources/css/style.css">
 </head>
-
 <body>
+
     <div class="wrapper">
         <!--헤더 섹션-->
         <header class="position-absolute w-100" style="top: 0; left: 0;">

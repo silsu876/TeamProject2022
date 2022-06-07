@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import com.sun.corba.se.spi.orbutil.fsm.Guard.Result;
+
 import common.JDBCUtil;
 
 public class MemberDAO {
@@ -104,5 +106,30 @@ public class MemberDAO {
 			JDBCUtil.close(conn, pstmt);
 		}
 		return n;
+	}public boolean getMemberPwd(String id, String pwd) {
+
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select userpwd from member where userid =?";
+		boolean result = false;
+		
+		conn = conn = JDBCUtil.getConnection();
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs= pstmt.executeQuery();
+			if (rs.next()) {
+				if (pwd.equals(rs.getString("userpwd"))) {
+					result =true;
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			JDBCUtil.close(conn, pstmt , rs);
+		}
+		return result;
+		
 	}
 }
