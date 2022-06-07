@@ -4,6 +4,15 @@
     margin: 0px;
     padding: 0px;
 }
+body {
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none
+}
+img {
+	-webkit-user-drag: none;
+}
 ul{
     list-style: none;
 }
