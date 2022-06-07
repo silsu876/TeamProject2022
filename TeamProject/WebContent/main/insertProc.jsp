@@ -22,7 +22,7 @@
 			response.sendRedirect(request.getContextPath() + "/main/login.jsp");
 
 		} else {
-			out.print("<script> alert('비밀번호가 맞지 않습니다'); history.back() </script>");
+			out.print("<script> alert('다시 작성해주세요'); history.back() </script>");
 		}
 	%>
 
