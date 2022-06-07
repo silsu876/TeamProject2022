@@ -129,7 +129,7 @@
         <!-- 메인 섹션 -->
         <section id="main">
             <div class="main_img" style="height: 80vh;">
-                <img class="images" src="images/#" />
+                <img class="images border" src="./imgs/1test.png" />
             </div>
             <div class="main_container container" style="height: 30vh;">
                 <div class="main_text text-center py-5 h-100">
@@ -144,12 +144,12 @@
         <!--사이드바디 섹션-->
         <section id="side_body">
             <div class="side_body_container" style="height: 80vh;">
-                <img class="images" src="images/#" />
+                <img class="images" src="./imgs/2test.png" />
             </div>
 
             <div class="row d-flex align-items-center w-100 justify-content-between">
                 <div class="left_side_body_container col-md-auto w-50" style="height: 50vh;">
-                    <img class="images" src="images/#" />
+                    <img class="images border" src="./imgs/3test.png" />
                 </div>
                 <div class="right_side_body_container col-md-auto w-50">
                     <div class="right_text text-end">
@@ -177,7 +177,7 @@
                 </div>
             </div>
             <div class="final_img h-100">
-                <img class="images" src="images/#" />
+                <img class="images border" src="./imgs/4test.png" />
             </div>
         </section>
 
