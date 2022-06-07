@@ -173,7 +173,7 @@
         <section id="final_body">
             <div class="final_body_container position-absolute w-100 h-100" style="left: 0; top: 0;">
                 <div class=" d-flex justify-content-center align-items-center w-100 h-100">
-                    <a href="../game/floor1/mainHall.jsp">Start!</a>
+                    <a href="<%= request.getContextPath()%>/game/mainGame.jsp">Start!</a>
                 </div>
             </div>
             <div class="final_img h-100">
