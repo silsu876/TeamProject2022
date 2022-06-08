@@ -14,14 +14,17 @@ $(() => {
     let floor = "floor2"; //기본 설정(층)
     let room = "clothingStore"; //기본 설정(방)
     let event = ""; //기본 설정(이벤트)
+    let eventBtn = 0;
     let item = []; //아이템 
-
+    
     //층 구별
     if (floor == "floor2") {
         ARROWS.hide();
         DOWN_ARROW.show();
+       
         //방 구별
         if (room == "clothingStore") {
+            
             //   EVENT1.css({ 'left': 0, 'top': 0 });
             //   EVENT2.css({ 'left': 0, 'top': 0 });
             //   EVENT3.css({ 'left': 0, 'top': 0 });
@@ -30,14 +33,7 @@ $(() => {
             BACK_IMG.attr('src', './imgs/2floor/옷.png');
 
             EVENT1.click(function () {
-                console.log('1들감')
-                EVENTS.hide();
-                SMALL_EVENT.show();
-                BACK_IMG.attr('src', './imgs/2floor/아이템.png');
-                event = "유성준";
-                DOWN_ARROW.click(function () {
-                    downEvent('./imgs/2floor/옷.png');
-                });
+               eventBtn =1;
             });
             EVENT2.click(function () {
                 EVENTS.hide();
@@ -57,6 +53,16 @@ $(() => {
                     downEvent('./imgs/2floor/옷.png');
                 });
             });
+            if(eventBtn == 1) {
+                console.log('1들감')
+                EVENTS.hide();
+                SMALL_EVENT.show();
+                BACK_IMG.attr('src', './imgs/2floor/아이템.png');
+                event = "유성준";
+                DOWN_ARROW.click(function () {
+                    downEvent('./imgs/2floor/옷.png');
+                });
+            }
             if (event == "유성준") {
                 SMALL_EVENT.click(function () {
                     // BACK_IMG.attr('src','여기에 해당 이벤트 아이템 바뀔 이미지.png');
