@@ -6,3 +6,4 @@ create table users(
 drop table users;
 delete from users; 
 select * from users;
+
