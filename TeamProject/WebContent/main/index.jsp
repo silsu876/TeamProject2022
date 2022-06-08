@@ -34,10 +34,23 @@
                     <nav class="col-md-auto m-0">
                         <ul class="menu d-flex justify-content-end align-items-center m-0">
                           <li class="p-2">
+                     			<%
+                     			String id =(String)session.getAttribute("loginOK");
+                     			if(id == null){
+                     			%>
                                 <a href="<%= request.getContextPath()%>/main/login.jsp" class="text-white">
                                 Login
-                           <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                           			<i class="fa-solid fa-arrow-right-to-bracket"></i>
                                 </a>
+                                <%
+                     			}else{
+                                %>
+                                <a href="<%= request.getContextPath()%>/main/login.jsp" class="text-white">
+                                <%= id %>
+                                
+                                <%
+                     			}
+                                %>
                             </li>
                             <li class="p-2">
                                 <span class="d-flex justify-content-center align-items-center ">|</span>

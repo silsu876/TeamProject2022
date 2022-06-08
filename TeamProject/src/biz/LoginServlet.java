@@ -12,21 +12,13 @@ import javax.servlet.http.HttpSession;
 
 import dao.MemberDAO;
 
-@WebServlet("/Login")
+@WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
 	public LoginServlet() {
 		super();
 	}
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.setContentType("text/html; charset=UTF-8");
@@ -39,6 +31,7 @@ public class LoginServlet extends HttpServlet {
 		
 		MemberDAO dao = new MemberDAO();
 		result = dao.getMemberPwd(id, pwd);
+		
 		if(result) {
 			HttpSession session = request.getSession();
 			session.setAttribute("loginOk", id);
