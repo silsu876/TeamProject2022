@@ -1,0 +1,5 @@
+1. server 설정
+2. 프로젝트 -> properties -> project facets
+-> Dynamic Web Module, java, javaScript 선택
+3. java 클릭 -> runtimes -> Apache Tomcat v8.5 선택
+Apply the close
