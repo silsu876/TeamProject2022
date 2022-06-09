@@ -36,18 +36,17 @@
                           <li class="p-2">
                      			<%
                      			String id =(String)session.getAttribute("loginOK");
-                     			if(id == null){
+                     			if(id != null){
                      			%>
-                                <a href="<%= request.getContextPath()%>/main/login.jsp" class="text-white">
-                                Login
-                           			<i class="fa-solid fa-arrow-right-to-bracket"></i>
+                     			 <a href="<%= request.getContextPath()%>/main/login.jsp" class="text-white">
+                                <%=id %>
                                 </a>
                                 <%
                      			}else{
                                 %>
                                 <a href="<%= request.getContextPath()%>/main/login.jsp" class="text-white">
-                                <%= id %>
-                                
+                                Login
+                           			<i class="fa-solid fa-arrow-right-to-bracket"></i>
                                 <%
                      			}
                                 %>

@@ -112,7 +112,7 @@ public class MemberDAO {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select pwd from users where id =?";
+		String sql = "select pw from users where id =?";
 		boolean result = false;
 		
 		conn = JDBCUtil.getConnection();
@@ -122,7 +122,7 @@ public class MemberDAO {
 			rs= pstmt.executeQuery();
 			
 			if (rs.next()) {
-				if (pwd.equals(rs.getString("pwd"))) 
+				if (pwd.equals(rs.getString("pw"))) 
 					result = true;
 				
 			}

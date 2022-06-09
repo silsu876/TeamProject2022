@@ -22,23 +22,23 @@ public class LoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.setContentType("text/html; charset=UTF-8");
-		String id,pwd;
+		
+		String id,pw;
 		boolean result = false;
 		PrintWriter out = response.getWriter();
 		
 		id = request.getParameter("id");
-		pwd = request.getParameter("pwd");
+		pw = request.getParameter("pw");
 		
 		MemberDAO dao = new MemberDAO();
-		result = dao.getMemberPwd(id, pwd);
+		result = dao.getMemberPwd(id, pw);		
 		
-		if(result) {
+		if(result) {	
 			HttpSession session = request.getSession();
 			session.setAttribute("loginOk", id);
-			response.sendRedirect("/main/login.jsp");
+			out.println("<script>location.href ='"+request.getContextPath()+"/main/index.jsp',alert('로그인이 성공하였습니다.');</script>");
 		}else {
 		out.println("<script>alert('회원정보가 맞지 않습니다.'); history.back(); </script>");	
 		}
 	}
-
 }
