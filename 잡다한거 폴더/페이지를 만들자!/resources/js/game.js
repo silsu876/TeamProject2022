@@ -276,35 +276,35 @@ $(() => {
     }
     // 텍스트 박스 
     let firstChat = true; //첫번째 텍스트
-    let txt = []; // 텍스트 배열
-    const TXTBOX = $(".text_box"); // 텍스트 박스
+    let text = []; // 텍스트 배열
+    const TEXTBOX = $(".text_box"); // 텍스트 박스
     //텍스트 박스 눌렀을때
-    TXTBOX.click(() => {
+    TEXTBOX.click(() => {
         nextChat();
     });
     //다음 텍스트로 넘기기
     function nextChat() {
-        if (!txt.length) {
-            TXTBOX.hide();
+        if (!text.length) {
+            TEXTBOX.hide();
             firstChat = true;
         } else {
-            TXTBOX.show();
-            $(".text_box h2").text(txt[0].msg);
-            txt.splice(0, 1);
+            TEXTBOX.show();
+            $(".text_box h2").text(text[0].msg);
+            text.splice(0, 1);
         }
     }
     //텍스트 추가하기
-    function txtAdd(msg) {
+    function textAdd(msg) {
         if (!msg) {
             console.log("메세지 오류!");
             return;
         }
         if (firstChat) {
-            TXTBOX.show();
+            TEXTBOX.show();
             $(".text_box h2").text(msg);
             firstChat = false;
         } else {
-            txt.push({ "msg": msg });
+            text.push({ "msg": msg });
         }
     }
 
