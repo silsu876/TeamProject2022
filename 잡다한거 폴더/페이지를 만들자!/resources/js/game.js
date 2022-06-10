@@ -135,6 +135,7 @@ $(() => {
                 //이벤트1 클릭 이벤트
                 EVENT1.click(function () {
                     room = "clothingStore";
+                    console.log(room);
                 });
             } else if (room == "floor2Hall2") {
                 BACK_IMG.attr('src', './imgs/2floor/밖2.png');
@@ -191,8 +192,7 @@ $(() => {
                 <img src="./imgs/2floor/${value}.jpg" alt="${value}" class="w-100 h-100">
                 </div>`          
             }
-            console.log(itemHTML)
-            ITEMS.appendChild(itemHTML);
+            $('.items').append(itemHTML);
         });
     }
 
@@ -249,14 +249,14 @@ $(() => {
 
     //템창 나왔다가 들어갔다가 하는 함수들
     let bool = false;
-    $('.check').click(function () {
+    $(document).on('click', '.check', function () {
         $('.check').addClass('item');
         $('.check').removeClass('check');
         $(this).addClass('check');
         $(this).removeClass('item');
         toggleCheck();
     });
-    $('.item').click(function () {
+    $(document).on('click', '.item', function () {
         $('.check').addClass('item');
         $('.check').removeClass('check');
         $(this).addClass('check');
