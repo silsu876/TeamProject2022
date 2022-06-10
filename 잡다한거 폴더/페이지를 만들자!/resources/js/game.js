@@ -135,6 +135,7 @@ $(() => {
                 //이벤트1 클릭 이벤트
                 EVENT1.click(function () {
                     room = "clothingStore";
+                    roomEvent();
                     console.log(room);
                 });
             } else if (room == "floor2Hall2") {
