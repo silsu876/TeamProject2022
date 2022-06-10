@@ -62,119 +62,17 @@
                             <th scope="col">플레이 시간</th>
                         </thead>
                         <tbody>
+                       <%--데이터 베이스 만들어줘 Rank 기본 유저 테이블 하고 연결좀 --%>
                        <% 
-                       for (int i=1; i<6; i++) { %>
+                       for (int i=1; i<11; i++) { %>
                        		<tr>
                        			<td scope="row">
-                       				<div>i</div>
+                       				<div><%= i %></div>
                        			</td>
                        			<td>id</td>
                        			<td>date</td>
                        		</tr>
                        <% } %>
-
-                       
-                       %>
-                        
-                            <tr>
-                                <td scope="row">
-                                    <div class="d-flex align-items-center">
-                           <i class="fa-solid fa-crown"></i>1
-                                    </div>
-                                </td>
-                                <td>hong1234</td>
-                                <td>20:00</td>
-                            </tr>
-                            <tr>
-                                <td scope="row">
-                                    <div class="d-flex align-items-center">
-                              <i class="fa-solid fa-crown"></i>1
-                                    </div>
-                                </td>
-                                <td>hong1234</td>
-                                <td>20:00</td>
-                            </tr>
-                            <tr>
-                                <td scope="row">
-                                    <div class="d-flex align-items-center">
-                                        <i class="fa fa-crown"></i>1
-                                    </div>
-                                </td>
-                                <td>hong1234</td>
-                                <td>20:00</td>
-                            </tr>
-                            <tr>
-                                <td scope="row">
-                                    <div class="d-flex align-items-center">
-                                    <i class="fa-solid fa-crown"></i>1
-                                    </div>
-                                </td>
-                                <td>hong1234</td>
-                                <td>20:00</td>
-                            </tr>
-                            <tr>
-                                <td scope="row">
-                                    <div class="d-flex align-items-center">
-                                      <i class="fa-solid fa-crown"></i>1
-                                    </div>
-                                </td>
-                                <td>hong1234</td>
-                                <td>20:00</td>
-                            </tr>
-                            <tr>
-                                <td scope="row">
-                                    <div class="d-flex align-items-center">
-                                    <i class="fa-solid fa-crown"></i>1
-                                    </div>
-                                </td>
-                                <td>hong1234</td>
-                                <td>20:00</td>
-                            </tr>
-                            <tr>
-                                <td scope="row">
-                                    <div class="d-flex align-items-center">
-                                        <i class="fa-solid fa-crown"></i>1
-                                    </div>
-                                </td>
-                                <td>hong1234</td>
-                                <td>20:00</td>
-                            </tr>
-                            <tr>
-                                <td scope="row">
-                                    <div class="d-flex align-items-center">
-                                        <i class="fa-solid fa-crown"></i>1
-                                    </div>
-                                </td>
-                                <td>hong1234</td>
-                                <td>20:00</td>
-                            </tr>
-                            <tr>
-                                <td scope="row">
-                                    <div class="d-flex align-items-center">
-                                        <i class="fa-solid fa-crown"></i>1
-                                    </div>
-                                </td>
-                                <td>hong1234</td>
-                                <td>20:00</td>
-                            </tr>
-                            <tr>
-                                <td scope="row">
-                                    <div class="d-flex align-items-center">
-                                        <i class="fa-solid fa-crown"></i>1
-                                    </div>
-                                </td>
-                                <td>hong1234</td>
-                                <td>20:00</td>
-                            </tr>
-                            <tr>
-                                <td scope="row">
-                                    <div class="d-flex align-items-center">
-                                        <i class="fa-solid fa-crown"></i>1
-                                    </div>
-                                </td>
-                                <td>hong1234</td>
-                                <td>20:00</td>
-                            </tr>
                     </tbody>
                 </table>                      
             </div>

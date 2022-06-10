@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -47,17 +48,18 @@ body::-webkit-scrollbar {
 							<li class="p-2">
 								<%
                           	String id = (String)session.getAttribute("loginOK");
-                          	if(id !=null){
+								
+							System.out.print(id);
+                          	if(id == null){
                          %> 
-                         <a href="logout">logout</a> 
-                         <script>alert('회원정보가 맞지 않습니다.');</script>
-                         <% 		
-                          }
-                          	else{
-                          %> <a
+                         	<a
 								href="<%= request.getContextPath()%>/main/login.jsp" class="text-white"> Login <i
 									class="fa-solid fa-arrow-right-to-bracket"></i> 
-							<%
+							                       		<%
+                          }
+                          	else{
+                          %> <a href="/logout">logout</a> <% 
+                         	 
                           	}
                            	%>
 							</li>
