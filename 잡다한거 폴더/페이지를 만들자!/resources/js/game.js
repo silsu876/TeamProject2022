@@ -113,6 +113,7 @@ $(() => {
             BACK_IMG.attr('src','./imgs/2floor/밖1.png');
             ARROWS.show();
             DOWN_ARROW.hide();
+            EVENT3.hide();
         }
     }
     
