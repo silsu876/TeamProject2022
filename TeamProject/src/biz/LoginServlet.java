@@ -19,8 +19,7 @@ public class LoginServlet extends HttpServlet {
 	public LoginServlet() {
 		super();
 	}
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
 		response.setContentType("text/html; charset=UTF-8");
 		
 		String id,pw;
@@ -37,6 +36,8 @@ public class LoginServlet extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("loginOk", id);
 			out.println("<script>location.href ='"+request.getContextPath()+"/main/index.jsp',alert('로그인이 성공하였습니다.');</script>");
+			System.out.println(id); 
+
 		}else {
 		out.println("<script>alert('회원정보가 맞지 않습니다.'); history.back(); </script>");	
 		}

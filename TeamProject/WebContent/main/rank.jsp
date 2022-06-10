@@ -62,6 +62,20 @@
                             <th scope="col">플레이 시간</th>
                         </thead>
                         <tbody>
+                       <% 
+                       for (int i=1; i<6; i++) { %>
+                       		<tr>
+                       			<td scope="row">
+                       				<div>i</div>
+                       			</td>
+                       			<td>id</td>
+                       			<td>date</td>
+                       		</tr>
+                       <% } %>
+
+                       
+                       %>
+                        
                             <tr>
                                 <td scope="row">
                                     <div class="d-flex align-items-center">
