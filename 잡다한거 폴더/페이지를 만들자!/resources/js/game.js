@@ -13,7 +13,7 @@ $(() => {
     const RIGHT_ARROW = $('.arrow_right'); //오른쪽 화살표
     const DOWN_ARROW = $('.arrow_bottom'); //아래쪽 화살표
     const ARROWS = $('.arrow'); //화살표들
-    const CHECK_ITEM = $('.check > img'); //아이템 check된 이미지
+    const CHECK_ITEM = $('.check'); //아이템 check된 이미지
     const ITEMS = $('.items');
     let floor = "floor2"; //기본 설정(층)
     let room = "clothingStore"; //기본 설정(방)
@@ -21,18 +21,30 @@ $(() => {
     let item = []; //아이템 
     let itemVal = []; //아이템 중복 제거 값
     let eventBool = false; //이벤트 중인지 방안인지 확인 용도
+    let eventNum = 0;
+    //클릭 이벤트1 이벤트
+    EVENT1.click(function () {
+        eventNum = 1;
+        roomEvent();
+    });
+    //클릭 이벤트2 이벤트
+    EVENT2.click(function () {
+        eventNum = 2;
+        roomEvent();
+    });
+    //클릭 이벤트3 이벤트
+    EVENT3.click(function () {
+        eventNum = 3;
+        roomEvent();
+    });
 
     //층과 방 구별 하고 여러 클릭 이벤트 들어있는 함수
     roomEvent();
     function roomEvent() {
-
         //층 구별
         if (floor == "floor2") {
-         
-
             //방 구별
             if (room == "clothingStore") {
-
                 //   EVENT1.css({ 'left': 0, 'top': 0 });
                 //   EVENT2.css({ 'left': 0, 'top': 0 });
                 //   EVENT3.css({ 'left': 0, 'top': 0 });
@@ -40,44 +52,43 @@ $(() => {
                 ARROWS.hide();
                 DOWN_ARROW.show();
                 SMALL_EVENT.hide();
-                //이벤트1 클릭이벤트
-                EVENT1.click(function () {
+
+                if (eventNum == 1) { //이벤트1 클릭이벤트
                     EVENTS.hide();
                     SMALL_EVENT1.show();
                     BACK_IMG.attr('src', './imgs/2floor/아이템.png');
                     eventBool = true;
+                    eventNum = 0;
                     SMALL_EVENT1.click(function () {
                         BACK_IMG.attr('src', './imgs/2floor/a.png');
                         item.push('유성준');
                         itemAdd();
                     });
-                });
-                //이벤트2 클릭이벤트
-                EVENT2.click(function () {
+                } else if (eventNum == 2) { //이벤트2 클릭이벤트
                     EVENTS.hide();
                     SMALL_EVENT1.show();
                     BACK_IMG.attr('src', './imgs/2floor/a.png');
                     event = "마네킹";
                     eventBool = true;
+                    eventNum = 0;
                     SMALL_EVENT1.click(function () {
                         BACK_IMG.attr('src', './imgs/2floor/a.png');
                         item.push('마네킹');
                         itemAdd();
                     });
-                });
-                //이벤트3 클릭이벤트
-                EVENT3.click(function () {
+                } else if (eventNum == 3) { //이벤트3 클릭이벤트
                     EVENTS.hide();
                     SMALL_EVENT1.show();
                     BACK_IMG.attr('src', './imgs/2floor/옷.png');
                     event = "옷";
                     eventBool = true;
+                    eventNum = 0;
                     SMALL_EVENT1.click(function () {
                         BACK_IMG.attr('src', './imgs/2floor/a.png');
                         item.push('옷');
                         itemAdd();
                     });
-                });
+                }
             } else if (room == "toilet") {
                 //   EVENT1.css({ 'left': 0, 'top': 0 });
                 //   EVENT2.css({ 'left': 0, 'top': 0 });
@@ -86,44 +97,43 @@ $(() => {
                 ARROWS.hide();
                 DOWN_ARROW.show();
                 SMALL_EVENT.hide();
-                //이벤트1 클릭이벤트
-                EVENT1.click(function () {
+                EVENTS.show();
+                if (eventNum == 1) { //이벤트1 클릭이벤트
                     EVENTS.hide();
                     SMALL_EVENT1.show();
                     BACK_IMG.attr('src', './imgs/2floor/아이템.png');
                     eventBool = true;
+                    eventNum = 0;
                     SMALL_EVENT1.click(function () {
                         BACK_IMG.attr('src', './imgs/2floor/a.png');
                         item.push('유성준');
                         itemAdd();
                     });
-                });
-                //이벤트2 클릭이벤트
-                EVENT2.click(function () {
+                } else if (eventNum == 2) { //이벤트2 클릭이벤트
                     EVENTS.hide();
                     SMALL_EVENT1.show();
                     BACK_IMG.attr('src', './imgs/2floor/a.png');
                     event = "마네킹";
                     eventBool = true;
+                    eventNum = 0;
                     SMALL_EVENT1.click(function () {
                         BACK_IMG.attr('src', './imgs/2floor/a.png');
                         item.push('마네킹');
                         itemAdd();
                     });
-                });
-                //이벤트3 클릭이벤트
-                EVENT3.click(function () {
+                } else if (eventNum == 3) { //이벤트3 클릭이벤트
                     EVENTS.hide();
                     SMALL_EVENT1.show();
                     BACK_IMG.attr('src', './imgs/2floor/옷.png');
                     event = "옷";
                     eventBool = true;
+                    eventNum = 0;
                     SMALL_EVENT1.click(function () {
                         BACK_IMG.attr('src', './imgs/2floor/a.png');
                         item.push('옷');
                         itemAdd();
                     });
-                });
+                }
             } else if (room == "floor2Hall") {
                 BACK_IMG.attr('src', './imgs/2floor/밖1.png');
                 // EVENT1.css({ 'left': 0, 'top': 0 });
@@ -133,11 +143,15 @@ $(() => {
                 EVENT1.show();
                 SMALL_EVENT.hide();
                 //이벤트1 클릭 이벤트
-                EVENT1.click(function () {
+                if (eventNum == 1) {
                     room = "clothingStore";
-                    roomEvent();
-                    console.log(room);
-                });
+                    BACK_IMG.attr('src', './imgs/2floor/옷.png');
+                    ARROWS.hide();
+                    DOWN_ARROW.show();
+                    SMALL_EVENT.hide();
+                    EVENTS.show();
+                    eventNum = 0;
+                }
             } else if (room == "floor2Hall2") {
                 BACK_IMG.attr('src', './imgs/2floor/밖2.png');
                 // EVENT1.css({ 'left': 0, 'top': 0 });
@@ -146,12 +160,19 @@ $(() => {
                 EVENTS.hide();
                 EVENT1.show();
                 SMALL_EVENT.hide();
+                console.log(CHECK_ITEM.find('img').attr('class'))
                 //이벤트1 클릭 이벤트
-                EVENT1.click(function () {
+                if (eventNum == 1) {
                     if (CHECK_ITEM.attr('alt') == '유성준') {
                         room = "toilet";
+                        BACK_IMG.attr('src', './imgs/2floor/화장실.jpg');
+                        ARROWS.hide();
+                        DOWN_ARROW.show();
+                        SMALL_EVENT.hide();
+                        EVENTS.show();
                     }
-                });
+                    eventNum = 0;
+                }
             } else if (room == "floor2Stair") {
                 BACK_IMG.attr('src', './imgs/2floor/계단.jpg');
                 // EVENT1.css({ 'left': 0, 'top': 0 });
@@ -161,15 +182,12 @@ $(() => {
                 EVENT1.show();
                 SMALL_EVENT.hide();
                 //이벤트1 클릭 이벤트
-                EVENT1.click(function () {
+                if (eventNum == 1) {
                     if (CHECK_ITEM.attr('alt') == '유성준') {
-                        room = "toilet";
-                        // BACK_IMG.attr('src','toilet.png');
-                        ARROWS.hide();
-                        DOWN_ARROW.show();
                     }
-                });
-            } 
+                    eventNum = 0;
+                }
+            }
 
         }
     }
@@ -181,18 +199,20 @@ $(() => {
             if (itemVal.indexOf(value) == -1) itemVal.push(value);
         });
         //아이템 추가
-        $.each(itemVal, function(i, value) {
+        $.each(itemVal, function (i, value) {
             let itemHTML;
             itemHTML = `
             <div class="item mx-1">
             <img src="./imgs/2floor/${value}.jpg" alt="${value}" class="w-100 h-100">
             </div>`
-            if(i ==0) {
+            if (i == 0) {
                 itemHTML = `
                 <div class="check mx-1">
                 <img src="./imgs/2floor/${value}.jpg" alt="${value}" class="w-100 h-100">
-                </div>`          
+                </div>`
             }
+            console.log(itemHTML)
+            console.log(CHECK_ITEM.find('img').attr('alt'))
             $('.items').append(itemHTML);
         });
     }
