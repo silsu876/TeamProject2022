@@ -237,9 +237,60 @@ $(() => {
                     room = "B1Stair";
                     eventNum = 0;
                 }
+            } else if (room == "floor1Hall") {
+                BACK_IMG.attr('src', './imgs/2floor/밖1.png');
+                // EVENT1.css({ 'left': 0, 'top': 0 });
+                ARROWS.show();
+                DOWN_ARROW.hide();
+                EVENT.hide();
+                EVENT1.show();
+                SMALL_EVENT.hide();
+                //이벤트1 클릭 이벤트
+                if (eventNum == 1) {
+                    room = "bookStore";
+                    BACK_IMG.attr('src', './imgs/2floor/서점.jpg');
+                    ARROWS.hide();
+                    DOWN_ARROW.show();
+                    SMALL_EVENT.hide();
+                    EVENT.show();
+                    eventNum = 0;
+                }
+            } else if (room == "bookStore") {
+                //   EVENT1.css({ 'left': 0, 'top': 0 });
+                //   EVENT2.css({ 'left': 0, 'top': 0 });
+                BACK_IMG.attr('src', './imgs/2floor/옷.png');
+                EVENT.show();
+                EVENT3.hide();
+                ARROWS.hide();
+                DOWN_ARROW.show();
+                SMALL_EVENT.hide();
+
+                if (eventNum == 1) { //이벤트1 클릭이벤트 /유성준
+                    EVENT.hide();
+                    SMALL_EVENT1.show();
+                    BACK_IMG.attr('src', './imgs/2floor/아이템.png');
+                    eventBool = true;
+                    eventNum = 0;
+                    SMALL_EVENT1.click(function () {
+                        BACK_IMG.attr('src', './imgs/2floor/a.png');
+                        itemAdd('유성준');
+                        SMALL_EVENT1.hide();
+                    });
+                } else if (eventNum == 2) { //이벤트2 클릭이벤트 /마네킹
+                    EVENT.hide();
+                    SMALL_EVENT1.show();
+                    BACK_IMG.attr('src', './imgs/2floor/a.png');
+                    eventBool = true;
+                    eventNum = 0;
+                    SMALL_EVENT1.click(function () {
+                        BACK_IMG.attr('src', './imgs/2floor/a.png');
+                        itemAdd('열쇠');
+                        SMALL_EVENT1.hide();
+                    });
+                }
             }
         } else if (floor == "B1") {
-            
+
         }
     }
     //아이템 추가 함수
