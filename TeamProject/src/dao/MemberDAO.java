@@ -134,4 +134,11 @@ public class MemberDAO {
 		return result;
 		
 	}
+	public void selectRank(String id, String pwd) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "";
+		
+	}
 }

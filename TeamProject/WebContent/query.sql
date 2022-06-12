@@ -11,3 +11,4 @@ drop table users;
 delete from users; 
 select * from users;
 
+insert into users values('rjsdud','123');
