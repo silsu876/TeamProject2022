@@ -496,6 +496,7 @@ $(() => {
             textAdd('정답이다');
             textAdd('다음문제는');
             numberAnswer++;
+            $('.answer').val("");
             textAdd("answer", "turnEvent");
         } else if (answer == "d" && numberAnswer == 2) {
             answerText = false;
@@ -504,6 +505,7 @@ $(() => {
             textAdd('정답이다');
             textAdd('다음문제는');
             numberAnswer++;
+            $('.answer').val("");
             textAdd("answer", "turnEvent");
         } else if (answer == "d" && numberAnswer == 3) {
             answerText = false;
@@ -524,7 +526,7 @@ $(() => {
     });
     //선택지1을 골랐을때 이벤트
     CHOICE1.click(function () {
-        CHOICE_BOX.fadeOut(200);
+        CHOICE_BOX.fadeOut(0);
         if (numberChoice == 1) {
             textAdd('어멋 틀렸어');
             textAdd('죽어라 얍');
