@@ -17,7 +17,6 @@ $(() => {
     const ITEMS = $('.items');
     let floor = "floor2"; //기본 설정(층)
     let room = "clothingStore"; //기본 설정(방)
-    let event = ""; //기본 설정(이벤트)
     let item = []; //아이템 
     let itemVal = []; //아이템 중복 제거 값
     let eventBool = false; //이벤트 중인지 방안인지 확인 용도
@@ -53,7 +52,7 @@ $(() => {
                 DOWN_ARROW.show();
                 SMALL_EVENT.hide();
 
-                if (eventNum == 1) { //이벤트1 클릭이벤트
+                if (eventNum == 1) { //이벤트1 클릭이벤트 /유성준
                     EVENTS.hide();
                     SMALL_EVENT1.show();
                     BACK_IMG.attr('src', './imgs/2floor/아이템.png');
@@ -63,30 +62,31 @@ $(() => {
                         BACK_IMG.attr('src', './imgs/2floor/a.png');
                         item.push('유성준');
                         itemAdd();
+                        SMALL_EVENT1.hide();
                     });
-                } else if (eventNum == 2) { //이벤트2 클릭이벤트
+                } else if (eventNum == 2) { //이벤트2 클릭이벤트 /마네킹
                     EVENTS.hide();
                     SMALL_EVENT1.show();
                     BACK_IMG.attr('src', './imgs/2floor/a.png');
-                    event = "마네킹";
                     eventBool = true;
                     eventNum = 0;
                     SMALL_EVENT1.click(function () {
                         BACK_IMG.attr('src', './imgs/2floor/a.png');
-                        item.push('마네킹');
+                        item.push('열쇠');
                         itemAdd();
+                        SMALL_EVENT1.hide();
                     });
-                } else if (eventNum == 3) { //이벤트3 클릭이벤트
+                } else if (eventNum == 3) { //이벤트3 클릭이벤트 /옷
                     EVENTS.hide();
                     SMALL_EVENT1.show();
                     BACK_IMG.attr('src', './imgs/2floor/옷.png');
-                    event = "옷";
                     eventBool = true;
                     eventNum = 0;
                     SMALL_EVENT1.click(function () {
                         BACK_IMG.attr('src', './imgs/2floor/a.png');
                         item.push('옷');
                         itemAdd();
+                        SMALL_EVENT1.hide();
                     });
                 }
             } else if (room == "toilet") {
@@ -98,40 +98,60 @@ $(() => {
                 DOWN_ARROW.show();
                 SMALL_EVENT.hide();
                 EVENTS.show();
-                if (eventNum == 1) { //이벤트1 클릭이벤트
+                if (eventNum == 1) { //이벤트1 클릭이벤트 /궁예
                     EVENTS.hide();
-                    SMALL_EVENT1.show();
-                    BACK_IMG.attr('src', './imgs/2floor/아이템.png');
+                    SMALL_EVENT.show();
+                    // SMALL_EVENT1.css({ 'left': 0, 'top': 0 });
+                    // SMALL_EVENT2.css({ 'left': 0, 'top': 0 });
+                    // SMALL_EVENT3.css({ 'left': 0, 'top': 0 });
+                    BACK_IMG.attr('src', './imgs/2floor/궁예.jpg');
                     eventBool = true;
                     eventNum = 0;
-                    SMALL_EVENT1.click(function () {
-                        BACK_IMG.attr('src', './imgs/2floor/a.png');
-                        item.push('유성준');
-                        itemAdd();
+                    SMALL_EVENT1.click(function () { //흰휴지
+                        SMALL_EVENT.hide();
+                        BACK_IMG.attr('src', './imgs/2floor/변기.jpg');
+                        console.log('흰')
                     });
-                } else if (eventNum == 2) { //이벤트2 클릭이벤트
-                    EVENTS.hide();
-                    SMALL_EVENT1.show();
-                    BACK_IMG.attr('src', './imgs/2floor/a.png');
-                    event = "마네킹";
-                    eventBool = true;
-                    eventNum = 0;
-                    SMALL_EVENT1.click(function () {
-                        BACK_IMG.attr('src', './imgs/2floor/a.png');
-                        item.push('마네킹');
-                        itemAdd();
+                    SMALL_EVENT2.click(function () { //빨간휴지
+                        SMALL_EVENT.hide();
+                        BACK_IMG.attr('src', './imgs/2floor/변기.jpg');
+                        console.log('빨')
                     });
-                } else if (eventNum == 3) { //이벤트3 클릭이벤트
+                    SMALL_EVENT3.click(function () { //파랑휴지
+                        SMALL_EVENT.hide();
+                        BACK_IMG.attr('src', './imgs/2floor/변기.jpg');
+                        console.log('파')
+                    });
+                } else if (eventNum == 2) { //이벤트2 클릭이벤트 /산신령
                     EVENTS.hide();
                     SMALL_EVENT1.show();
-                    BACK_IMG.attr('src', './imgs/2floor/옷.png');
-                    event = "옷";
+                    SMALL_EVENT2.show();
+                    BACK_IMG.attr('src', './imgs/2floor/산신령.jpg');
+                    eventBool = true;
+                    eventNum = 0;
+                    SMALL_EVENT1.click(function () { // 금
+                        SMALL_EVENT.hide();
+                        BACK_IMG.attr('src', './imgs/2floor/변기.jpg');
+                        item.push('금도끼');
+                        itemAdd();
+                        console.log('금')
+                    });
+                    SMALL_EVENT2.click(function () { //은
+                        SMALL_EVENT.hide();
+                        BACK_IMG.attr('src', './imgs/2floor/변기.jpg');
+                        item.push('은도끼');
+                        itemAdd();
+                        console.log('은')
+                    });
+                } else if (eventNum == 3) { //이벤트3 클릭이벤트 /유성준 뒤
+                    EVENTS.hide();
+                    SMALL_EVENT1.show();
+                    BACK_IMG.attr('src', './imgs/2floor/변기.jpg');
                     eventBool = true;
                     eventNum = 0;
                     SMALL_EVENT1.click(function () {
-                        BACK_IMG.attr('src', './imgs/2floor/a.png');
-                        item.push('옷');
-                        itemAdd();
+                        BACK_IMG.attr('src', './imgs/2floor/유성준.jpg');
+                        SMALL_EVENT1.hide();
                     });
                 }
             } else if (room == "floor2Hall") {
@@ -203,12 +223,12 @@ $(() => {
             itemHTML = `
             <div class="item mx-1">
             <img src="./imgs/2floor/${value}.jpg" alt="${value}" class="w-100 h-100">
-            </div>`
+            </div>`;
             if (i == 0) {
                 itemHTML = `
                 <div class="check mx-1">
                 <img src="./imgs/2floor/${value}.jpg" alt="${value}" class="w-100 h-100">
-                </div>`
+                </div>`;
             }
             $('.items').append(itemHTML);
         });
@@ -221,7 +241,6 @@ $(() => {
         console.log(room)
     });
     function downEvent(back_img) {
-        event = "";
         BACK_IMG.attr('src', back_img);
         EVENTS.show();
         SMALL_EVENT1.hide();
@@ -232,10 +251,14 @@ $(() => {
         if (eventBool) {
             if (room == "clothingStore") {
                 downEvent('./imgs/2floor/옷.png');
+            } else if (room == "toilet") {
+                downEvent('./imgs/2floor/화장실.jpg');
             }
         } else {
             if (room == "clothingStore") {
                 room = "floor2Hall";
+            } else if (room == "toilet") {
+                room = "floor2Hall2";
             }
         }
     }
