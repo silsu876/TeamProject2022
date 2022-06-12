@@ -28,6 +28,8 @@ $(() => {
     let eventNum = 0; //몇번째 버튼 눌렀는지 확인 용도
     let answerText = false; //정답박스 존재 여부
     let answer = "";// 유저가 쓴 정답
+    let numberAnswer = 1; // 답 번호
+    let numberChoice = 1; // 선택지 번호
 
     //클릭 이벤트1 이벤트
     EVENT1.click(function () {
@@ -297,26 +299,33 @@ $(() => {
                 if (eventNum == 1) { //이벤트1 클릭이벤트 /최서윤
                     EVENT.hide();
                     SMALL_EVENT1.hide();
-                    DOWN_ARROW.hide();
-                    BACK_IMG.attr('src', './imgs/floor1/최서윤.jpg');
-                    eventNum = 0;
-                    textAdd('책을 넘기면서 그윽하게 쳐다보는 최서윤이 보인다')
-                    textAdd(`"이제야 여길 보는구나?"`)
-                    textAdd("choice", "event");
+                    if (numberChoice >= 3) {
+                        textAdd('왜 또오니');
+                    } else {
+                        DOWN_ARROW.hide();
+                        BACK_IMG.attr('src', './imgs/floor1/최서윤.jpg');
+                        eventNum = 0;
+                        CHOICE1.find('h2').text('여기다');
+                        CHOICE2.find('h2').text('여기다');
+                        CHOICE3.find('h2').text('여기다');
+                        textAdd('책을 넘기면서 그윽하게 쳐다보는 최서윤이 보인다')
+                        textAdd(`"이제야 여길 보는구나?"`)
+                        textAdd("choice", "event");
+                    }
+                    eventBool = true;
                 } else if (eventNum == 2) { //이벤트2 클릭이벤트 /스핑크스
                     EVENT.hide();
                     SMALL_EVENT1.hide();
+                    if(numberAnswer >= 4) {
+                        textAdd('장사 더 안합니다');
+                    } else {
                     DOWN_ARROW.hide();
                     BACK_IMG.attr('src', './imgs/floor1/스핑크스.jpg');
-                    eventBool = true;
                     eventNum = 0;
                     textAdd('스핑크스 입니다')
                     textAdd("answer", "turnEvent");
-                    SMALL_EVENT1.click(function () {
-                        BACK_IMG.attr('src', './imgs/floor2/a.png');
-                        itemAdd('영화관열쇠');
-                        SMALL_EVENT1.hide();
-                    });
+                    }
+                    eventBool = true;
                 }
             } else if (room == "theater") {
                 //   EVENT1.css({ 'left': 0, 'top': 0 });
@@ -475,6 +484,88 @@ $(() => {
             $('.items').append(itemHTML);
         });
     }
+    //대답할때 버튼 클릭시 이벤트
+    ANSWER_BTN.click(function () {
+        answer = $('.answer').val();
+        if ($.trim(answer) == "") {
+            alert("정답을 입력해주세요");
+        } else if (answer == "d" && numberAnswer == 1) {
+            answerText = false;
+            ANSWER_BOX.hide();
+            TEXTBOX.find('h2').show();
+            textAdd('정답이다');
+            textAdd('다음문제는');
+            numberAnswer++;
+            textAdd("answer", "turnEvent");
+        } else if (answer == "d" && numberAnswer == 2) {
+            answerText = false;
+            ANSWER_BOX.hide();
+            TEXTBOX.find('h2').show();
+            textAdd('정답이다');
+            textAdd('다음문제는');
+            numberAnswer++;
+            textAdd("answer", "turnEvent");
+        } else if (answer == "d" && numberAnswer == 3) {
+            answerText = false;
+            ANSWER_BOX.hide();
+            TEXTBOX.find('h2').show();
+            textAdd('정답이다');
+            textAdd('이제 열쇠를 주겠다');
+            itemAdd('영화관열쇠');
+            numberAnswer++;
+            textAdd("show", "turnEvent");
+        } else {
+            answerText = false;
+            ANSWER_BOX.hide();
+            TEXTBOX.find('h2').show();
+            textAdd('틀렸다');
+            ending("die");
+        }
+    });
+    //선택지1을 골랐을때 이벤트
+    CHOICE1.click(function () {
+        CHOICE_BOX.fadeOut(200);
+        if (numberChoice == 1) {
+            textAdd('어멋 틀렸어');
+            textAdd('죽어라 얍');
+            ending("die");
+        } else if (numberChoice == 2) {
+            textAdd('어멋 정답이야');
+            textAdd('이제 보내줄께');
+            textAdd("show", "turnEvent");
+            numberChoice++;
+        }
+    });
+    //선택지2을 골랐을때 이벤트
+    CHOICE2.click(function () {
+        CHOICE_BOX.fadeOut(0);
+        if (numberChoice == 1) {
+            CHOICE1.find('h2').text('여기다ㅇ');
+            CHOICE2.find('h2').text('여기다ㅇ');
+            CHOICE3.find('h2').text('여기다ㅇ');
+            textAdd('어멋 정답이야');
+            textAdd('다음 어쩌구');
+            textAdd("choice", "event");
+            numberChoice++;
+        } else if (numberChoice == 2) {
+            textAdd('어멋 틀렸어');
+            textAdd('죽어라 얍');
+            ending("die");
+        }
+    });
+    //선택지3을 골랐을때 이벤트
+    CHOICE3.click(function () {
+        CHOICE_BOX.fadeOut(0);
+        if (numberChoice == 1) {
+            textAdd('어멋 틀렸어');
+            textAdd('죽어라 얍');
+            ending("die");
+        } else if (numberChoice == 2) {
+            textAdd('어멋 틀렸어');
+            textAdd('죽어라 얍');
+            ending("die");
+        }
+    });
 
     //아래쪽 버튼 이벤트
     DOWN_ARROW.click(function () {
@@ -572,7 +663,6 @@ $(() => {
 
         }
     }
-
     //템창 나왔다가 들어갔다가 하는 함수들
     let bool = false;
     $(document).on('click', '.check', function () {
@@ -599,17 +689,7 @@ $(() => {
             bool = false;
         }
     }
-    ANSWER_BTN.click(function () {
-        answer = $('.answer_text').val();
-        if ($.trim(answer) == "") {
-            alert("정답을 입력해주세요")
-        }
-        else {
-            answerText = false;
-            ANSWER_BOX.hide();
-            TEXTBOX.find('h2').show();
-        }
-    })
+
     // 텍스트 박스 
     let firstChat = true; //첫번째 텍스트
     let text = []; // 텍스트 배열
@@ -653,7 +733,7 @@ $(() => {
             } else if (Object.keys(text[0]) == "event") {
                 if (text[0].event == "choice") {
                     CHOICE_BOX.fadeIn(200);
-                } 
+                }
                 text.splice(0, 1);
                 nextChat();
 
@@ -664,6 +744,8 @@ $(() => {
                     TEXTBOX.find('h2').hide();
                 } else if (text[0].turnEvent == "bgImg") {
                     BACK_IMG.attr('src', `./imgs/${floor}/${bgImg}`);
+                } else if (text[0].turnEvent == "show") {
+                    DOWN_ARROW.show();
                 }
                 text.splice(0, 1);
             }
