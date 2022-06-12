@@ -13,13 +13,19 @@ $(() => {
     const RIGHT_ARROW = $('.arrow_right'); //오른쪽 화살표
     const DOWN_ARROW = $('.arrow_bottom'); //아래쪽 화살표
     const ARROWS = $('.arrow'); //화살표들
-    const ITEMS = $('.items');
+    const ITEMS = $('.items'); // 아이템창
+    const CHOICE_BOX = $('.choice_box'); //선택지 박스
+    const ANSWER_BOX = $('.answer_box'); // 정답 박스
+    const ANSWER_BTN = $('.answer_btn'); //정답 버튼
     let floor = "floor2"; //기본 설정(층)
     let room = "clothingStore"; //기본 설정(방)
     let item = []; //아이템 
     let itemVal = []; //아이템 중복 제거 값
     let eventBool = false; //이벤트 중인지 방안인지 확인 용도
     let eventNum = 0; //몇번째 버튼 눌렀는지 확인 용도
+    let answerText = false; //정답박스 존재 여부
+    
+
     //클릭 이벤트1 이벤트
     EVENT1.click(function () {
         eventNum = 1;
@@ -367,6 +373,9 @@ $(() => {
                 if (eventNum == 1) {
                     floor = "floor1";
                     room = "floor1Stair";
+                    EVENT.hide();
+                    EVENT1.show();
+                    EVENT2.show();
                     eventNum = 0;
                 } 
             } else if (room == "B1Hall") {
@@ -592,8 +601,10 @@ $(() => {
     let text = []; // 텍스트 배열
     const TEXTBOX = $(".text_box"); // 텍스트 박스
     //텍스트 박스 눌렀을때
-    TEXTBOX.click(() => {
-        nextChat();
+    TXTBOX.click(() => {
+        if (!nameTextBox) {
+            nextChat();
+        }
     });
     //다음 텍스트로 넘기기
     function nextChat() {
@@ -607,21 +618,77 @@ $(() => {
         }
     }
     //텍스트 추가하기
-    function textAdd(msg) {
+    function textAdd(msg, type) {
         if (!msg) {
             console.log("메세지 오류!");
             return;
         }
         if (firstChat) {
             TEXTBOX.show();
-            $(".text_box h2").text(msg);
+            $(".text-box > h2").text(msg);
             firstChat = false;
         } else {
-            text.push({ "msg": msg });
+            if (type) {
+                text.push({});
+                text[text.length - 1][type] = msg;
+            } else {
+                text.push({ "msg": msg });
+            }
         }
     }
 
 
+    function nextChat() {
+        if (!text.length) {
+            TEXTBOX.hide();
+            firstChat = true;
+        } else {
+            TEXTBOX.show();
+            if (Object.keys(text[0]) == "msg") {
+                $(".text_box h2").text(text[0].msg);
+                text.splice(0, 1);
+            } else if (Object.keys(text[0]) == "event") {
+                if (text[0].event == "endturn") {
+                    TEXTBOX.hide();
+                    firstChat = true;
+                    goMain();
+                } if (text[0].event == "walk") {
+                    walk();
+                } else if (text[0].event == "modal_random") {
+                    $(".q1-modal").fadeIn(200);
+                } else if (text[0].event == "nocountmain") {
+                    noCountMain();
+                } else if (text[0].event == "storm") {
+                    BG.attr('src', './resourses/배경/storm.jpg');
+                } else if (text[0].event == "yard") {
+                    BG.attr('src', './resourses/배경/yard.jpg');
+                }
+                text.splice(0, 1);
+                nextChat();
+
+            } else if (Object.keys(text[0]) == "turnEvent") {
+                if (text[0].turnEvent == "goosename") {
+                    nameTextBox = true;
+                    if (nameTextBox) {
+                        NAME_BOX.show();
+                        TEXTBOX_text.hide();
+                    }
+                } else if (text[0].turnEvent == "endturn") {
+                    TEXTBOX.hide();
+                    firstChat = true;
+                    goMain();
+                } else if (text[0].turnEvent == "bgImg") {
+                    BG.attr('src', './resourses/배경/' + bgImg);
+                } else if (text[0].turnEvent == "show") {
+                    GOOSE_IMG.show();
+                } else if (text[0].turnEvent == "openBox") {
+                    GOOSE_IMG.attr("src", "./resourses/아이콘/openbox.png");
+                }
+                text.splice(0, 1);
+            }
+        }
+    }
+  
 
 })
 
