@@ -45,7 +45,7 @@
 									class="fa-solid fa-arrow-right-to-bracket"></i>
 							</a></li>
 							<li class="p-2"><span
-								class="d-flex justify-content-center align-items-center ">|</span>
+								class="d-flex justify-content-center align-items-center">|</span>
 							</li>
 							<li class="p-2"><a
 								href="<%= request.getContextPath()%>/main/rank.jsp"
@@ -61,8 +61,7 @@
 		<section id="login" class="w-100">
 			<div
 				class="d-flex align-items-center justify-content-center w-100 h-100">
-				<form action="<%= request.getContextPath()%>/login"
-					method="get">
+				<form action="<%= request.getContextPath()%>/login" method="get">
 					<div class="container login_container ">
 						<h1 class="mb-4 text-center">
 							<b>로그인</b>

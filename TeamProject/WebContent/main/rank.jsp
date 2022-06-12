@@ -64,7 +64,7 @@
                         <tbody>
                        <%--데이터 베이스 만들어줘 Rank 기본 유저 테이블 하고 연결좀 --%>
                        <% 
-                       for (int i=1; i<11; i++) { %>
+                       for (int i=1; i<21; i++) { %>
                        		<tr>
                        			<td scope="row">
                        				<div><%= i %></div>

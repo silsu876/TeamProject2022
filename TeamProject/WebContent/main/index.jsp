@@ -51,20 +51,16 @@ body::-webkit-scrollbar {
 								
 							System.out.print(id);
                           	if(id == null){
-                         %> 
-                         	<a
-								href="<%= request.getContextPath()%>/main/login.jsp" class="text-white"> Login</a> <i
-									class="fa-solid fa-arrow-right-to-bracket"></i> 
-							                       		<%
+                         %> <a
+								href="<%= request.getContextPath()%>/main/login.jsp"
+								class="text-white"> Login</a> <i
+								class="fa-solid fa-arrow-right-to-bracket"></i> <%
                           }
                           	else{
                           		
                           %> 
-                          	<form action="<%= request.getContextPath()%>/logout" method="get">
-                          <a href="<%=request.getContextPath()%>/main/logout" class="text-white">logout</a> 
-                         	</form>
-                          
-                          <% 
+                          <a href="<%= request.getContextPath()%>/Logout" class="text-white">logout</a>
+								<i class="fa-solid fa-arrow-right-to-bracket"></i> <% 
                           	}
                            	%>
 							</li>
