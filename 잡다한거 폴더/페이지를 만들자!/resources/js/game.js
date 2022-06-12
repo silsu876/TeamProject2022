@@ -3,7 +3,7 @@ $(() => {
     const EVENT1 = $('.event1'); //이벤트 1버튼
     const EVENT2 = $('.event2'); //이벤트 2버튼
     const EVENT3 = $('.event3'); //이벤트 3버튼
-    const EVENTS = $('.event'); //이벤트들
+    const EVENT = $('.event'); //이벤트들
     const SMALL_EVENT = $('.small_event'); //이벤트 속 이벤트1
     const SMALL_EVENT1 = $('.small_event1'); //이벤트 속 이벤트1
     const SMALL_EVENT2 = $('.small_event2'); //이벤트 속 이벤트1
@@ -53,7 +53,7 @@ $(() => {
                 SMALL_EVENT.hide();
 
                 if (eventNum == 1) { //이벤트1 클릭이벤트 /유성준
-                    EVENTS.hide();
+                    EVENT.hide();
                     SMALL_EVENT1.show();
                     BACK_IMG.attr('src', './imgs/2floor/아이템.png');
                     eventBool = true;
@@ -64,7 +64,7 @@ $(() => {
                         SMALL_EVENT1.hide();
                     });
                 } else if (eventNum == 2) { //이벤트2 클릭이벤트 /마네킹
-                    EVENTS.hide();
+                    EVENT.hide();
                     SMALL_EVENT1.show();
                     BACK_IMG.attr('src', './imgs/2floor/a.png');
                     eventBool = true;
@@ -75,7 +75,7 @@ $(() => {
                         SMALL_EVENT1.hide();
                     });
                 } else if (eventNum == 3) { //이벤트3 클릭이벤트 /옷
-                    EVENTS.hide();
+                    EVENT.hide();
                     SMALL_EVENT1.show();
                     BACK_IMG.attr('src', './imgs/2floor/옷.png');
                     eventBool = true;
@@ -94,9 +94,9 @@ $(() => {
                 ARROWS.hide();
                 DOWN_ARROW.show();
                 SMALL_EVENT.hide();
-                EVENTS.show();
+                EVENT.show();
                 if (eventNum == 1) { //이벤트1 클릭이벤트 /궁예
-                    EVENTS.hide();
+                    EVENT.hide();
                     SMALL_EVENT.show();
                     // SMALL_EVENT1.css({ 'left': 0, 'top': 0 });
                     // SMALL_EVENT2.css({ 'left': 0, 'top': 0 });
@@ -120,7 +120,7 @@ $(() => {
                         console.log('파')
                     });
                 } else if (eventNum == 2) { //이벤트2 클릭이벤트 /산신령
-                    EVENTS.hide();
+                    EVENT.hide();
                     SMALL_EVENT1.show();
                     SMALL_EVENT2.show();
                     BACK_IMG.attr('src', './imgs/2floor/산신령.jpg');
@@ -139,7 +139,7 @@ $(() => {
                         console.log('은')
                     });
                 } else if (eventNum == 3) { //이벤트3 클릭이벤트 /유성준 뒤
-                    EVENTS.hide();
+                    EVENT.hide();
                     SMALL_EVENT1.show();
                     BACK_IMG.attr('src', './imgs/2floor/변기.jpg');
                     eventBool = true;
@@ -154,7 +154,7 @@ $(() => {
                 // EVENT1.css({ 'left': 0, 'top': 0 });
                 ARROWS.show();
                 DOWN_ARROW.hide();
-                EVENTS.hide();
+                EVENT.hide();
                 EVENT1.show();
                 SMALL_EVENT.hide();
                 //이벤트1 클릭 이벤트
@@ -164,7 +164,7 @@ $(() => {
                     ARROWS.hide();
                     DOWN_ARROW.show();
                     SMALL_EVENT.hide();
-                    EVENTS.show();
+                    EVENT.show();
                     eventNum = 0;
                 }
             } else if (room == "floor2Hall2") {
@@ -172,18 +172,21 @@ $(() => {
                 // EVENT1.css({ 'left': 0, 'top': 0 });
                 ARROWS.hide();
                 LEFT_ARROW.show();
-                EVENTS.hide();
+                EVENT.hide();
                 EVENT1.show();
                 SMALL_EVENT.hide();
                 //이벤트1 클릭 이벤트
                 if (eventNum == 1) {
                     if ($('.check > img').attr('alt') == '유성준') {
+                        textAdd('화장실이 열렸다')
                         room = "toilet";
                         BACK_IMG.attr('src', './imgs/2floor/화장실.jpg');
                         ARROWS.hide();
                         DOWN_ARROW.show();
                         SMALL_EVENT.hide();
-                        EVENTS.show();
+                        EVENT.show();
+                    } else {
+                        textAdd('화장실이 잠겨있다')
                     }
                     eventNum = 0;
                 }
@@ -192,17 +195,51 @@ $(() => {
                 // EVENT1.css({ 'left': 0, 'top': 0 });
                 ARROWS.hide();
                 RIGHT_ARROW.show();
-                EVENTS.hide();
+                EVENT.hide();
                 EVENT1.show();
                 SMALL_EVENT.hide();
                 //이벤트1 클릭 이벤트
                 if (eventNum == 1) {
-                    if (CHECK_ITEM.attr('alt') == '유성준') {
-                    }
+                    floor = "floor1";
+                    room = "floor1Stair";
+                    BACK_IMG.attr('src', './imgs/2floor/계단.jpg');
+                    // EVENT1.css({ 'left': 0, 'top': 0 });
+                    // EVENT2.css({ 'left': 0, 'top': 0 });
+                    EVENT.hide();
+                    EVENT1.show();
+                    EVENT2.show();
+                    SMALL_EVENT.hide();
+                    eventNum = 0;
+
+                } 
+            }
+
+        } else if (floor == "floor1") {
+            if(room == "floor1Stair") {
+                BACK_IMG.attr('src', './imgs/2floor/계단.jpg');
+                // EVENT1.css({ 'left': 0, 'top': 0 });
+                // EVENT2.css({ 'left': 0, 'top': 0 });
+                ARROWS.hide();
+                RIGHT_ARROW.show();
+                EVENT.hide();
+                EVENT1.show();
+                EVENT2.show();
+                SMALL_EVENT.hide();
+                //이벤트1 클릭 이벤트
+                if (eventNum == 1) {
+                    floor = "floor2";
+                    room = "floor2Stair";
+                    EVENT.hide();
+                    EVENT1.show();
+                    eventNum = 0;
+                }  else if (eventNum == 2) {
+                    floor = "B1";
+                    room = "B1Stair";
                     eventNum = 0;
                 }
             }
-
+        } else if (floor == "B1") {
+            
         }
     }
     //아이템 추가 함수
@@ -238,7 +275,7 @@ $(() => {
     });
     function downEvent(back_img) {
         BACK_IMG.attr('src', back_img);
-        EVENTS.show();
+        EVENT.show();
         SMALL_EVENT1.hide();
         eventBool = false;
     }
@@ -273,6 +310,10 @@ $(() => {
             room = "floor2Hall2";
         } else if (room == "floor2Stair") {
             room = "floor2Hall";
+        } else if (room == "floor1Hall") {
+            room = "floor1Hall2";
+        } else if (room == "floor1Stair") {
+            room = "floor1Hall";
         }
     }
     //왼쪽 화살표 이벤트
@@ -281,6 +322,24 @@ $(() => {
             room = "floor2Hall";
         } else if (room == "floor2Hall") {
             room = "floor2Stair";
+        } else if (room == "floor1Hall2") {
+            room = "floor1Hall";
+        } else if (room == "floor1Hall") {
+            room = "floor1Stair";
+        }
+    }
+    //엔딩
+    function ending(endingName) {
+        EVENT.hide();
+        SMALL_EVENT.hide();
+        ARROWS.hide();
+        if(endingName == "die") {
+            BACK_IMG.attr('src', './imgs/ending/죽음 엔딩.jpg');
+            textAdd('죽음')
+        } else if (endingName == "end1") {
+            
+        } else if (endingName == "end2") {
+
         }
     }
 
