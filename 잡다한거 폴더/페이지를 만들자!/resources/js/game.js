@@ -373,7 +373,6 @@ $(() => {
                 BACK_IMG.attr('src', './imgs/B1/밖1.png');
                 // EVENT1.css({ 'left': 0, 'top': 0 });
                 ARROWS.show();
-                RIGHT_ARROW.hide();
                 DOWN_ARROW.hide();
                 EVENT.hide();
                 EVENT1.show();
@@ -384,52 +383,57 @@ $(() => {
                     BACK_IMG.attr('src', './imgs/B1/mart1.jpg');
                     SMALL_EVENT.hide();
                     EVENT.show();
+                    EVENT3.hide();
                     ARROWS.hide();
                     DOWN_ARROW.show();
                     eventNum = 0;
                 }
+            } else if (room == "B1Hall2") {
+                BACK_IMG.attr('src', './imgs/B1/밖2.png');
+                // EVENT1.css({ 'left': 0, 'top': 0 });
+                ARROWS.show();
+                RIGHT_ARROW.hide();
+                DOWN_ARROW.hide();
+                EVENT.hide();
+                EVENT1.show();
+                SMALL_EVENT.hide();
+                //이벤트1 클릭 이벤트
+                if (eventNum == 1) {
+                    ending("imo");
+                }
             } else if (room == "mart") {
                 //   EVENT1.css({ 'left': 0, 'top': 0 });
                 //   EVENT2.css({ 'left': 0, 'top': 0 });
-                //   EVENT3.css({ 'left': 0, 'top': 0 });
-                BACK_IMG.attr('src', './imgs/1floor/cinema.jpg');
+                BACK_IMG.attr('src', './imgs/B1/mart1.jpg');
+                EVENT.show();
+                EVENT3.hide();
                 ARROWS.hide();
                 DOWN_ARROW.show();
                 SMALL_EVENT.hide();
 
-                if (eventNum == 1) { //이벤트1 클릭이벤트 / 박건영 귀신
+                if (eventNum == 1) { //이벤트1 클릭이벤트 / 황유하 김동건 
                     EVENT.hide();
                     SMALL_EVENT1.show();
-                    BACK_IMG.attr('src', './imgs/1floor/최서윤.jpg');
+                    BACK_IMG.attr('src', './imgs/B1/최서윤.jpg');
                     eventBool = true;
                     eventNum = 0;
                     SMALL_EVENT1.click(function () {
-                        BACK_IMG.attr('src', './imgs/1floor/밖1.jpg');
-                        if($('.check > img').attr('alt') == '포스터') {
-                            itemAdd('마트열쇠');
+                        if($('.check > img').attr('alt') == '유성준침대') {
+                            BACK_IMG.attr('src', './imgs/B1/밖1.jpg');
+                            itemAdd('이모');
                             SMALL_EVENT1.hide();
                         }
                     });
-                } else if (eventNum == 2) { //이벤트2 클릭이벤트 / 스크린
+                } else if (eventNum == 2) { //이벤트2 클릭이벤트 / 유성준 침대
                     EVENT.hide();
                     SMALL_EVENT1.show();
-                    BACK_IMG.attr('src', './imgs/1floor/최서윤.jpg');
+                    BACK_IMG.attr('src', './imgs/B1/최서윤.jpg');
                     eventBool = true;
                     eventNum = 0;
                     SMALL_EVENT1.click(function () {
-                        BACK_IMG.attr('src', './imgs/1floor/밖1.jpg');
+                        BACK_IMG.attr('src', './imgs/B1/밖1.jpg');
                         SMALL_EVENT1.hide();
-                    });
-                } else if (eventNum == 3) { //이벤트3 클릭이벤트 / 엘사 포스터
-                    EVENT.hide();
-                    SMALL_EVENT1.show();
-                    BACK_IMG.attr('src', './imgs/1floor/최서윤.jpg');
-                    eventBool = true;
-                    eventNum = 0;
-                    SMALL_EVENT1.click(function () {
-                        BACK_IMG.attr('src', './imgs/1floor/밖1.jpg');
-                        itemAdd('포스터');
-                        SMALL_EVENT1.hide();
+                        itemAdd('유성준침대');
                     });
                 }
             }
@@ -521,6 +525,8 @@ $(() => {
             room = "floor1Hall";
         } else if (room == "B1Stair") {
             room = "B1Hall";
+        } else if (room == "B1Hall") {
+            room = "B1Hall2";
         }
     }
     //왼쪽 화살표 이벤트
@@ -535,6 +541,8 @@ $(() => {
             room = "floor1Stair";
         } else if (room == "B1Hall") {
             room = "B1Stair";
+        } else if (room == "B1Hall2") {
+            room = "B1Hall";
         }
     }
     //엔딩
@@ -542,12 +550,13 @@ $(() => {
         EVENT.hide();
         SMALL_EVENT.hide();
         ARROWS.hide();
+        ITEMS.hide();
         if (endingName == "die") {
             BACK_IMG.attr('src', './imgs/ending/죽음 엔딩.jpg');
             textAdd('죽음')
-        } else if (endingName == "end1") {
+        } else if (endingName == "imo") {
 
-        } else if (endingName == "end2") {
+        } else if (endingName == "hospital") {
 
         }
     }

@@ -263,3 +263,8 @@ td,th {
 .choice_box {
     display: none;
 }
+.back_img {
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+}
