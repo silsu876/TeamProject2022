@@ -21,7 +21,7 @@ $(() => {
     let item = []; //아이템 
     let itemVal = []; //아이템 중복 제거 값
     let eventBool = false; //이벤트 중인지 방안인지 확인 용도
-    let eventNum = 0;
+    let eventNum = 0; //몇번째 버튼 눌렀는지 확인 용도
     //클릭 이벤트1 이벤트
     EVENT1.click(function () {
         eventNum = 1;
@@ -160,10 +160,9 @@ $(() => {
                 EVENTS.hide();
                 EVENT1.show();
                 SMALL_EVENT.hide();
-                console.log(CHECK_ITEM.find('img').attr('class'))
                 //이벤트1 클릭 이벤트
                 if (eventNum == 1) {
-                    if (CHECK_ITEM.attr('alt') == '유성준') {
+                    if ($('.check > img').attr('alt') == '유성준') {
                         room = "toilet";
                         BACK_IMG.attr('src', './imgs/2floor/화장실.jpg');
                         ARROWS.hide();
@@ -211,8 +210,6 @@ $(() => {
                 <img src="./imgs/2floor/${value}.jpg" alt="${value}" class="w-100 h-100">
                 </div>`
             }
-            console.log(itemHTML)
-            console.log(CHECK_ITEM.find('img').attr('alt'))
             $('.items').append(itemHTML);
         });
     }
