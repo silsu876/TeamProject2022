@@ -265,7 +265,7 @@ $(() => {
                 DOWN_ARROW.show();
                 SMALL_EVENT.hide();
 
-                if (eventNum == 1) { //이벤트1 클릭이벤트 /유성준
+                if (eventNum == 1) { //이벤트1 클릭이벤트 /최서윤
                     EVENT.hide();
                     SMALL_EVENT1.show();
                     BACK_IMG.attr('src', './imgs/2floor/아이템.png');
@@ -276,7 +276,7 @@ $(() => {
                         itemAdd('유성준');
                         SMALL_EVENT1.hide();
                     });
-                } else if (eventNum == 2) { //이벤트2 클릭이벤트 /마네킹
+                } else if (eventNum == 2) { //이벤트2 클릭이벤트 /스핑크스
                     EVENT.hide();
                     SMALL_EVENT1.show();
                     BACK_IMG.attr('src', './imgs/2floor/a.png');
