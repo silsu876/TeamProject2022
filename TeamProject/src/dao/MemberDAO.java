@@ -138,6 +138,7 @@ public class MemberDAO {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
+		String sql = "";
 		
 	}
 }
