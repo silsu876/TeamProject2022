@@ -60,8 +60,7 @@ $(() => {
                     eventNum = 0;
                     SMALL_EVENT1.click(function () {
                         BACK_IMG.attr('src', './imgs/2floor/a.png');
-                        item.push('유성준');
-                        itemAdd();
+                        itemAdd('유성준');
                         SMALL_EVENT1.hide();
                     });
                 } else if (eventNum == 2) { //이벤트2 클릭이벤트 /마네킹
@@ -72,8 +71,7 @@ $(() => {
                     eventNum = 0;
                     SMALL_EVENT1.click(function () {
                         BACK_IMG.attr('src', './imgs/2floor/a.png');
-                        item.push('열쇠');
-                        itemAdd();
+                        itemAdd('열쇠');
                         SMALL_EVENT1.hide();
                     });
                 } else if (eventNum == 3) { //이벤트3 클릭이벤트 /옷
@@ -84,8 +82,7 @@ $(() => {
                     eventNum = 0;
                     SMALL_EVENT1.click(function () {
                         BACK_IMG.attr('src', './imgs/2floor/a.png');
-                        item.push('옷');
-                        itemAdd();
+                        itemAdd('옷');
                         SMALL_EVENT1.hide();
                     });
                 }
@@ -132,15 +129,13 @@ $(() => {
                     SMALL_EVENT1.click(function () { // 금
                         SMALL_EVENT.hide();
                         BACK_IMG.attr('src', './imgs/2floor/변기.jpg');
-                        item.push('금도끼');
-                        itemAdd();
+                        itemAdd('금도끼');
                         console.log('금')
                     });
                     SMALL_EVENT2.click(function () { //은
                         SMALL_EVENT.hide();
                         BACK_IMG.attr('src', './imgs/2floor/변기.jpg');
-                        item.push('은도끼');
-                        itemAdd();
+                        itemAdd('은도끼');
                         console.log('은')
                     });
                 } else if (eventNum == 3) { //이벤트3 클릭이벤트 /유성준 뒤
@@ -211,7 +206,8 @@ $(() => {
         }
     }
     //아이템 추가 함수
-    function itemAdd() {
+    function itemAdd(itemName) {
+        item.push(itemName);
         ITEMS.empty();
         // 중복제거
         $.each(item, function (i, value) {
