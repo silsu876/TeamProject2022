@@ -17,28 +17,21 @@
     <link rel="stylesheet" href="<%= request.getContextPath()%>/resources/css/style.css">
 </head>
 <body>
-   <div class="wrapper">
+   <div class="wrapper" style="height: 100vh; width: 100vw; overflow: hidden;">
         <!-- 배경 -->
-        <img src="" alt="">
+        <img src="./imgs/2floor/옷.png" class="back_img position-absolute" alt="">
          <!-- 이벤트 -->
         <div class="event_box">
-            <a href="" class="event1 border border-black position-absolute event" style="width: 200px; height: 200px; top:30%; left:10%"></a>
-            <a href="" class="event2 border border-black position-absolute event" style="width: 200px; height: 200px; top:30%; left:40%"></a>
-            <a href="" class="event3 border border-black position-absolute event" style="width: 200px; height: 200px; top:30%; left:80%"></a>
+            <div class="event1 border border-black position-absolute event" style="width: 200px; height: 200px; top:30%; left:10%"></div>
+            <div class="event2 border border-black position-absolute event" style="width: 200px; height: 200px; top:30%; left:40%"></div>
+            <div class="event3 border border-black position-absolute event" style="width: 200px; height: 200px; top:30%; left:80%"></div>
         </div>
-	        <a href="small_event"></a>
+	    <div class="small_event border position-absolute small_event1" style="width: 200px; height: 200px; top:30%; left:10%"></div>
+	    <div class="small_event border position-absolute small_event2" style="width: 200px; height: 200px; top:30%; left:40%"></div>
+	    <div class="small_event border position-absolute small_event3" style="width: 200px; height: 200px; top:30%; left:80%"></div>
         <!-- 템창 -->
         <div class="items position-absolute" style="top: 0; left: 0;">
             <div class="check mx-1">
-                <img src="<%= request.getContextPath()%>/floor2/imgs/" alt="">
-            </div>
-            <div class="item mx-1">
-                <img src="<%= request.getContextPath()%>/floor2/imgs/" alt="">
-            </div>
-            <div class="item mx-1">
-                <img src="<%= request.getContextPath()%>/floor2/imgs/" alt="">
-            </div>
-            <div class="item mx-1">
                 <img src="" alt="">
             </div>
         </div>
@@ -46,6 +39,25 @@
         <div class="text_box position-absolute">
             <div class="w-100 h-100 d-flex align-items-center justify-content-center">
                 <h2 class="m-0 text-white">여기에 글씨</h2>
+                <div class="answer_box">
+                    <div class="d-flex align-items-center justify-content-center " style="width: 500px;">
+                        <input type="text" name="" id="text" placeholder="여기에 정답을 써주세요"
+                            class="form-control answer mx-1" maxlength="6"  autocomplete='off'>
+                        <button class="btn btn-dark mx-1 answer_btn" style="white-space: nowrap;">작성 완료</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 선택지 -->
+        <div class="choice_box">
+            <div class="choice choice1 border rounded border-black position-absolute d-flex align-items-center justify-content-center" style="top: 20%; left: 32%;">
+                <h2>선택지1</h2>
+            </div>
+            <div class="choice choice2 border rounded border-black position-absolute d-flex align-items-center justify-content-center" style="top: 40%; left: 32%;">
+                <h2>선택지2</h2>
+            </div>
+            <div class="choice choice3 border rounded border-black position-absolute d-flex align-items-center justify-content-center" style="top: 60%; left: 32%;">
+                <h2>선택지3</h2>
             </div>
         </div>
         <!-- 화살표 -->

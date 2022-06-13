@@ -304,7 +304,6 @@ $(() => {
                     } else {
                         DOWN_ARROW.hide();
                         BACK_IMG.attr('src', './imgs/floor1/최서윤.jpg');
-                        eventNum = 0;
                         CHOICE1.find('h2').text('여기다');
                         CHOICE2.find('h2').text('여기다');
                         CHOICE3.find('h2').text('여기다');
@@ -312,6 +311,7 @@ $(() => {
                         textAdd(`"이제야 여길 보는구나?"`)
                         textAdd("choice", "event");
                     }
+                    eventNum = 0;
                     eventBool = true;
                 } else if (eventNum == 2) { //이벤트2 클릭이벤트 /스핑크스
                     EVENT.hide();
@@ -321,10 +321,10 @@ $(() => {
                     } else {
                     DOWN_ARROW.hide();
                     BACK_IMG.attr('src', './imgs/floor1/스핑크스.jpg');
-                    eventNum = 0;
                     textAdd('스핑크스 입니다')
                     textAdd("answer", "turnEvent");
-                    }
+                }
+                    eventNum = 0;
                     eventBool = true;
                 }
             } else if (room == "theater") {
@@ -711,7 +711,7 @@ $(() => {
         }
         if (firstChat) {
             TEXTBOX.show();
-            $(".text-box > h2").text(msg);
+            $(".text_box h2").text(msg);
             firstChat = false;
         } else {
             if (type) {
