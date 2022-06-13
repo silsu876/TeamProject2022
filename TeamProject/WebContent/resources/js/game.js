@@ -278,6 +278,7 @@ $(() => {
                     DOWN_ARROW.show();
                     SMALL_EVENT.hide();
                     EVENT.show();
+                    EVENT3.hide();
                     eventNum = 0;
                 }
             } else if (room == "bookStore") {
@@ -321,6 +322,7 @@ $(() => {
                     eventBool = true;
                 }
             } else if (room == "theater") {
+            	BACK_IMG.css({'bottom' : 'auto','top' :  0});
                 //   EVENT1.css({ 'left': 0, 'top': 0 });
                 //   EVENT2.css({ 'left': 0, 'top': 0 });
                 BACK_IMG.attr('src', './imgs/floor1/cinema1.jpg');
@@ -333,11 +335,11 @@ $(() => {
                 if (eventNum == 1) { //이벤트1 클릭이벤트 / 박건영 귀신
                     EVENT.hide();
                     SMALL_EVENT1.show();
-                    BACK_IMG.attr('src', './imgs/floor1/cinema2.jpg');
+                    BACK_IMG.attr('src', './imgs/floor1/cinema2.png');
                     eventBool = true;
                     eventNum = 0;
                     SMALL_EVENT1.click(function () {
-                    	  BACK_IMG.attr('src', './imgs/floor1/cinema3.jpg');
+                    	  BACK_IMG.attr('src', './imgs/floor1/cinema3.png');
                         if ($('.check > img').attr('alt') == '포스터') {
                             itemAdd('마트열쇠');
                             SMALL_EVENT1.hide();

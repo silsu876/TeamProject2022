@@ -19,7 +19,7 @@
 <body>
    <div class="wrapper" style="height: 100vh; width: 100vw; overflow: hidden;">
         <!-- 배경 -->
-        <img src="./imgs/2floor/옷.png" class="back_img" alt="">
+        <img src="./imgs/2floor/옷.png" class="back_img position-absolute" alt="">
          <!-- 이벤트 -->
         <div class="event_box">
             <div class="event1 border border-black position-absolute event" style="width: 200px; height: 200px; top:30%; left:10%"></div>
