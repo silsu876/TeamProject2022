@@ -238,113 +238,114 @@ footer {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+}
 
-    /* 랭킹 */
-    td,
-    th {
-        color: white;
-    }
+/* 랭킹 */
+td,
+th {
+    color: white;
+}
 
-    .table_scroll::-webkit-scrollbar {
-        width: 10px;
-    }
+.table_scroll::-webkit-scrollbar {
+    width: 10px;
+}
 
-    .table_scroll::-webkit-scrollbar-thumb {
-        background-color: #4e4e4e;
-        border-radius: 10px;
-    }
+.table_scroll::-webkit-scrollbar-thumb {
+    background-color: #4e4e4e;
+    border-radius: 10px;
+}
 
-    .table_scroll::-webkit-scrollbar-track {
-        background-color: rgb(255, 255, 255);
-        border-radius: 10px;
-        box-shadow: inset 0 0 5px white;
-    }
+.table_scroll::-webkit-scrollbar-track {
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px white;
+}
 
-    /* 게임창 */
-    /* 아이템창 */
-    .items {
-        border: 10px solid rgba(0, 0, 0, .2);
-        border-left-width: 8px;
-        border-right-width: 8px;
-        border-radius: 10px;
-        background-color: rgba(0, 0, 0, 0.8);
-        display: flex;
-        justify-content: space-between;
-    }
+/* 게임창 */
+/* 아이템창 */
+.items {
+    border: 10px solid rgba(0, 0, 0, .2);
+    border-left-width: 8px;
+    border-right-width: 8px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: space-between;
+}
 
-    .item,
-    .check {
-        background-color: rgba(220, 220, 220, .8);
-        border-radius: 10px;
-        width: 5vw;
-        height: 5vw;
-        cursor: pointer;
-    }
+.item,
+.check {
+    background-color: rgba(220, 220, 220, .8);
+    border-radius: 10px;
+    width: 5vw;
+    height: 5vw;
+    cursor: pointer;
+}
 
-    .item {
-        display: none;
-    }
+.item {
+    display: none;
+}
 
-    .check {
-        display: block;
-        background-color: rgba(255, 255, 255, 0.9);
-    }
+.check {
+    display: block;
+    background-color: rgba(255, 255, 255, 0.9);
+}
 
-    .arrow {
-        position: absolute;
-        color: white;
-        font-size: 3rem;
-        padding: 7% 10px;
-        background-color: rgba(0, 0, 0, .5);
-        border-radius: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-    }
+.arrow {
+    position: absolute;
+    color: white;
+    font-size: 3rem;
+    padding: 7% 10px;
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
 
-    .arrow_left {
-        left: 2%;
-        top: 50%;
-        transform: translate(0, -50%);
-    }
+.arrow_left {
+    left: 2%;
+    top: 50%;
+    transform: translate(0, -50%);
+}
 
-    .arrow_right {
-        right: 2%;
-        top: 50%;
-        transform: translate(0, -50%);
-    }
+.arrow_right {
+    right: 2%;
+    top: 50%;
+    transform: translate(0, -50%);
+}
 
-    .arrow_bottom {
-        padding: 0 20%;
-        bottom: 3%;
-        left: 50%;
-        transform: translate(-50%, 0);
-    }
+.arrow_bottom {
+    padding: 0 20%;
+    bottom: 3%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
 
-    .text_box {
-        left: 50%;
-        bottom: 13%;
-        height: 150px;
-        width: 60%;
-        transform: translate(-50%, 0);
-        border-radius: 10px;
-        background-color: rgba(0, 0, 0, 0.7);
-        cursor: pointer;
-    }
+.text_box {
+    left: 50%;
+    bottom: 13%;
+    height: 150px;
+    width: 60%;
+    transform: translate(-50%, 0);
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+}
 
-    .choice_box {
-        display: none;
-    }
+.choice_box {
+    display: none;
+}
 
-    .choice {
-        width: 700px;
-        height: 150px;
-        background-color: rgba(255, 255, 255, .8);
-    }
+.choice {
+    width: 700px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, .8);
+}
 
-    .back_img {
-        height: auto;
-        width: 100%;
-        object-fit: cover;
-    }
+.back_img {
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+}
