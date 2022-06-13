@@ -8,8 +8,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.sun.corba.se.spi.orbutil.fsm.Guard.Result;
+import com.sun.jmx.snmp.Timestamp;
 
 import common.JDBCUtil;
+import oracle.sql.TIMESTAMP;
 
 public class MemberDAO {
 	public ArrayList<String> getMemberList() {
@@ -135,17 +137,13 @@ public class MemberDAO {
 		return result;
 		
 	}
-	public void selectRank(String id, Date time) {
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		String sql = "SELECT";
+	
 		
-	}
-	public void insertRank() {
+	
+	public void insertRank(String id, TIMESTAMP PUtime) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "";
+		String sql = "insert into rank values(?,?)";
 	}
 }
