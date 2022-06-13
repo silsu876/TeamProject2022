@@ -4,160 +4,202 @@
     margin: 0px;
     padding: 0px;
 }
+
 body {
-  -webkit-user-select:none;
-  -moz-user-select:none;
-  -ms-user-select:none;
-  user-select:none
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
 }
+
 img {
-	-webkit-user-drag: none;
+    -webkit-user-drag: none;
 }
-ul{
+
+ul {
     list-style: none;
 }
+
 a {
     text-decoration: none
 }
+
 a:hover {
-	color: white;
+    color: white;
 }
+
 .wrqpper {
     width: 100%;
     overflow: hidden;
     position: relative;
 }
+
 .short_line {
     width: 50px;
     border-bottom: 1px solid #fff;
 }
+
 .long_line {
     height: 70px;
     border-left: 1px solid darkgray;
     width: 1px;
 }
-header, #visual {
+
+header,
+#visual {
     background-color: rgb(0, 0, 0);
 }
+
 /* 헤더 */
 header {
     height: 10vh;
     font-size: 14px;
     color: white;
 }
+
 hr {
     margin: 0;
 }
-header i, footer  i, td i {
+
+header i,
+footer i,
+td i {
     font-size: 12px;
 }
+
 header span {
     font-size: 20px;
 }
+
 /* 비주얼 */
 #visual {
     height: 90vh;
     color: white;
 }
-.small_title{
+
+.small_title {
     letter-spacing: 20px;
     margin-left: 15px;
     margin-bottom: 10%;
 }
+
 .visual_container h2 {
     line-height: 100%;
     font-size: 150px;
     font-weight: bold;
 }
-.visual_container .short_line, .visual_text {
+
+.visual_container .short_line,
+.visual_text {
     margin-top: 10%;
     margin-left: 15px;
 }
-.visual_text{
+
+.visual_text {
     margin-bottom: 15%;
 }
+
 .title2 {
-    -webkit-text-stroke-width:2px;
+    -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: white;
     color: transparent;
 }
+
 /* 서브 비주얼 */
 #serve_visual {
     height: 40vh;
     background-color: rgb(183, 204, 248);
     color: white;
 }
+
 .serve_visual_container .short_line {
     margin: 8% 0 8% auto;
 }
+
 /* 스토리 */
 #story {
     height: 115vh;
 }
-.story_container > h2{
+
+.story_container>h2 {
     margin-top: 3%;
 }
+
 .f-14 {
     font-size: 14px;
 }
-.bottom > .long_line {
+
+.bottom>.long_line {
     height: 50px;
 }
-.right_story_container >img {
+
+.right_story_container>img {
     background-color: gray;
     width: 100%;
     height: 100%;
     box-shadow: 15px 15px 0 rgb(208, 242, 255);
 }
+
 /* 메인 */
 #main {
     height: 110vh;
 }
-.main_img > img, .side_body_container > img{
+
+.main_img>img,
+.side_body_container>img {
     background-color: gray;
     width: 100%;
     height: 100%;
 }
+
 /* 사이드 바디 */
 #side_body {
     height: 130vh;
 }
-.left_side_body_container > img{
- width: 100%;
- height: 100%;
- background-color: black;
+
+.left_side_body_container>img {
+    width: 100%;
+    height: 100%;
+    background-color: black;
 }
-.right_text{
+
+.right_text {
     max-width: 660px;
     margin-left: 0;
     padding-right: 3%;
 }
+
 .right_side_body_container .short_line {
     margin: 5% 0 5% auto;
     border-color: black;
 }
+
 /* 파이널 */
-#final_body{
+#final_body {
     height: 100vh;
     position: relative;
 }
-.final_img > img{
+
+.final_img>img {
     width: 100%;
     height: 100%;
-     background-color: gray;
+    background-color: gray;
 }
-.final_body_container a{
+
+.final_body_container a {
     border: 1px solid white;
     padding: 30px 100px;
     color: white;
     font-size: 30px;
 }
+
 /* 푸터 */
 footer {
     height: 25vh;
     background-color: rgb(65, 65, 65);
     color: white;
 }
+
 /* 로그인 , 회원가입 , 랭킹*/
 #join,
 #login,
@@ -166,62 +208,89 @@ footer {
     color: white;
     height: 100vh;
 }
+
 .login_container {
     border: 1px solid white;
     padding: 100px;
     width: 650px;
 }
+
 .join_container {
     border: 1px solid white;
     padding: 100px 160px;
     width: 850px;
 }
+
 .ranking_container {
     border: 1px solid white;
     padding: 100px;
     width: 800px;
 }
+
+.logout_box {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
 /* 랭킹 */
-td,th {
+td,
+th {
     color: white;
 }
+
 .table_scroll::-webkit-scrollbar {
     width: 10px;
 }
+
 .table_scroll::-webkit-scrollbar-thumb {
     background-color: #4e4e4e;
     border-radius: 10px;
 }
+
 .table_scroll::-webkit-scrollbar-track {
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
     box-shadow: inset 0 0 5px white;
 }
+
 /* 게임창 */
 /* 아이템창 */
 .items {
     border: 10px solid rgba(0, 0, 0, .2);
-    border-left-width:8px;
-    border-right-width:8px;
+    border-left-width: 8px;
+    border-right-width: 8px;
     border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.8) ;
+    background-color: rgba(0, 0, 0, 0.8);
     display: flex;
     justify-content: space-between;
 }
-.item, .check {
+
+.item,
+.check {
     background-color: rgba(220, 220, 220, .8);
     border-radius: 10px;
     width: 5vw;
     height: 5vw;
     cursor: pointer;
 }
+
 .item {
     display: none;
 }
+
 .check {
     display: block;
     background-color: rgba(255, 255, 255, 0.9);
 }
+
 .arrow {
     position: absolute;
     color: white;
@@ -230,46 +299,53 @@ td,th {
     background-color: rgba(0, 0, 0, .5);
     border-radius: 10px;
     display: flex;
-    align-items:center ;
+    align-items: center;
     justify-content: center;
     cursor: pointer;
 }
+
 .arrow_left {
     left: 2%;
     top: 50%;
-    transform:translate(0, -50%); 
+    transform: translate(0, -50%);
 }
+
 .arrow_right {
     right: 2%;
     top: 50%;
-    transform:translate(0, -50%); 
+    transform: translate(0, -50%);
 }
+
 .arrow_bottom {
     padding: 0 20%;
     bottom: 3%;
     left: 50%;
-    transform:translate(-50%, 0); 
+    transform: translate(-50%, 0);
 }
+
 .text_box {
     left: 50%;
     bottom: 13%;
     height: 150px;
     width: 60%;
-    transform:translate(-50%, 0); 
+    transform: translate(-50%, 0);
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.7);
     cursor: pointer;
 }
-.logout_box {
-	  background-color: #4CAF50;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-	
+
+.choice_box {
+    display: none;
+}
+
+.choice {
+    width: 700px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, .8);
+}
+
+.back_img {
+    height: auto;
+    width: 100%;
+    object-fit: cover;
 }
