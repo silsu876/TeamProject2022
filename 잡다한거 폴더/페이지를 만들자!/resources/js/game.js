@@ -711,7 +711,7 @@ $(() => {
         }
         if (firstChat) {
             TEXTBOX.show();
-            $(".text-box > h2").text(msg);
+            $(".text_box h2").text(msg);
             firstChat = false;
         } else {
             if (type) {
