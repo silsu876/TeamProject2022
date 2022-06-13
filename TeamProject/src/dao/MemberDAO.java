@@ -141,4 +141,25 @@ public class MemberDAO {
 		String sql = "";
 		
 	}
+	public void insertRank() {
+		
+	}
+	public int PUnum() {
+		int n=0;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "SELECT COUNT(*) FROM users";
+		conn = JDBCUtil.getConnection();
+		try {
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			JDBCUtil.close(conn, pstmt, rs);
+		}
+		return n;
+	}
 }

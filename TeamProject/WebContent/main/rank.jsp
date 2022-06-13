@@ -1,5 +1,7 @@
+<%@page import="dao.MemberDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+	<% request.setCharacterEncoding("UTF-8"); %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,7 +55,13 @@
         <section id="rank">
             <div class="d-flex align-items-center justify-content-center w-100 h-100">
                 <div class="ranking_container container mt-5">
-                    <h1 class="text-center mb-5"><b>랭킹</b></h1>
+                    <h1 class="text-center mb-5"><b>랭킹</b></h1><br>
+                    <%
+                    MemberDAO dao= new MemberDAO();
+               		int count = dao.PUnum();
+                    
+                    %>
+                    <p class="text-center mb-5">총 <%= count %>명의 유저가 있습니다</p>
                     <div style="width:100%; height:300px; overflow:auto" class="table_scroll">
                         <table class="table" width="100%" cellspacing="0" cellpadding="0">
                             <thead>
@@ -63,11 +71,12 @@
                         </thead>
                         <tbody>
                        <%--데이터 베이스 만들어줘 Rank 기본 유저 테이블 하고 연결좀 --%>
+                       <%--그리고 아무도 없었다. --%>
                        <% 
-                       for (int i=1; i<21; i++) { %>
+                       for (int i=1; i<=20; i++) { %>
                        		<tr>
                        			<td scope="row">
-                       				<div><%= i %></div>
+                       				<div><%=i%></div>
                        			</td>
                        			<td>id</td>
                        			<td>date</td>
