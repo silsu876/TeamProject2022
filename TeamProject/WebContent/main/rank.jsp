@@ -1,5 +1,7 @@
+<%@page import="dao.MemberDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+	<% request.setCharacterEncoding("UTF-8"); %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -63,11 +65,12 @@
                         </thead>
                         <tbody>
                        <%--데이터 베이스 만들어줘 Rank 기본 유저 테이블 하고 연결좀 --%>
+                       <%--그리고 아무도 없었다. --%>
                        <% 
-                       for (int i=1; i<21; i++) { %>
+                       for (int i=1; i<=20; i++) { %>
                        		<tr>
                        			<td scope="row">
-                       				<div><%= i %></div>
+                       				<div><%=i%></div>
                        			</td>
                        			<td>id</td>
                        			<td>date</td>
