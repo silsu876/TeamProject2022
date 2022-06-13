@@ -55,13 +55,7 @@
         <section id="rank">
             <div class="d-flex align-items-center justify-content-center w-100 h-100">
                 <div class="ranking_container container mt-5">
-                    <h1 class="text-center mb-5"><b>랭킹</b></h1><br>
-                    <%
-                    MemberDAO dao= new MemberDAO();
-               		int count = dao.PUnum();
-                    
-                    %>
-                    <p class="text-center mb-5">총 <%= count %>명의 유저가 있습니다</p>
+                    <h1 class="text-center mb-5"><b>랭킹</b></h1>
                     <div style="width:100%; height:300px; overflow:auto" class="table_scroll">
                         <table class="table" width="100%" cellspacing="0" cellpadding="0">
                             <thead>
