@@ -162,9 +162,12 @@ header span {
 }
 .truck {
 	width: 70vw;
+	left :-70%;
 }
 .gigocu {
 	width : 50vw;
+	left: 33%;
+	top: 0;
 }
 /* 사이드 바디 */
 #side_body {
