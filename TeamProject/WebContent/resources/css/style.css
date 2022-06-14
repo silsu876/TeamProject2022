@@ -144,7 +144,6 @@ header span {
 }
 .right_story_container {
 	width:50%;
-	height: 53%;
 }
 .right_story_container>img {
     width: 100%;
@@ -203,19 +202,56 @@ header span {
     position: relative;
 }
 
-.final_img>img {
+.main5_img {
     width: 100%;
-    height: 100%;
+    height: auto;
     background-color: gray;
+    bottom: -10%;
 }
-
-.final_body_container a {
-    border: 1px solid white;
-    padding: 30px 100px;
-    color: white;
+.mail {
+	bottom : -10%;
+	z-index: 10;
+	left: 50%;
+	width: 40%;
+	transform: translate( -50%, 0);
+}
+.mailback {
+	bottom : -10%;
+	z-index: -10;
+	left: 50%;
+	width: 40%;
+	transform: translate( -50%, 0);
+}
+.ticket {
+	z-index: 5;
+	bottom: -20%;
+	left: 50%;
+	width: 40%;
+	transform: translate( -50%, 0);
+	transition:.3s;
+}
+.start_btn {
+	transition:.3s;
+    border: 1px solid black;
+    padding: 10px 50px;
+    color:black;
     font-size: 30px;
+    z-index:10;
+    position:absolute;
+    left: 50%;
+    bottom: 10%;
+    border-radius: 3px;
+    transform: translate( -50%, 0);
 }
-
+.final_box:hover .ticket{
+	bottom: -10%;
+}
+.final_box:hover .start_btn{
+	bottom: 20%;
+}
+.start_btn:hover{
+	background-color:rgba(0,0,0);
+}
 /* 푸터 */
 footer {
     height: 25vh;
