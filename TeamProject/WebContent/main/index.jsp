@@ -21,9 +21,9 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
 	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
 	crossorigin="anonymous"></script>
-<script src="<%= request.getContextPath()%>/resources/js/script.js"></script>
+<script src="<%= request.getContextPath()%>/resources/js/script.js?ver=1"></script>
 <link rel="stylesheet"
-	href="<%= request.getContextPath()%>/resources/css/style.css">
+	href="<%= request.getContextPath()%>/resources/css/style.css?ver=1">
 <style type="text/css">
 body::-webkit-scrollbar {
 	display: none;
