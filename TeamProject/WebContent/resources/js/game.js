@@ -195,7 +195,7 @@ $(() => {
                     eventNum = 0;
                 }
             } else if (room == "floor2Stair") {
-                BACK_IMG.attr('src', './imgs/floor2/계단.jpg');
+                BACK_IMG.attr('src', './imgs/floor2/2fEscalator.jpg');
                 // EVENT1.css({ 'left': 0, 'top': 0 });
                 ARROWS.hide();
                 RIGHT_ARROW.show();
@@ -206,7 +206,7 @@ $(() => {
                 if (eventNum == 1) {
                     floor = "floor1";
                     room = "floor1Stair";
-                    BACK_IMG.attr('src', './imgs/floor1/계단.jpg');
+                    BACK_IMG.attr('src', './imgs/floor1/1fEscalator.jpg');
                     // EVENT1.css({ 'left': 0, 'top': 0 });
                     // EVENT2.css({ 'left': 0, 'top': 0 });
                     EVENT.hide();
@@ -222,9 +222,9 @@ $(() => {
             //박씨 담당
         } else if (floor == "floor1") {
             if (room == "floor1Stair") {
-                BACK_IMG.attr('src', './imgs/floor1/계단.jpg');
-                // EVENT1.css({ 'left': 0, 'top': 0 });
-                // EVENT2.css({ 'left': 0, 'top': 0 });
+                BACK_IMG.attr('src', './imgs/floor1/1fEscalator.jpg');
+                //EVENT1.css({ 'left': 25%, 'top': 80% });
+                //EVENT2.css({ 'left': 75%, 'top': 80% });
                 ARROWS.hide();
                 RIGHT_ARROW.show();
                 EVENT.hide();
@@ -246,8 +246,8 @@ $(() => {
                     eventNum = 0;
                 }
             } else if (room == "floor1Hall") {
-                BACK_IMG.attr('src', './imgs/floor1/밖1.png');
-                // EVENT1.css({ 'left': 0, 'top': 0 });
+                BACK_IMG.attr('src', './imgs/floor1/departmentStore.png');
+                // EVENT1.css({ 'left': 50%, 'top':70%});
                 ARROWS.show();
                 DOWN_ARROW.hide();
                 EVENT.hide();
@@ -266,7 +266,7 @@ $(() => {
                 }
             } else if (room == "floor1Hall2") {
                 BACK_IMG.attr('src', './imgs/floor1/밖2.png');
-                // EVENT1.css({ 'left': 0, 'top': 0 });
+             // EVENT1.css({ 'left': 50%, 'top':70%});
                 ARROWS.hide();
                 LEFT_ARROW.show();
                 EVENT.hide();
@@ -284,8 +284,8 @@ $(() => {
                     eventNum = 0;
                 }
             } else if (room == "bookStore") {
-                //   EVENT1.css({ 'left': 0, 'top': 0 });
-                //   EVENT2.css({ 'left': 0, 'top': 0 });
+                //   EVENT1.css({ 'left': 25%, 'top': 70% });
+                //   EVENT2.css({ 'left': 75%, 'top': 70% });
                 BACK_IMG.attr('src', './imgs/floor1/bookStore1.png');
                 EVENT.show();
                 EVENT3.hide();
@@ -325,8 +325,8 @@ $(() => {
                 }
             } else if (room == "theater") {
             	BACK_IMG.css({'bottom' : 'auto','top' :  0});
-                //   EVENT1.css({ 'left': 0, 'top': 0 });
-                //   EVENT2.css({ 'left': 0, 'top': 0 });
+                //   EVENT1.css({ 'left': 20%, 'top': 50% });
+                //   EVENT2.css({ 'left': 50%, 'top': 50% });
                 BACK_IMG.attr('src', './imgs/floor1/cinema1.jpg');
                 EVENT.show();
                 EVENT3.hide();
@@ -364,7 +364,7 @@ $(() => {
             
         } else if (floor == "B1") {
             if (room == "B1Stair") {
-                BACK_IMG.attr('src', './imgs/B1/계단.jpg');
+                BACK_IMG.attr('src', './imgs/B1/b1Escalator.jpg');
                 // EVENT1.css({ 'left': 0, 'top': 0 });
                 ARROWS.hide();
                 RIGHT_ARROW.show();
