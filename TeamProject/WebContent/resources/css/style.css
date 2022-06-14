@@ -55,11 +55,9 @@ header {
     height: 10vh;
     font-size: 14px;
     color: white;
+    border-bottom:1px solid rgba(255, 255, 255, .3);
 }
 
-hr {
-    margin: 0;
-}
 
 header i,
 footer i,
@@ -75,8 +73,14 @@ header span {
 #visual {
     height: 90vh;
     color: white;
+    overflow:hidden;
+    position:relative;
 }
-
+.blackWolf {
+	top : 0;
+	right:10%;	
+	opacity: 80%;
+}
 .small_title {
     letter-spacing: 20px;
     margin-left: 15px;
@@ -108,12 +112,18 @@ header span {
 /* 서브 비주얼 */
 #serve_visual {
     height: 40vh;
-    background-color: rgb(183, 204, 248);
     color: white;
+    position:relative;
+    overflow:hidden;
 }
 
 .serve_visual_container .short_line {
     margin: 8% 0 8% auto;
+}
+.sky {
+	height: auto;
+	z-index: -1;
+	top: -100%;
 }
 
 /* 스토리 */
@@ -132,26 +142,34 @@ header span {
 .bottom>.long_line {
     height: 50px;
 }
-
+.right_story_container {
+	width:50%;
+	height: 53%;
+}
 .right_story_container>img {
-    background-color: gray;
     width: 100%;
-    height: 100%;
+    height: auto;
     box-shadow: 15px 15px 0 rgb(208, 242, 255);
 }
 
 /* 메인 */
 #main {
-    height: 110vh;
+    height: 130vh;
 }
-
-.main_img>img,
-.side_body_container>img {
-    background-color: gray;
+.main2_img,
+.side_body_container> img {
     width: 100%;
-    height: 100%;
+    height: auto;
 }
-
+.main2_img{
+	bottom: -10%;
+}
+.truck {
+	width: 70vw;
+}
+.gigocu {
+	width : 50vw;
+}
 /* 사이드 바디 */
 #side_body {
     height: 130vh;
@@ -159,7 +177,7 @@ header span {
 
 .left_side_body_container>img {
     width: 100%;
-    height: 100%;
+    height: auto;
     background-color: black;
 }
 

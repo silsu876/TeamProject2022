@@ -40,7 +40,7 @@ body::-webkit-scrollbar {
 					class="row d-flex align-items-center h-100 w-100 m-0 justify-content-between">
 					<div class="logo_box col-md-auto m-0">
 						<a href="<%= request.getContextPath()%>/main/index.jsp"
-							class="text-white"> <img class="logoStart" src="images/#"
+							class="text-white"> <img class="logoStart" src="./imgs/logo.png" width="100"
 							alt="LOGO" />
 						</a>
 					</div>
@@ -80,10 +80,9 @@ body::-webkit-scrollbar {
 
 		<!--비주얼 섹션-->
 		<section id="visual">
-			<hr color="#fff" />
 			<div class="d-flex align-items-center w-100 h-100">
 				<div
-					class="visual_container container d-flex w-100 justify-content-between">
+					class="visual_container container d-flex w-100 justify-content-between" >
 					<div class="visual_content">
 						<p class="small_title f-14">THE BANGTALCHUL GAME</p>
 						<h2 class="title1">방탈출</h2>
@@ -93,15 +92,15 @@ body::-webkit-scrollbar {
 							이 게임은 학교 프로젝트로 단순한 방탈출 게임입니다. <br> 여러 이스터에그도 찾아보세요!
 						</p>
 					</div>
-					<img class="blackWolf" src="images/#" alt="blackWolf" />
+					<img class="blackWolf position-absolute" src="./imgs/blackWolf.jpg" alt="blackWolf" />
 				</div>
 			</div>
 		</section>
 
 		<!--서브비주얼 섹션-->
 		<section id="serve_visual">
+				<img class="sky position-absolute w-100" src="./imgs/sunnySky.jpg" />
 			<div class="serve_visual_container container w-100 h-100">
-				<img class="sky position-absolute" src="images/#" />
 				<div class="row w-100 h-100">
 					<div
 						class="col-12 d-flex align-items-center justify-content-end w-100 h-100 text-end">
@@ -140,8 +139,8 @@ body::-webkit-scrollbar {
 						<p class="f-14">김아무개씨는 첫날부터 지각할 위기에 놓이는데..</p>
 					</div>
 					<div
-						class="right_story_container col-md-auto w-50 h-50 d-flex justify-content-end">
-						<img class="images" src="images/#" />
+						class="right_story_container col-md-auto d-flex justify-content-end">
+						<img class="images" src="./imgs/main1.png" />
 					</div>
 				</div>
 				<div class="text-center bottom">
@@ -155,8 +154,10 @@ body::-webkit-scrollbar {
 		</section>
 		<!-- 메인 섹션 -->
 		<section id="main">
-			<div class="main_img" style="height: 80vh;">
-				<img class="images border" src="./imgs/1test.png" />
+			<div class="main_img position-relative" style="height: 100vh; overflow:hidden;">
+				<img class="images position-absolute main2_img" src="./imgs/main2.png" />
+				<img class="images position-absolute truck" src="./imgs/truck.png" />
+				<img class="images position-absolute gigocu" src="./imgs/gigocu.png" />
 			</div>
 			<div class="main_container container" style="height: 30vh;">
 				<div class="main_text text-center py-5 h-100">
