@@ -217,9 +217,7 @@ $(() => {
 
                 }
             }
-            
-            
-            //박씨 담당
+
         } else if (floor == "floor1") {
             if (room == "floor1Stair") {
                 BACK_IMG.attr('src', './imgs/floor1/계단.jpg');
@@ -304,7 +302,7 @@ $(() => {
                         CHOICE2.find('h2').text('여기다');
                         CHOICE3.find('h2').text('여기다');
                         textAdd('책을 넘기면서 그윽하게 쳐다보는 최서윤이 보인다')
-                        textAdd("이제야 여길 보는구나? 나의 작은 아기 고양이")
+                        textAdd(`"이제야 여길 보는구나?"`)
                         textAdd("choice", "event");
                     }
                     eventNum = 0;
@@ -360,8 +358,6 @@ $(() => {
                     });
                 } 
             }
-            
-            
         } else if (floor == "B1") {
             if (room == "B1Stair") {
                 BACK_IMG.attr('src', './imgs/B1/계단.jpg');
@@ -489,8 +485,7 @@ $(() => {
             ANSWER_BOX.hide();
             TEXTBOX.find('h2').show();
             textAdd('정답이다');
-            textAdd('다음문제는 ');
-            textAdd('김동건은 씹덕이다')//O
+            textAdd('다음문제는');
             numberAnswer++;
             $('.answer').val("");
             textAdd("answer", "turnEvent");
@@ -500,7 +495,6 @@ $(() => {
             TEXTBOX.find('h2').show();
             textAdd('정답이다');
             textAdd('다음문제는');
-            textAdd('대머리는 머리에 비듬이 생기는가?')//정답 O
             numberAnswer++;
             $('.answer').val("");
             textAdd("answer", "turnEvent");
