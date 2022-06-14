@@ -58,7 +58,7 @@ $(() => {
                 //   EVENT1.css({ 'left': 0, 'top': 0 });
                 //   EVENT2.css({ 'left': 0, 'top': 0 });
                 //   EVENT3.css({ 'left': 0, 'top': 0 });
-                BACK_IMG.attr('src', './imgs/floor2/clothingStore1.jpg');
+                BACK_IMG.attr('src', './imgs/floor2/clothingStore.jpg');
                 ARROWS.hide();
                 DOWN_ARROW.show();
                 SMALL_EVENT.hide();
@@ -87,7 +87,7 @@ $(() => {
                 } else if (eventNum == 3) { //이벤트3 클릭이벤트 /옷
                     EVENT.hide();
                     SMALL_EVENT1.show();
-                    BACK_IMG.attr('src', './imgs/floor2/clothingStore2.jpg');
+                    BACK_IMG.attr('src', './imgs/floor2/옷.png');
                     eventBool = true;
                     eventNum = 0;
                     SMALL_EVENT1.click(function () {
@@ -154,7 +154,7 @@ $(() => {
                     });
                 }
             } else if (room == "floor2Hall") {
-                BACK_IMG.attr('src', './imgs/floor2/clothingStoreHallway.png');
+                BACK_IMG.attr('src', './imgs/floor2/밖1.png');
                 // EVENT1.css({ 'left': 0, 'top': 0 });
                 ARROWS.show();
                 DOWN_ARROW.hide();
@@ -172,7 +172,7 @@ $(() => {
                     eventNum = 0;
                 }
             } else if (room == "floor2Hall2") {
-                BACK_IMG.attr('src', './imgs/floor2/bathroomHallway.png');
+                BACK_IMG.attr('src', './imgs/floor2/밖2.png');
                 // EVENT1.css({ 'left': 0, 'top': 0 });
                 ARROWS.hide();
                 LEFT_ARROW.show();
@@ -246,7 +246,7 @@ $(() => {
                     eventNum = 0;
                 }
             } else if (room == "floor1Hall") {
-                BACK_IMG.attr('src', './imgs/floor1/departmentStore.jpg');
+                BACK_IMG.attr('src', './imgs/floor1/departmentStore.png');
                 // EVENT1.css({ 'left': 50%, 'top':70%});
                 ARROWS.show();
                 DOWN_ARROW.hide();
@@ -265,7 +265,7 @@ $(() => {
                     eventNum = 0;
                 }
             } else if (room == "floor1Hall2") {
-                BACK_IMG.attr('src', './imgs/floor1/cinemaHallway.jpg');
+                BACK_IMG.attr('src', './imgs/floor1/밖2.png');
              // EVENT1.css({ 'left': 50%, 'top':70%});
                 ARROWS.hide();
                 LEFT_ARROW.show();
@@ -381,7 +381,7 @@ $(() => {
                     eventNum = 0;
                 }
             } else if (room == "B1Hall") {
-                BACK_IMG.attr('src', './imgs/B1/martHallway.jpg');
+                BACK_IMG.attr('src', './imgs/B1/밖1.png');
                 // EVENT1.css({ 'left': 0, 'top': 0 });
                 ARROWS.show();
                 DOWN_ARROW.hide();
@@ -430,7 +430,7 @@ $(() => {
                 if (eventNum == 1) { //이벤트1 클릭이벤트 / 황유하 김동건 
                     EVENT.hide();
                     SMALL_EVENT1.show();
-                    BACK_IMG.attr('src', './imgs/B1/kimHwang4.png');
+                    BACK_IMG.attr('src', './imgs/B1/황유하.jpg');
                     eventBool = true;
                     eventNum = 0;
                     SMALL_EVENT1.click(function () {
@@ -490,7 +490,7 @@ $(() => {
             TEXTBOX.find('h2').show();
             textAdd('정답이다');
             textAdd('다음문제는 ');
-            textAdd('금은 금인데 도둑고양이에게 가장 어울리는 금은?')//정답 야금야금
+            textAdd('말레이시아의 수도는?')//정답 쿠알라룸푸르 | 코타키나발루 , 랑카위 ,말라카
             numberAnswer++;
             $('.answer').val("");
             textAdd("answer", "turnEvent");
@@ -500,7 +500,7 @@ $(() => {
             TEXTBOX.find('h2').show();
             textAdd('정답이다');
             textAdd('다음문제는');
-            textAdd('왕이 넘어지면 뭐가될까?')//정답 킹콩
+            textAdd('호주의 수도는?')//정답  캔버라 | 예 시드니 , 멘버른 , 브리즈번
             numberAnswer++;
             $('.answer').val("");
             textAdd("answer", "turnEvent");
