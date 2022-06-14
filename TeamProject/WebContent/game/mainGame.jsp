@@ -38,7 +38,7 @@
         <!-- 말상자 -->
         <div class="text_box position-absolute">
             <div class="w-100 h-100 d-flex align-items-center justify-content-center">
-                <h2 class="m-0 text-white">여기에 글씨</h2>
+                <h2 class="m-0 text-white">안은 생각보다 깨끗한데?</h2>
                 <div class="answer_box">
                     <div class="d-flex align-items-center justify-content-center " style="width: 500px;">
                         <input type="text" name="" id="text" placeholder="여기에 정답을 써주세요"
