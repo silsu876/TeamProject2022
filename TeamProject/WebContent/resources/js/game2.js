@@ -58,12 +58,14 @@ $(() => {
                 //   EVENT1.css({ 'left': 0, 'top': 0 });
                 //   EVENT2.css({ 'left': 0, 'top': 0 });
                 //   EVENT3.css({ 'left': 0, 'top': 0 });
+
                 BACK_IMG.attr('src', './imgs/floor2/clothingStore.jpg');
                 ARROWS.hide();
                 DOWN_ARROW.show();
                 SMALL_EVENT.hide();
 
                 if (eventNum == 1) { //이벤트1 클릭이벤트 /유성준
+                //   SMALL_EVENT1.css({ 'left': 0, 'top': 0 });
                     EVENT.hide();
                     SMALL_EVENT1.show();
                     BACK_IMG.attr('src', './imgs/floor2/pettingRoom1.png');
@@ -75,25 +77,25 @@ $(() => {
                         SMALL_EVENT1.hide();
                     });
                 } else if (eventNum == 2) { //이벤트2 클릭이벤트 /마네킹
+                //   SMALL_EVENT1.css({ 'left': 0, 'top': 0 });
                     EVENT.hide();
                     SMALL_EVENT1.show();
                     BACK_IMG.attr('src', './imgs/floor2/mannequin.png');
                     eventBool = true;
                     eventNum = 0;
                     SMALL_EVENT1.click(function () {
-                        itemAdd('열쇠');
+                        itemAdd('피팅룸열쇠');
                         SMALL_EVENT1.hide();
                     });
                 } else if (eventNum == 3) { //이벤트3 클릭이벤트 /옷
+                     //   SMALL_EVENT1.css({ 'left': 0, 'top': 0 });
                     EVENT.hide();
                     SMALL_EVENT1.show();
                     BACK_IMG.attr('src', './imgs/floor2/옷.png');
                     eventBool = true;
                     eventNum = 0;
                     SMALL_EVENT1.click(function () {
-                        BACK_IMG.attr('src', './imgs/floor2/a.png');
-                        itemAdd('옷');
-                        SMALL_EVENT1.hide();
+                        textAdd('히힛 속았징? 암것도 없지렁');
                     });
                 }
             } else if (room == "toilet") {
