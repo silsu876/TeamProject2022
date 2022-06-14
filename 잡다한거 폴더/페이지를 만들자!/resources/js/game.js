@@ -221,8 +221,8 @@ $(() => {
         } else if (floor == "floor1") {
             if (room == "floor1Stair") {
                 BACK_IMG.attr('src', './imgs/floor1/계단.jpg');
-                // EVENT1.css({ 'left': 0, 'top': 0 });
-                // EVENT2.css({ 'left': 0, 'top': 0 });
+                // EVENT1.css({ 'left': 0, 'top': 0 , 'width' : '0px', 'height' : '0px' });
+                // EVENT2.css({ 'left': 0, 'top': 0 ,'width' : '0px', 'height' : '0px' });
                 ARROWS.hide();
                 RIGHT_ARROW.show();
                 EVENT.hide();

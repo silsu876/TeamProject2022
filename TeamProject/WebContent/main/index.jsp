@@ -200,15 +200,14 @@ body::-webkit-scrollbar {
 
 		<!--파이널바디 섹션-->
 		<section id="final_body">
-			<div class="final_body_container position-absolute w-100 h-100"
-				style="left: 0; top: 0;">
-				<div
-					class=" d-flex justify-content-center align-items-center w-100 h-100">
-					<a href="<%= request.getContextPath()%>/game/mainGame.jsp">Start!</a>
+			<div class="final_img vh-100 position-relative" style="overflow:hidden;">
+				<img class="images position-absolute main5_img" src="./imgs/main5.png" />
+				<div class="final_box">
+				<img class="images position-absolute mail" src="./imgs/mail.png"/>				
+				<img class="images position-absolute ticket" src="./imgs/ticket.png" />				
+				<img class="images position-absolute mailback" src="./imgs/mailback.png" />				
+				<a href="<%= request.getContextPath()%>/game/mainGame.jsp" class="start_btn">Start!</a>
 				</div>
-			</div>
-			<div class="final_img vh-100" >
-				<img class="images" src="./imgs/main5.png" />
 			</div>
 		</section>
 
