@@ -21,7 +21,7 @@ $(() => {
     const CHOICE2 = $('.choice2'); //선택지2
     const CHOICE3 = $('.choice3'); //선택지3
     let floor = "floor2"; //기본 설정(층)
-    let room = "clothingStore"; //기본 설정(방)
+    let room = "toilet"; //기본 설정(방)
     let item = []; //아이템 
     let itemVal = []; //아이템 중복 제거 값
     let eventBool = false; //이벤트 중인지 방안인지 확인 용도
@@ -126,6 +126,7 @@ $(() => {
                     BACK_IMG.css({ 'bottom': '0' });
                 }
                 text.splice(0, 1);
+                nextChat();
             }
         }
     }
@@ -149,13 +150,14 @@ $(() => {
                 SMALL_EVENT.hide();
 
                 if (eventNum == 1) { //이벤트1 클릭이벤트 /유성준
-
+                    DOWN_ARROW.hide();
                     EVENT.hide();
                     SMALL_EVENT1.show();
                     eventBool = true;
                     SMALL_EVENT1.css({ 'left': '20%', 'top': '0', 'width': '40%', 'height': '80%' });
                     BACK_IMG.attr('src', './imgs/floor2/pettingRoom1.png');
                     if (smallEventNum == 1) {
+                        
                         if ($('.check > img').attr('alt') == '피팅룸열쇠') {
                             BACK_IMG.attr('src', './imgs/floor2/pettingRoom2.png');
                             itemAdd('유성준메이드');
@@ -170,6 +172,7 @@ $(() => {
                         textAdd('show', 'turnEvent');
                     }
                 } else if (eventNum == 2) { //이벤트2 클릭이벤트 /마네킹
+                    DOWN_ARROW.hide();
                     eventBool = true;
                     SMALL_EVENT1.css({ 'left': '25%', 'top': '85%', 'width': '5%', 'height': '5%' });
                     EVENT.hide();
@@ -184,6 +187,7 @@ $(() => {
                         textAdd('show', 'turnEvent');
                     }
                 } else if (eventNum == 3) { //이벤트3 클릭이벤트 /옷
+                    DOWN_ARROW.hide();
                     SMALL_EVENT1.css({ 'left': '20%', 'top': '0', 'width': '40%', 'height': '80%' });
                     EVENT.hide();
                     SMALL_EVENT1.show();
@@ -219,6 +223,7 @@ $(() => {
                     SMALL_EVENT3.css({ 'left': '80%', 'top': '47%', 'width': '20%', 'height': '50%' });
                     BACK_IMG.attr('src', './imgs/floor2/bathroom2.png');
                     if (smallEventNum == 1) { //파랑휴지
+                        text.splice(0);
                         SMALL_EVENT.hide();
                         textAdd('이런 배응망덕한!!');
                         textAdd('파랑휴지를 고르다니!!');
@@ -227,9 +232,9 @@ $(() => {
                         ending('die');
                         eventNum = 0;
                         smallEventNum = 0;
-                        textAdd('show', 'turnEvent');
                     }
                     else if (smallEventNum == 2) {//빨강휴지
+                        text.splice(0);
                         SMALL_EVENT.hide();
                         textAdd('이런 배응망덕한!!');
                         textAdd('빨강휴지를 고르다니!!');
@@ -238,9 +243,9 @@ $(() => {
                         ending('die');
                         eventNum = 0;
                         smallEventNum = 0;
-                        textAdd('show', 'turnEvent');
                     }
                     else if (smallEventNum == 3) {//흰휴지
+                        text.splice(0);
                         SMALL_EVENT.hide();
                         textAdd('그럼그럼 역시 휴지는 흰휴지지');
                         textAdd('사실 이거 안줄거라네 ㅋ');
@@ -263,6 +268,7 @@ $(() => {
                     SMALL_EVENT2.css({ 'left': '65%', 'top': '55%', 'width': '10%', 'height': '13%' });
                     BACK_IMG.attr('src', './imgs/floor2/bathroom3.png');
                     if (smallEventNum == 1) { // 금
+                        text.splice(0);
                         SMALL_EVENT.hide();
                         textAdd('오! 그렇군');
                         textAdd('잘가시게나');
@@ -275,6 +281,7 @@ $(() => {
                         textAdd('show', 'turnEvent');
                     }
                     else if (smallEventNum == 2) { //은
+                        text.splice(0);
                         SMALL_EVENT.hide();
                         BACK_IMG.attr('src', './imgs/floor2/bathroom4.png');
                         textAdd('까꿍~~!!');
