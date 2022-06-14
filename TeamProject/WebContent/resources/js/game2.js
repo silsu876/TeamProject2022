@@ -278,7 +278,6 @@ $(() => {
                         itemAdd('도끼');
                         eventNum = 0;
                         smallEventNum = 0;
-                        textAdd('show', 'turnEvent');
                     }
                     else if (smallEventNum == 2) { //은
                         text.splice(0);
@@ -291,7 +290,6 @@ $(() => {
                         textAdd("show", "turnEvent");
                         eventNum = 0;
                         smallEventNum = 0;
-                        textAdd('show', 'turnEvent');
                     }
                 }
             } else if (room == "floor2Hall") {
