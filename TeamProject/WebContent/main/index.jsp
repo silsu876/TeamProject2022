@@ -145,7 +145,7 @@ body::-webkit-scrollbar {
 				</div>
 				<div class="text-center bottom">
 
-					<p class="m-0 f-14">하지만 연회할 기회는 있었고, 열심히 달린 김아무개씨</p>
+					<p class="m-0 f-14">하지만 면회할 기회는 있었고, 열심히 달린 김아무개씨</p>
 					<h3 class="fw-bold" style="margin-bottom: 2%;">이 앞 코너만 돌면
 						정문이다!!</h3>
 					<div class="long_line m-auto"></div>
@@ -171,15 +171,15 @@ body::-webkit-scrollbar {
 
 		<!--사이드바디 섹션-->
 		<section id="side_body">
-			<div class="side_body_container" style="height: 80vh;">
-				<img class="images" src="./imgs/2test.png" />
+			<div class="side_body_container position-relative" style="height: 100vh; overflow:hidden;">
+				<img class="images position-absolute main3_img" src="./imgs/main3.gif" />
 			</div>
 
 			<div
 				class="row d-flex align-items-center w-100 justify-content-between">
-				<div class="left_side_body_container col-md-auto w-50"
-					style="height: 50vh;">
-					<img class="images border" src="./imgs/3test.png" />
+				<div class="left_side_body_container position-relative col-md-auto w-50"
+					style="height: 70vh; overflow:hidden;">
+					<img class="images position-absolute main4_img border border-black" src="./imgs/main4.png" />
 				</div>
 				<div class="right_side_body_container col-md-auto w-50">
 					<div class="right_text text-end">
@@ -207,8 +207,8 @@ body::-webkit-scrollbar {
 					<a href="<%= request.getContextPath()%>/game/mainGame.jsp">Start!</a>
 				</div>
 			</div>
-			<div class="final_img h-100">
-				<img class="images border" src="./imgs/4test.png" />
+			<div class="final_img vh-100" >
+				<img class="images" src="./imgs/main5.png" />
 			</div>
 		</section>
 
@@ -229,8 +229,8 @@ body::-webkit-scrollbar {
 						<p class="f-14 m-0">Copyrightⓒ2022 All rights reserved.
 							Software development department 2nd year 2nd class 2nd team.</p>
 					</div>
-					<a href="./index.jsp" class="text-white col-md-auto"> <img
-						class="logoStart" src="images/#" alt="LOGO" />
+					<a href="./index.jsp" class="text-white col-md-auto"> <img class="logoStart" src="./imgs/logo.png" width="100"
+							alt="LOGO" />
 					</a>
 				</div>
 			</div>

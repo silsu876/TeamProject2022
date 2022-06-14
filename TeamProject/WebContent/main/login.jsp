@@ -34,7 +34,7 @@
 					class="row d-flex align-items-center h-100 w-100 m-0 justify-content-between">
 					<div class="logo_box col-md-auto m-0">
 						<a href="<%= request.getContextPath()%>/main/index.jsp"
-							class="text-white"> <img class="logoStart" src="images/#"
+							class="text-white"> <img class="logoStart" src="./imgs/logo.png" width="100"
 							alt="LOGO" />
 						</a>
 					</div>
@@ -56,7 +56,6 @@
 					</nav>
 				</div>
 			</div>
-			<hr />
 		</header>
 		<!--로그인-->
 		<section id="login" class="w-100">

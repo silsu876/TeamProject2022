@@ -156,12 +156,9 @@ header span {
 #main {
     height: 130vh;
 }
-.main2_img,
-.side_body_container> img {
+.main2_img{
     width: 100%;
     height: auto;
-}
-.main2_img{
 	bottom: -10%;
 }
 .truck {
@@ -172,13 +169,21 @@ header span {
 }
 /* 사이드 바디 */
 #side_body {
-    height: 130vh;
+    height: 170vh;
 }
-
-.left_side_body_container>img {
-    width: 100%;
-    height: auto;
+.side_body_container {	
     background-color: black;
+}
+.main3_img {
+	left : 50%;
+	top : 50%;
+    width : 80%;
+    height :auto;
+    transform: translate(-50%, -50%);
+}
+.main4_img {
+	width : 100%;
+	bottom : -10%;
 }
 
 .right_text {

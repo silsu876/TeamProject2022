@@ -58,7 +58,7 @@ $(() => {
                 //   EVENT1.css({ 'left': 0, 'top': 0 });
                 //   EVENT2.css({ 'left': 0, 'top': 0 });
                 //   EVENT3.css({ 'left': 0, 'top': 0 });
-                BACK_IMG.attr('src', './imgs/floor2/옷.png');
+                BACK_IMG.attr('src', './imgs/floor2/clothingStore.jpg');
                 ARROWS.hide();
                 DOWN_ARROW.show();
                 SMALL_EVENT.hide();
@@ -66,22 +66,21 @@ $(() => {
                 if (eventNum == 1) { //이벤트1 클릭이벤트 /유성준
                     EVENT.hide();
                     SMALL_EVENT1.show();
-                    BACK_IMG.attr('src', './imgs/floor2/아이템.png');
+                    BACK_IMG.attr('src', './imgs/floor2/pettingRoom1.png');
                     eventBool = true;
                     eventNum = 0;
                     SMALL_EVENT1.click(function () {
-                        BACK_IMG.attr('src', './imgs/floor2/a.png');
+                        BACK_IMG.attr('src', './imgs/floor2/pettingRoom2.png');
                         itemAdd('유성준');
                         SMALL_EVENT1.hide();
                     });
                 } else if (eventNum == 2) { //이벤트2 클릭이벤트 /마네킹
                     EVENT.hide();
                     SMALL_EVENT1.show();
-                    BACK_IMG.attr('src', './imgs/floor2/a.png');
+                    BACK_IMG.attr('src', './imgs/floor2/mannequin.png');
                     eventBool = true;
                     eventNum = 0;
                     SMALL_EVENT1.click(function () {
-                        BACK_IMG.attr('src', './imgs/floor2/a.png');
                         itemAdd('열쇠');
                         SMALL_EVENT1.hide();
                     });
@@ -101,7 +100,7 @@ $(() => {
                 //   EVENT1.css({ 'left': 0, 'top': 0 });
                 //   EVENT2.css({ 'left': 0, 'top': 0 });
                 //   EVENT3.css({ 'left': 0, 'top': 0 });
-                BACK_IMG.attr('src', './imgs/floor2/화장실.jpg');
+                BACK_IMG.attr('src', './imgs/floor2/bathroom1.png');
                 ARROWS.hide();
                 DOWN_ARROW.show();
                 SMALL_EVENT.hide();
@@ -112,51 +111,45 @@ $(() => {
                     // SMALL_EVENT1.css({ 'left': 0, 'top': 0 });
                     // SMALL_EVENT2.css({ 'left': 0, 'top': 0 });
                     // SMALL_EVENT3.css({ 'left': 0, 'top': 0 });
-                    BACK_IMG.attr('src', './imgs/floor2/궁예.jpg');
+                    BACK_IMG.attr('src', './imgs/floor2/bathroom2.png');
                     eventBool = true;
                     eventNum = 0;
                     SMALL_EVENT1.click(function () { //흰휴지
                         SMALL_EVENT.hide();
-                        BACK_IMG.attr('src', './imgs/floor2/변기.jpg');
                         console.log('흰')
                     });
                     SMALL_EVENT2.click(function () { //빨간휴지
                         SMALL_EVENT.hide();
-                        BACK_IMG.attr('src', './imgs/floor2/변기.jpg');
                         console.log('빨')
                     });
                     SMALL_EVENT3.click(function () { //파랑휴지
                         SMALL_EVENT.hide();
-                        BACK_IMG.attr('src', './imgs/floor2/변기.jpg');
                         console.log('파')
                     });
-                } else if (eventNum == 2) { //이벤트2 클릭이벤트 /산신령
+                } else if (eventNum == 2) { //이벤트2 클릭이벤트 /  무야호
                     EVENT.hide();
                     SMALL_EVENT1.show();
                     SMALL_EVENT2.show();
-                    BACK_IMG.attr('src', './imgs/floor2/산신령.jpg');
+                    BACK_IMG.attr('src', './imgs/floor2/bathroom3.png');
                     eventBool = true;
                     eventNum = 0;
                     SMALL_EVENT1.click(function () { // 금
                         SMALL_EVENT.hide();
-                        BACK_IMG.attr('src', './imgs/floor2/변기.jpg');
                         itemAdd('금도끼');
                         console.log('금')
                     });
                     SMALL_EVENT2.click(function () { //은
                         SMALL_EVENT.hide();
-                        BACK_IMG.attr('src', './imgs/floor2/변기.jpg');
                         itemAdd('은도끼');
                         console.log('은')
                     });
-                } else if (eventNum == 3) { //이벤트3 클릭이벤트 /유성준 뒤
+                } else if (eventNum == 3) { //이벤트3 클릭이벤트 /유성준 오리
                     EVENT.hide();
                     SMALL_EVENT1.show();
-                    BACK_IMG.attr('src', './imgs/floor2/변기.jpg');
+                    BACK_IMG.attr('src', './imgs/floor2/bathroom4.png');
                     eventBool = true;
                     eventNum = 0;
                     SMALL_EVENT1.click(function () {
-                        BACK_IMG.attr('src', './imgs/floor2/유성준.jpg');
                         SMALL_EVENT1.hide();
                     });
                 }
@@ -171,7 +164,7 @@ $(() => {
                 //이벤트1 클릭 이벤트
                 if (eventNum == 1) {
                     room = "clothingStore";
-                    BACK_IMG.attr('src', './imgs/floor2/옷.png');
+                    BACK_IMG.attr('src', './imgs/floor2/clothingStore.jpg');
                     ARROWS.hide();
                     DOWN_ARROW.show();
                     SMALL_EVENT.hide();
@@ -191,7 +184,7 @@ $(() => {
                     if ($('.check > img').attr('alt') == '유성준') {
                         textAdd('화장실이 열렸다')
                         room = "toilet";
-                        BACK_IMG.attr('src', './imgs/floor2/화장실.jpg');
+                        BACK_IMG.attr('src', './imgs/floor2/bathroom1.png');
                         ARROWS.hide();
                         DOWN_ARROW.show();
                         SMALL_EVENT.hide();
@@ -213,7 +206,7 @@ $(() => {
                 if (eventNum == 1) {
                     floor = "floor1";
                     room = "floor1Stair";
-                    BACK_IMG.attr('src', './imgs/floor2/계단.jpg');
+                    BACK_IMG.attr('src', './imgs/floor1/계단.jpg');
                     // EVENT1.css({ 'left': 0, 'top': 0 });
                     // EVENT2.css({ 'left': 0, 'top': 0 });
                     EVENT.hide();
@@ -261,7 +254,7 @@ $(() => {
                 //이벤트1 클릭 이벤트
                 if (eventNum == 1) {
                     room = "bookStore";
-                    BACK_IMG.attr('src', './imgs/floor1/서점.jpg');
+                    BACK_IMG.attr('src', './imgs/floor1/bookStore1.png');
                     SMALL_EVENT.hide();
                     EVENT.show();
                     EVENT3.hide();
@@ -280,17 +273,18 @@ $(() => {
                 //이벤트1 클릭 이벤트
                 if (eventNum == 1) {
                     room = "theater";
-                    BACK_IMG.attr('src', './imgs/floor1/cinema.jpg');
+                    BACK_IMG.attr('src', './imgs/floor1/cinema1.jpg');
                     ARROWS.hide();
                     DOWN_ARROW.show();
                     SMALL_EVENT.hide();
                     EVENT.show();
+                    EVENT3.hide();
                     eventNum = 0;
                 }
             } else if (room == "bookStore") {
                 //   EVENT1.css({ 'left': 0, 'top': 0 });
                 //   EVENT2.css({ 'left': 0, 'top': 0 });
-                BACK_IMG.attr('src', './imgs/floor1/서점.jpg');
+                BACK_IMG.attr('src', './imgs/floor1/bookStore1.png');
                 EVENT.show();
                 EVENT3.hide();
                 ARROWS.hide();
@@ -299,11 +293,11 @@ $(() => {
                 if (eventNum == 1) { //이벤트1 클릭이벤트 /최서윤
                     EVENT.hide();
                     SMALL_EVENT1.hide();
+                    BACK_IMG.attr('src', './imgs/floor1/bookStore2.png');
                     if (numberChoice >= 3) {
                         textAdd('왜 또오니');
                     } else {
                         DOWN_ARROW.hide();
-                        BACK_IMG.attr('src', './imgs/floor1/최서윤.jpg');
                         CHOICE1.find('h2').text('여기다');
                         CHOICE2.find('h2').text('여기다');
                         CHOICE3.find('h2').text('여기다');
@@ -316,11 +310,11 @@ $(() => {
                 } else if (eventNum == 2) { //이벤트2 클릭이벤트 /스핑크스
                     EVENT.hide();
                     SMALL_EVENT1.hide();
+                    BACK_IMG.attr('src', './imgs/floor1/maDongSeok1.png');
                     if(numberAnswer >= 4) {
                         textAdd('장사 더 안합니다');
                     } else {
                     DOWN_ARROW.hide();
-                    BACK_IMG.attr('src', './imgs/floor1/스핑크스.jpg');
                     textAdd('스핑크스 입니다')
                     textAdd("answer", "turnEvent");
                 }
@@ -328,10 +322,12 @@ $(() => {
                     eventBool = true;
                 }
             } else if (room == "theater") {
+            	BACK_IMG.css({'bottom' : 'auto','top' :  0});
                 //   EVENT1.css({ 'left': 0, 'top': 0 });
                 //   EVENT2.css({ 'left': 0, 'top': 0 });
-                //   EVENT3.css({ 'left': 0, 'top': 0 });
-                BACK_IMG.attr('src', './imgs/floor1/cinema.jpg');
+                BACK_IMG.attr('src', './imgs/floor1/cinema1.jpg');
+                EVENT.show();
+                EVENT3.hide();
                 ARROWS.hide();
                 DOWN_ARROW.show();
                 SMALL_EVENT.hide();
@@ -339,38 +335,28 @@ $(() => {
                 if (eventNum == 1) { //이벤트1 클릭이벤트 / 박건영 귀신
                     EVENT.hide();
                     SMALL_EVENT1.show();
-                    BACK_IMG.attr('src', './imgs/floor1/최서윤.jpg');
+                    BACK_IMG.attr('src', './imgs/floor1/cinema2.png');
                     eventBool = true;
                     eventNum = 0;
                     SMALL_EVENT1.click(function () {
-                        BACK_IMG.attr('src', './imgs/floor1/밖1.jpg');
+                    	  BACK_IMG.attr('src', './imgs/floor1/cinema3.png');
                         if ($('.check > img').attr('alt') == '포스터') {
                             itemAdd('마트열쇠');
                             SMALL_EVENT1.hide();
                         }
                     });
-                } else if (eventNum == 2) { //이벤트2 클릭이벤트 / 스크린
-                    EVENT.hide();
+                } else if (eventNum == 2) { //이벤트2 클릭이벤트 / 엘사포스터
+                	EVENT.hide();
                     SMALL_EVENT1.show();
-                    BACK_IMG.attr('src', './imgs/floor1/최서윤.jpg');
+                    BACK_IMG.attr('src', './imgs/floor1/b.png');
                     eventBool = true;
                     eventNum = 0;
                     SMALL_EVENT1.click(function () {
-                        BACK_IMG.attr('src', './imgs/floor1/밖1.jpg');
-                        SMALL_EVENT1.hide();
-                    });
-                } else if (eventNum == 3) { //이벤트3 클릭이벤트 / 엘사 포스터
-                    EVENT.hide();
-                    SMALL_EVENT1.show();
-                    BACK_IMG.attr('src', './imgs/floor1/최서윤.jpg');
-                    eventBool = true;
-                    eventNum = 0;
-                    SMALL_EVENT1.click(function () {
-                        BACK_IMG.attr('src', './imgs/floor1/밖1.jpg');
+                        BACK_IMG.attr('src', './imgs/floor1/c.png');
                         itemAdd('포스터');
                         SMALL_EVENT1.hide();
                     });
-                }
+                } 
             }
         } else if (floor == "B1") {
             if (room == "B1Stair") {
@@ -410,7 +396,7 @@ $(() => {
                     eventNum = 0;
                 }
             } else if (room == "B1Hall2") {
-                BACK_IMG.attr('src', './imgs/B1/밖2.png');
+                BACK_IMG.attr('src', './imgs/B1/escapeDoor1.png');
                 // EVENT1.css({ 'left': 0, 'top': 0 });
                 ARROWS.show();
                 RIGHT_ARROW.hide();
@@ -420,7 +406,12 @@ $(() => {
                 SMALL_EVENT.hide();
                 //이벤트1 클릭 이벤트
                 if (eventNum == 1) {
-                    ending("imo");
+                	BACK_IMG.attr('src', './imgs/B1/escapeDoor2.png');
+                	if($('.check > img').attr('alt') == '이모') {
+                		ending("imo");
+                	} else {
+                		ending("hospital");
+                	}
                 }
             } else if (room == "mart") {
                 //   EVENT1.css({ 'left': 0, 'top': 0 });
@@ -435,12 +426,12 @@ $(() => {
                 if (eventNum == 1) { //이벤트1 클릭이벤트 / 황유하 김동건 
                     EVENT.hide();
                     SMALL_EVENT1.show();
-                    BACK_IMG.attr('src', './imgs/B1/최서윤.jpg');
+                    BACK_IMG.attr('src', './imgs/B1/황유하.jpg');
                     eventBool = true;
                     eventNum = 0;
                     SMALL_EVENT1.click(function () {
                         if ($('.check > img').attr('alt') == '유성준침대') {
-                            BACK_IMG.attr('src', './imgs/B1/밖1.jpg');
+                        	  BACK_IMG.attr('src', './imgs/B1/유성준 먹는.jpg');
                             itemAdd('이모');
                             SMALL_EVENT1.hide();
                         }
@@ -448,11 +439,11 @@ $(() => {
                 } else if (eventNum == 2) { //이벤트2 클릭이벤트 / 유성준 침대
                     EVENT.hide();
                     SMALL_EVENT1.show();
-                    BACK_IMG.attr('src', './imgs/B1/최서윤.jpg');
+                    BACK_IMG.attr('src', './imgs/B1/hidingYSJ.png');
                     eventBool = true;
                     eventNum = 0;
                     SMALL_EVENT1.click(function () {
-                        BACK_IMG.attr('src', './imgs/B1/밖1.jpg');
+                        BACK_IMG.attr('src', './imgs/B1/yooSeongJun6.png');
                         SMALL_EVENT1.hide();
                         itemAdd('유성준침대');
                     });
@@ -585,15 +576,15 @@ $(() => {
     function downBool() {
         if (eventBool) {
             if (room == "clothingStore") {
-                downEvent('./imgs/floor2/옷.png');
+                downEvent('./imgs/floor2/clothingStore.jpg');
             } else if (room == "toilet") {
-                downEvent('./imgs/floor2/화장실.jpg');
+                downEvent('./imgs/floor2/bathroom1.png');
             } else if (room == "bookStore") {
-                downEvent('./imgs/floor1/서점.jpg');
+                downEvent('./imgs/floor1/bookStore1.png');
             } else if (room == "theater") {
-                downEvent('./imgs/floor1/cinema.jpg');
+                downEvent('./imgs/floor1/cinema1.jpg');
             } else if (room == "mart") {
-                downEvent('./imgs/B1/mart.jpg');
+                downEvent('./imgs/B1/mart1.jpg');
             }
         } else {
             if (room == "clothingStore") {
@@ -657,7 +648,7 @@ $(() => {
         ARROWS.hide();
         ITEMS.hide();
         if (endingName == "die") {
-            BACK_IMG.attr('src', './imgs/ending/죽음 엔딩.jpg');
+            BACK_IMG.attr('src', './imgs/ending/dieEnding.png');
             textAdd('죽음')
         } else if (endingName == "imo") {
 
