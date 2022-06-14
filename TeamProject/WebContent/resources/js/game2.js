@@ -21,7 +21,7 @@ $(() => {
     const CHOICE2 = $('.choice2'); //선택지2
     const CHOICE3 = $('.choice3'); //선택지3
     let floor = "floor2"; //기본 설정(층)
-    let room = "toilet"; //기본 설정(방)
+    let room = "clothingStore"; //기본 설정(방)
     let item = []; //아이템 
     let itemVal = []; //아이템 중복 제거 값
     let eventBool = false; //이벤트 중인지 방안인지 확인 용도
@@ -179,7 +179,6 @@ $(() => {
                         itemAdd('피팅룸열쇠');
                         SMALL_EVENT1.hide();
                         textAdd('피팅룸 열쇠를 획득했다')
-                        console.log('dd99999999d')
                         eventNum = 0;
                         smallEventNum = 0;
                         textAdd('show', 'turnEvent');
@@ -192,7 +191,6 @@ $(() => {
                     BACK_IMG.attr('src', './imgs/floor2/clothingStore2.jpg');
                     if (smallEventNum == 1) {
                         textAdd('히힛 속았징? 암것도 없지롱~')
-                        console.log('ddd')
                         eventNum = 0;
                         smallEventNum = 0;
                         textAdd('show', 'turnEvent');
@@ -258,6 +256,7 @@ $(() => {
                     EVENT.hide();
                     SMALL_EVENT.show();
                     SMALL_EVENT3.hide();
+                    eventBool = true;
                     textAdd('거기 지나가던 당신');
                     textAdd('어느 것이 당신의 것이지?');
                     SMALL_EVENT1.css({ 'left': '20%', 'top': '50%', 'width': '10%', 'height': '13%' });
@@ -271,7 +270,6 @@ $(() => {
                         textAdd("bottom", "turnEvent");
                         textAdd("show", "turnEvent");
                         itemAdd('도끼');
-                        eventBool = true;
                         eventNum = 0;
                         smallEventNum = 0;
                         textAdd('show', 'turnEvent');
@@ -284,7 +282,6 @@ $(() => {
                         textAdd('도망가지 말아요~~');
                         textAdd("bottom", "turnEvent");
                         textAdd("show", "turnEvent");
-                        eventBool = true;
                         eventNum = 0;
                         smallEventNum = 0;
                         textAdd('show', 'turnEvent');
