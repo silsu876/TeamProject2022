@@ -104,16 +104,16 @@ body::-webkit-scrollbar {
 				<div class="row w-100 h-100">
 					<div
 						class="col-12 d-flex align-items-center justify-content-end w-100 h-100 text-end">
-						<div class="serve_visual_text">
+						<div class="serve_visual_text position-relative">
 							<h3 class="fw-bold">story</h3>
 							<div class="short_line"></div>
-							<i class="fa-solid fa-quote-left"></i>
+							<i class="fa-solid fa-quote-left position-absolute" style="top: 38%; left: 20%;"></i>
 							<p class="f-14">
 								내 이름은 김아무개, 17살이지!<br /> 앗 눈부셔! 오늘도 화려한 햇빛이 나를 감싸<br /> 는구나!
 								지저귀는 새소리도 너무 아름다워!<br>
 							</p>
-							<i class="fa-solid fa-quote-right"></i>
-							<p class="f-14">김아무개씨는 아무것도 모른채 신나있다.</p>
+							<i class="fa-solid fa-quote-right position-absolute" style="bottom: 24%; right: -8%;"></i>
+							<p class="f-14"><b>김아무개씨는 아무것도 모른채 신나있다.</b></p>
 						</div>
 					</div>
 				</div>
@@ -129,14 +129,14 @@ body::-webkit-scrollbar {
 				<div
 					class="row d-flex align-items-center w-100 justify-content-between"
 					style="height: 85vh;">
-					<div class="left_story_container col-md-auto">
-						<i class="fa-solid fa-quote-left"></i>
+					<div class="left_story_container col-md-auto position-relative">
+						<i class="fa-solid fa-quote-left position-absolute" style="top: -3%; left: -3%;"></i>
 						<h2 class="fw-bold m-0">지고쿠! 지고쿠!</h2>
 						<p class="f-14">
 							젠장! 새학기 첫날부터 지각이라니!<br /> 나답지 못한 실수를 했군!<br />
 						</p>
-						<i class="fa-solid fa-quote-right"></i>
-						<p class="f-14">김아무개씨는 첫날부터 지각할 위기에 놓이는데..</p>
+						<i class="fa-solid fa-quote-right position-absolute" style="top: 50%; right: 41%;"></i>
+						<p class="f-14"><b>김아무개씨는 첫날부터 지각할 위기에 놓이는데..</b></p>
 					</div>
 					<div
 						class="right_story_container col-md-auto d-flex justify-content-end">
@@ -160,11 +160,11 @@ body::-webkit-scrollbar {
 				<img class="images position-absolute gigocu" src="./imgs/gigocu.png" />
 			</div>
 			<div class="main_container container" style="height: 30vh;">
-				<div class="main_text text-center py-5 h-100">
-					<p>으으... 여기가 어디지?</p>
-					<p>트럭에 치인 후로 기억이 없어..</p>
-					<p>설마?! 이세계 트럭???</p>
-					<h3 class="fw-bold m-0">나도 드디어 이세카이로??</h3>
+				<div class="main_text text-center py-5 h-100 position-relative">
+					<p class="position-absolute" style="left:35%;">으으... 여기가 어디지?</p>
+					<p class="position-absolute" style="top: 30%; right: 30%;">트럭에 치인 후로 기억이 없어..</p>
+					<p class="position-absolute" style="top: 45%; left: 50%; transform: translate( -50%, 0);">설마?! 이세계 트럭???</p>
+					<h3 class="fw-bold m-0 position-absolute" style="top:65%; left: 50%; transform: translate( -50%, 0);">나도 드디어 이세카이로??</h3>
 				</div>
 			</div>
 		</section>
@@ -182,15 +182,15 @@ body::-webkit-scrollbar {
 					<img class="images position-absolute main4_img border border-black" src="./imgs/main4.png" />
 				</div>
 				<div class="right_side_body_container col-md-auto w-50">
-					<div class="right_text text-end">
+					<div class="right_text text-end position-relative">
 						<h3 class="fw-bold">라는 망상을 한 김아무개씨였다</h3>
 						<p class="f-14">김아무개씨가 정신을 차린 곳은 백화점이였다.</p>
 						<div class="short_line"></div>
-						<i class="fa-solid fa-quote-left"></i>
+						<i class="fa-solid fa-quote-left position-absolute" style="top: 72%; right:43%;"></i>
 						<p class="m-0">
 							뭐야? 백화점이잖아? 일단 이 백화<br /> 점에서 탈출하고 생각하자!
 						</p>
-						<i class="fa-solid fa-quote-right"></i>
+						<i class="fa-solid fa-quote-right position-absolute" style="bottom: -0.5%; right: 0.5%;"></i>
 					</div>
 				</div>
 			</div>
