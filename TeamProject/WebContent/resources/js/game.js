@@ -297,7 +297,7 @@ $(() => {
                     SMALL_EVENT1.hide();
                     BACK_IMG.attr('src', './imgs/floor1/bookStore2.png');
                     if (numberChoice >= 3) {
-                        textAdd('왜 또오니');
+                        textAdd('왜 나를 그렇게 까지 보고 싶어서 온거야?');
                     } else {
                         DOWN_ARROW.hide();
                         CHOICE1.find('h2').text('여기다');
@@ -490,7 +490,7 @@ $(() => {
             TEXTBOX.find('h2').show();
             textAdd('정답이다');
             textAdd('다음문제는 ');
-            textAdd('김동건은 씹덕이다')//O
+            textAdd('말레이시아의 수도는?')//정답 쿠알라룸푸르 | 코타키나발루 , 랑카위 ,말라카
             numberAnswer++;
             $('.answer').val("");
             textAdd("answer", "turnEvent");
@@ -500,7 +500,7 @@ $(() => {
             TEXTBOX.find('h2').show();
             textAdd('정답이다');
             textAdd('다음문제는');
-            textAdd('대머리는 머리에 비듬이 생기는가?')//정답 O
+            textAdd('호주의 수도는?')//정답  캔버라 | 예 시드니 , 멘버른 , 브리즈번
             numberAnswer++;
             $('.answer').val("");
             textAdd("answer", "turnEvent");
