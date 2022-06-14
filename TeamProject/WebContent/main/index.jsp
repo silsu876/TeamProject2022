@@ -203,9 +203,9 @@ body::-webkit-scrollbar {
 			<div class="final_img vh-100 position-relative" style="overflow:hidden;">
 				<img class="images position-absolute main5_img" src="./imgs/main5.png" />
 				<div class="final_box">
-				<img class="images position-absolute mail" src="./imgs/mail.png"/>				
-				<img class="images position-absolute ticket" src="./imgs/ticket.png" />				
-				<img class="images position-absolute mailback" src="./imgs/mailback.png" />				
+				<img class="images position-absolute mail" src="./imgs/mail2.png"/>				
+				<img class="images position-absolute ticket" src="./imgs/ticket2.png" />				
+				<img class="images position-absolute mailback" src="./imgs/mailback2.png" />				
 				<a href="<%= request.getContextPath()%>/game/mainGame.jsp" class="start_btn">Start!</a>
 				</div>
 			</div>
