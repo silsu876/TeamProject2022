@@ -21,7 +21,7 @@ $(() => {
     const CHOICE2 = $('.choice2'); //선택지2
     const CHOICE3 = $('.choice3'); //선택지3
     let floor = "floor2"; //기본 설정(층)
-    let room = "floor2Stair"; //기본 설정(방)
+    let room = "clothingStore"; //기본 설정(방)
     let item = []; //아이템 
     let itemVal = []; //아이템 중복 제거 값
     let eventBool = false; //이벤트 중인지 방안인지 확인 용도
@@ -31,6 +31,7 @@ $(() => {
     let answer = "";// 유저가 쓴 정답
     let numberAnswer = 1; // 답 번호
     let numberChoice = 1; // 선택지 번호
+    let g
 
     //클릭 이벤트1 이벤트
     EVENT1.click(function () {
@@ -111,11 +112,11 @@ $(() => {
                     CHOICE_BOX.fadeIn(200);
                 } else if (text[0].turnEvent == "bgimg") {
                     BACK_IMG.attr('src', `./imgs/${floor}/${bgimg}`);
-                } else if (text[0].turnEvent == "show") {
-                    DOWN_ARROW.show();
                 } else if (text[0].turnEvent == "bottom") {
                     BACK_IMG.css({ 'bottom': '0' });
-                }
+                } else if (text[0].turnEvent == "show") {
+                    DOWN_ARROW.show();
+                } 
                 text.splice(0, 1);
                 nextChat();
 
@@ -149,14 +150,12 @@ $(() => {
                 SMALL_EVENT.hide();
 
                 if (eventNum == 1) { //이벤트1 클릭이벤트 /유성준
-                    DOWN_ARROW.hide();
                     EVENT.hide();
                     SMALL_EVENT1.show();
-                    eventBool = true;
                     SMALL_EVENT1.css({ 'left': '20%', 'top': '0', 'width': '40%', 'height': '80%' });
                     BACK_IMG.attr('src', './imgs/floor2/pettingRoom1.png');
                     if (smallEventNum == 1) {
-                        
+
                         if ($('.check > img').attr('alt') == '피팅룸열쇠') {
                             BACK_IMG.attr('src', './imgs/floor2/pettingRoom2.png');
                             itemAdd('유성준메이드');
@@ -168,11 +167,9 @@ $(() => {
                         }
                         eventNum = 0;
                         smallEventNum = 0;
-                        textAdd('show', 'event');
                     }
-                } else if (eventNum == 2) { //이벤트2 클릭이벤트 /마네킹
-                    DOWN_ARROW.hide();
                     eventBool = true;
+                } else if (eventNum == 2) { //이벤트2 클릭이벤트 /마네킹
                     SMALL_EVENT1.css({ 'left': '25%', 'top': '85%', 'width': '5%', 'height': '5%' });
                     EVENT.hide();
                     SMALL_EVENT1.show();
@@ -183,21 +180,20 @@ $(() => {
                         textAdd('피팅룸 열쇠를 획득했다')
                         eventNum = 0;
                         smallEventNum = 0;
-                        textAdd('show', 'event');
                     }
+                    eventBool = true;
                 } else if (eventNum == 3) { //이벤트3 클릭이벤트 /옷
-                    DOWN_ARROW.hide();
                     SMALL_EVENT1.css({ 'left': '20%', 'top': '0', 'width': '40%', 'height': '80%' });
                     EVENT.hide();
                     SMALL_EVENT1.show();
-                    eventBool = true;
                     BACK_IMG.attr('src', './imgs/floor2/clothingStore2.jpg');
                     if (smallEventNum == 1) {
                         textAdd('히힛 속았징? 암것도 없지롱~')
+                        SMALL_EVENT1.hide();
                         eventNum = 0;
                         smallEventNum = 0;
-                        textAdd('show', 'event');
                     }
+                    eventBool = true;
                 }
             } else if (room == "toilet") {
                 EVENT1.css({ 'left': '0', 'top': '0', 'width': '15%', 'height': '100%' });
@@ -210,7 +206,6 @@ $(() => {
                 DOWN_ARROW.show();
                 SMALL_EVENT.hide();
                 if (eventNum == 1) { //이벤트1 클릭이벤트 /궁예
-                    eventBool = true;
                     DOWN_ARROW.hide();
                     BACK_IMG.css({ 'bottom': 'auto' });
                     textAdd('누가 똥소리를 내었는가?');
@@ -249,11 +244,11 @@ $(() => {
                         textAdd('그럼그럼 역시 휴지는 흰휴지지');
                         textAdd('사실 이거 안줄거라네 ㅋ');
                         textAdd("bottom", "event");
-                        textAdd("show", "event");
+                        textAdd('show', 'event');
                         eventNum = 0;
                         smallEventNum = 0;
-                        textAdd('show', 'event');
                     }
+                    eventBool = true;
                 } else if (eventNum == 2) { //이벤트2 클릭이벤트 /  무야호
                     DOWN_ARROW.hide();
                     BACK_IMG.css({ 'bottom': 'auto' });
@@ -292,7 +287,7 @@ $(() => {
                     }
                 }
             } else if (room == "floor2Hall") {
-                BACK_IMG.css({ 'bottom': '0', 'width': '100%', 'left' : 'auto', 'transform': 'translate(0, 0)'});
+                BACK_IMG.css({ 'bottom': '0', 'width': '100%', 'left': 'auto', 'transform': 'translate(0, 0)' });
                 BACK_IMG.attr('src', './imgs/floor2/clothingStoreHallway.png');
                 EVENT1.css({ 'left': '20%', 'top': '10%', 'width': '60%', 'height': '80%' });
                 ARROWS.show();
@@ -342,7 +337,7 @@ $(() => {
             } else if (room == "floor2Stair") {
                 BACK_IMG.attr('src', './imgs/floor2/2fEscalator.jpg');
                 EVENT1.css({ 'left': '50%', 'top': '25%', 'width': '15%', 'height': '60%' });
-                BACK_IMG.css({ 'bottom': 'auto', 'width': '40%', 'left' : '50%', 'transform': 'translate(-50%, 0)'});
+                BACK_IMG.css({ 'bottom': 'auto', 'width': '40%', 'left': '50%', 'transform': 'translate(-50%, 0)' });
                 ARROWS.hide();
                 RIGHT_ARROW.show();
                 EVENT.hide();
@@ -366,7 +361,7 @@ $(() => {
 
         } else if (floor == "floor1") {
             if (room == "floor1Stair") {
-                BACK_IMG.css({ 'bottom': 'auto', 'width': '40%', 'left' : '50%', 'transform': 'translate(-50%, 0)'});
+                BACK_IMG.css({ 'bottom': 'auto', 'width': '40%', 'left': '50%', 'transform': 'translate(-50%, 0)' });
                 BACK_IMG.attr('src', './imgs/floor1/1fEscalator.jpg');
                 EVENT1.css({ 'left': '35%', 'top': '25%', 'width': '15%', 'height': '60%' });
                 EVENT2.css({ 'left': '50%', 'top': '25%', 'width': '15%', 'height': '60%' });
@@ -376,7 +371,7 @@ $(() => {
                 EVENT1.show();
                 EVENT2.show();
                 SMALL_EVENT.hide();
-                //이벤트1 클릭 이벤트
+                //이벤트1 클릭 이벤트 / 2층
                 if (eventNum == 1) {
                     BACK_IMG.attr('src', './imgs/floor2/2fEscalator.jpg');
                     EVENT1.css({ 'left': '50%', 'top': '25%', 'width': '15%', 'height': '60%' });
@@ -385,7 +380,7 @@ $(() => {
                     EVENT.hide();
                     EVENT1.show();
                     eventNum = 0;
-                } else if (eventNum == 2) {
+                } else if (eventNum == 2) { //이벤트2 클릭 이벤트 / B1층
                     BACK_IMG.attr('src', './imgs/B1/b1Escalator.jpg');
                     EVENT1.css({ 'left': '35%', 'top': '25%', 'width': '15%', 'height': '60%' });
                     floor = "B1";
@@ -395,7 +390,7 @@ $(() => {
                     eventNum = 0;
                 }
             } else if (room == "floor1Hall") {
-                BACK_IMG.css({ 'bottom': '0', 'width': '100%', 'left' : 'auto', 'transform': 'translate(0, 0)'});
+                BACK_IMG.css({ 'bottom': '0', 'width': '100%', 'left': 'auto', 'transform': 'translate(0, 0)' });
                 BACK_IMG.attr('src', './imgs/floor1/bookStoreHallway.jpg');
                 EVENT1.css({ 'left': '15%', 'top': '20%', 'width': '50%', 'height': '60%' });
                 ARROWS.show();
@@ -403,7 +398,7 @@ $(() => {
                 EVENT.hide();
                 EVENT1.show();
                 SMALL_EVENT.hide();
-                //이벤트1 클릭 이벤트
+                //이벤트1 클릭 이벤트 / 서점
                 if (eventNum == 1) {
                     if ($('.check > img').attr('alt') == '도끼') {
                         textAdd('서점이 열렸다');
@@ -426,27 +421,35 @@ $(() => {
                 }
             } else if (room == "floor1Hall2") {
                 BACK_IMG.attr('src', './imgs/floor1/cinemaHallway.jpg');
+                BACK_IMG.css({ 'top': 'auto' });
                 EVENT1.css({ 'left': '30%', 'top': '20%', 'width': '50%', 'height': '60%' });
                 ARROWS.hide();
                 LEFT_ARROW.show();
                 EVENT.hide();
                 EVENT1.show();
                 SMALL_EVENT.hide();
-                //이벤트1 클릭 이벤트
+                //이벤트1 클릭 이벤트 / 영화관
                 if (eventNum == 1) {
-                    room = "theater";
-                    EVENT1.css({ 'left': '30%', 'top': '20%', 'width': '50%', 'height': '60%' });
-                    BACK_IMG.attr('src', './imgs/floor1/cinema1.jpg');
-                    ARROWS.hide();
-                    DOWN_ARROW.show();
-                    SMALL_EVENT.hide();
-                    EVENT.show();
-                    EVENT3.hide();
+                    if ($('.check > img').attr('alt') == '영화관열쇠') {
+                        textAdd('영화관이 열렸다');
+                        room = "theater";
+                        BACK_IMG.css({ 'top': '-30%' });
+                        EVENT1.css({ 'left': '13%', 'top': '0', 'width': '70%', 'height': '60%' });
+                        EVENT2.css({ 'left': '85%', 'top': '50%', 'width': '10%', 'height': '40%' });
+                        BACK_IMG.attr('src', './imgs/floor1/cinema1.jpg');
+                        ARROWS.hide();
+                        DOWN_ARROW.show();
+                        SMALL_EVENT.hide();
+                        EVENT.show();
+                        EVENT3.hide();
+                    } else {
+                        textAdd('영화관이 잠겨있다');
+                    }
                     eventNum = 0;
                 }
             } else if (room == "bookStore") {
                 EVENT1.css({ 'left': '60%', 'top': '25%', 'width': '15%', 'height': '35%' });
-                    EVENT2.css({ 'left': '0', 'top': '20%', 'width': '50%', 'height': '70%' });
+                EVENT2.css({ 'left': '0', 'top': '20%', 'width': '50%', 'height': '70%' });
                 BACK_IMG.attr('src', './imgs/floor1/bookStore1.png');
                 EVENT.show();
                 EVENT3.hide();
@@ -493,9 +496,9 @@ $(() => {
                     eventBool = true;
                 }
             } else if (room == "theater") {
-                BACK_IMG.css({ 'bottom': 'auto', 'top': 0 });
-                //   EVENT1.css({ 'left': 20%, 'top': 50% });
-                //   EVENT2.css({ 'left': 50%, 'top': 50% });
+                BACK_IMG.css({ 'top': '-30%' });
+                EVENT1.css({ 'left': '13%', 'top': '0', 'width': '70%', 'height': '60%' });
+                EVENT2.css({ 'left': '85%', 'top': '50%', 'width': '10%', 'height': '40%' });
                 BACK_IMG.attr('src', './imgs/floor1/cinema1.jpg');
                 EVENT.show();
                 EVENT3.hide();
@@ -504,36 +507,49 @@ $(() => {
                 SMALL_EVENT.hide();
 
                 if (eventNum == 1) { //이벤트1 클릭이벤트 / 박건영 귀신
+                    SMALL_EVENT1.css({ 'left': '40%', 'top': '0', 'width': '20%', 'height': '60%' });
+                    BACK_IMG.css({ 'top': '-20%' });
+                    DOWN_ARROW.hide();
                     EVENT.hide();
                     SMALL_EVENT1.show();
                     BACK_IMG.attr('src', './imgs/floor1/cinema2.png');
-                    eventBool = true;
-                    eventNum = 0;
                     if (smallEventNum == 1) {
                         BACK_IMG.attr('src', './imgs/floor1/cinema3.png');
                         if ($('.check > img').attr('alt') == '포스터') {
                             itemAdd('마트열쇠');
                             SMALL_EVENT1.hide();
+                            DOWN_ARROW.show();
+                            textAdd('악 이게 뭐야')
+                            textAdd('내 눈!!!!!!!')
+                            textAdd('마트열쇠를 획득했다')
+                        } else {
+                            textAdd('나는 세상에서 제일 강한 귀신이지')
+                            DOWN_ARROW.show();
                         }
+                        eventNum = 0;
                     }
+                    eventBool = true;
                 } else if (eventNum == 2) { //이벤트2 클릭이벤트 / 엘사포스터
+                    SMALL_EVENT1.css({ 'left': '53%', 'top': '0', 'width': '40%', 'height': '90%' });
                     EVENT.hide();
                     SMALL_EVENT1.show();
                     BACK_IMG.attr('src', './imgs/floor1/b.png');
-                    eventBool = true;
-                    eventNum = 0;
+                    DOWN_ARROW.show();
                     if (smallEventNum == 1) {
                         BACK_IMG.attr('src', './imgs/floor1/c.png');
                         itemAdd('포스터');
+                        textAdd('포스터를 획득했다')
                         SMALL_EVENT1.hide();
+                        eventNum = 0;
                     }
+                    eventBool = true;
                 }
             }
 
 
         } else if (floor == "B1") {
             if (room == "B1Stair") {
-                BACK_IMG.css({ 'bottom': 'auto', 'width': '40%', 'left' : '50%', 'transform': 'translate(-50%, 0)'});
+                BACK_IMG.css({ 'bottom': 'auto', 'width': '40%', 'left': '50%', 'transform': 'translate(-50%, 0)' });
                 BACK_IMG.attr('src', './imgs/B1/b1Escalator.jpg');
                 EVENT1.css({ 'left': '35%', 'top': '25%', 'width': '15%', 'height': '60%' });
                 ARROWS.hide();
@@ -554,7 +570,7 @@ $(() => {
                     eventNum = 0;
                 }
             } else if (room == "B1Hall") {
-                BACK_IMG.css({ 'bottom': '0', 'width': '100%', 'left' : 'auto', 'transform': 'translate(0, 0)'});
+                BACK_IMG.css({ 'bottom': '0', 'width': '100%', 'left': 'auto', 'transform': 'translate(0, 0)' });
                 BACK_IMG.attr('src', './imgs/B1/martHallway.jpg');
                 EVENT1.css({ 'left': '35%', 'top': '25%', 'width': '50%', 'height': '60%' });
                 ARROWS.show();
@@ -752,21 +768,22 @@ $(() => {
 
     //아래쪽 버튼 이벤트
     DOWN_ARROW.click(function () {
+        console.log(room)
+        console.log(eventBool)
         downBool();
         roomEvent();
-        console.log(room)
     });
     function downEvent(back_img) {
         BACK_IMG.attr('src', back_img);
         EVENT.show();
-        SMALL_EVENT1.hide();
+        SMALL_EVENT.hide();
         eventBool = false;
     }
     //아래쪽 여부 체크 
     function downBool() {
         if (eventBool) {
             if (room == "clothingStore") {
-                downEvent('./imgs/floor2/clothingStore.jpg');
+                downEvent('./imgs/floor2/clothingStore1.jpg');
             } else if (room == "toilet") {
                 downEvent('./imgs/floor2/bathroom1.png');
             } else if (room == "bookStore") {
@@ -849,6 +866,10 @@ $(() => {
             bgimg = "dieEnding.png";
             textAdd("bgimg", "event");
         } else if (endingName == "hospital") {
+            textAdd('김아무개씨가 죽었다');
+            textAdd('죽음 엔딩');
+            bgimg = "hospital.png";
+            textAdd("bgimg", "event");
             textAdd('김아무개씨가 죽었다');
             textAdd('죽음 엔딩');
             bgimg = "hospital.png";
