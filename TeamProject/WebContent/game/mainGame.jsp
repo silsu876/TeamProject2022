@@ -22,13 +22,13 @@
         <img src="" class="back_img position-absolute" alt="">
          <!-- 이벤트 -->
         <div class="event_box">
-            <div class="event1 border border-black position-absolute event" style="width: 200px; height: 200px; top:30%; left:10%"></div>
-            <div class="event2 border border-black position-absolute event" style="width: 200px; height: 200px; top:30%; left:40%"></div>
-            <div class="event3 border border-black position-absolute event" style="width: 200px; height: 200px; top:30%; left:80%"></div>
+            <div class="event1 border-black position-absolute event" style="width: 200px; height: 200px; top:30%; left:10%"></div>
+            <div class="event2 border-black position-absolute event" style="width: 200px; height: 200px; top:30%; left:40%"></div>
+            <div class="event3 border-black position-absolute event" style="width: 200px; height: 200px; top:30%; left:80%"></div>
         </div>
-	    <div class="small_event border position-absolute small_event1" style="width: 200px; height: 200px; top:30%; left:10%"></div>
-	    <div class="small_event border position-absolute small_event2" style="width: 200px; height: 200px; top:30%; left:40%"></div>
-	    <div class="small_event border position-absolute small_event3" style="width: 200px; height: 200px; top:30%; left:80%"></div>
+	    <div class="small_event position-absolute small_event1" style="width: 200px; height: 200px; top:30%; left:10%"></div>
+	    <div class="small_event position-absolute small_event2" style="width: 200px; height: 200px; top:30%; left:40%"></div>
+	    <div class="small_event position-absolute small_event3" style="width: 200px; height: 200px; top:30%; left:80%"></div>
         <!-- 템창 -->
         <div class="items position-absolute" style="top: 0; left: 0;">
             <div class="check mx-1">

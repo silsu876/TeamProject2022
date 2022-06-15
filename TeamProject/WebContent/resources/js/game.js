@@ -21,7 +21,7 @@ $(() => {
     const CHOICE2 = $('.choice2'); //선택지2
     const CHOICE3 = $('.choice3'); //선택지3
     let floor = "floor2"; //기본 설정(층)
-    let room = "toilet"; //기본 설정(방)
+    let room = "clothingStore"; //기본 설정(방)
     let item = []; //아이템 
     let itemVal = []; //아이템 중복 제거 값
     let eventBool = false; //이벤트 중인지 방안인지 확인 용도
@@ -196,14 +196,17 @@ $(() => {
                     SMALL_EVENT1.css({ 'left': '25%', 'top': '85%', 'width': '5%', 'height': '5%' });
                     EVENT.hide();
                     SMALL_EVENT1.show();
+                    DOWN_ARROW.hide();
                     BACK_IMG.attr('src', './imgs/floor2/mannequin.png');
                     if (mannequin == 1) {
                         eventNum = 0;
                         smallEventNum = 0;
                         textAdd('이미 피팅룸 열쇠를 얻었다')
                         SMALL_EVENT.hide();
+                        DOWN_ARROW.show();
                     }
                     if (smallEventNum == 1) {
+                    	DOWN_ARROW.show();
                         itemAdd('피팅룸열쇠');
                         SMALL_EVENT1.hide();
                         textAdd('피팅룸 열쇠를 획득했다')
