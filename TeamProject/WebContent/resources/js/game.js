@@ -20,8 +20,8 @@ $(() => {
     const CHOICE1 = $('.choice1'); //선택지1
     const CHOICE2 = $('.choice2'); //선택지2
     const CHOICE3 = $('.choice3'); //선택지3
-    let floor = "floor2"; //기본 설정(층)
-    let room = "floor2Stair"; //기본 설정(방)
+    let floor = "B1"; //기본 설정(층)
+    let room = "B1Stair"; //기본 설정(방)
     let item = []; //아이템 
     let itemVal = []; //아이템 중복 제거 값
     let eventBool = false; //이벤트 중인지 방안인지 확인 용도
@@ -520,6 +520,7 @@ $(() => {
                 BACK_IMG.css({ 'bottom': 'auto', 'width': '40%', 'left' : '50%', 'transform': 'translate(-50%, 0)'});
                 BACK_IMG.attr('src', './imgs/B1/b1Escalator.jpg');
                 EVENT1.css({ 'left': '35%', 'top': '25%', 'width': '15%', 'height': '60%' });
+                $('.wrapper').css({'background-color' : 'rgb(114, 114, 114)'});
                 ARROWS.hide();
                 RIGHT_ARROW.show();
                 EVENT.hide();
@@ -559,7 +560,9 @@ $(() => {
                 }
             } else if (room == "B1Hall2") {
                 BACK_IMG.attr('src', './imgs/B1/escapeDoor1.png');
-                // EVENT1.css({ 'left': 0, 'top': 0 });
+                EVENT1.css({ 'left': '45%', 'top': '55%', 'width': '8%', 'height': '20%' });
+                BACK_IMG.css({ 'width': '90%', 'left' : '50%', 'transform': 'translate(-50%, 0)'});
+                $('.wrapper').css({'background-color' : 'white'});
                 ARROWS.show();
                 RIGHT_ARROW.hide();
                 DOWN_ARROW.hide();
