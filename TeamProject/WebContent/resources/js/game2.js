@@ -334,7 +334,7 @@ $(() => {
                 EVENT.hide();
                 EVENT1.show();
                 SMALL_EVENT.hide();
-                //이벤트1 클릭 이벤트
+                //이벤트1 클릭 이벤트 /옷가게
                 if (eventNum == 1) {
                     EVENT1.css({ 'left': '5%', 'top': '40%', 'width': '20%', 'height': '20%' });
                     EVENT2.css({ 'left': '76%', 'top': '43%', 'width': '10%', 'height': '10%' });
@@ -355,7 +355,7 @@ $(() => {
                 EVENT.hide();
                 EVENT1.show();
                 SMALL_EVENT.hide();
-                //이벤트1 클릭 이벤트
+                //이벤트1 클릭 이벤트 / 화장실
                 if (eventNum == 1) {
                     if ($('.check > img').attr('alt') == '유성준메이드') {
                         textAdd('화장실이 열렸다')
@@ -382,7 +382,7 @@ $(() => {
                 EVENT.hide();
                 EVENT1.show();
                 SMALL_EVENT.hide();
-                //이벤트1 클릭 이벤트
+                //이벤트1 클릭 이벤트 / 1층
                 if (eventNum == 1) {
                     floor = "floor1";
                     room = "floor1Stair";
