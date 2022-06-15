@@ -293,6 +293,7 @@ $(() => {
                     }
                 }
             } else if (room == "floor2Hall") {
+                BACK_IMG.css({ 'bottom': '0', 'width': '100%', 'left' : 'auto', 'transform': 'translate(0, 0)'});
                 BACK_IMG.attr('src', './imgs/floor2/clothingStoreHallway.png');
                 EVENT1.css({ 'left': '20%', 'top': '10%', 'width': '60%', 'height': '80%' });
                 ARROWS.show();
@@ -353,8 +354,8 @@ $(() => {
                     floor = "floor1";
                     room = "floor1Stair";
                     BACK_IMG.attr('src', './imgs/floor1/1fEscalator.jpg');
-                    EVENT1.css({ 'left': 0, 'top': 0 });
-                    EVENT1.css({ 'left': '50%', 'top': '25%', 'width': '15%', 'height': '60%' });
+                    EVENT1.css({ 'left': '35%', 'top': '25%', 'width': '15%', 'height': '60%' });
+                    EVENT2.css({ 'left': '50%', 'top': '25%', 'width': '15%', 'height': '60%' });
                     EVENT.hide();
                     EVENT1.show();
                     EVENT2.show();
@@ -368,9 +369,10 @@ $(() => {
             //박씨 담당
         } else if (floor == "floor1") {
             if (room == "floor1Stair") {
+                BACK_IMG.css({ 'bottom': 'auto', 'width': '40%', 'left' : '50%', 'transform': 'translate(-50%, 0)'});
                 BACK_IMG.attr('src', './imgs/floor1/1fEscalator.jpg');
-                //EVENT1.css({ 'left': 25%, 'top': 80% });
-                //EVENT2.css({ 'left': 75%, 'top': 80% });
+                EVENT1.css({ 'left': '35%', 'top': '25%', 'width': '15%', 'height': '60%' });
+                EVENT2.css({ 'left': '50%', 'top': '25%', 'width': '15%', 'height': '60%' });
                 ARROWS.hide();
                 RIGHT_ARROW.show();
                 EVENT.hide();
@@ -379,12 +381,16 @@ $(() => {
                 SMALL_EVENT.hide();
                 //이벤트1 클릭 이벤트
                 if (eventNum == 1) {
+                    BACK_IMG.attr('src', './imgs/floor2/2fEscalator.jpg');
+                    EVENT1.css({ 'left': '50%', 'top': '25%', 'width': '15%', 'height': '60%' });
                     floor = "floor2";
                     room = "floor2Stair";
                     EVENT.hide();
                     EVENT1.show();
                     eventNum = 0;
                 } else if (eventNum == 2) {
+                    BACK_IMG.attr('src', './imgs/B1/b1Escalator.jpg');
+                    EVENT1.css({ 'left': '35%', 'top': '25%', 'width': '15%', 'height': '60%' });
                     floor = "B1";
                     room = "B1Stair";
                     EVENT.hide();
@@ -392,6 +398,7 @@ $(() => {
                     eventNum = 0;
                 }
             } else if (room == "floor1Hall") {
+                BACK_IMG.css({ 'bottom': '0', 'width': '100%', 'left' : 'auto', 'transform': 'translate(0, 0)'});
                 BACK_IMG.attr('src', './imgs/floor1/departmentStore.jpg');
                 // EVENT1.css({ 'left': 50%, 'top':70%});
                 ARROWS.show();
@@ -510,8 +517,9 @@ $(() => {
 
         } else if (floor == "B1") {
             if (room == "B1Stair") {
+                BACK_IMG.css({ 'bottom': 'auto', 'width': '40%', 'left' : '50%', 'transform': 'translate(-50%, 0)'});
                 BACK_IMG.attr('src', './imgs/B1/b1Escalator.jpg');
-                // EVENT1.css({ 'left': 0, 'top': 0 });
+                EVENT1.css({ 'left': '35%', 'top': '25%', 'width': '15%', 'height': '60%' });
                 ARROWS.hide();
                 RIGHT_ARROW.show();
                 EVENT.hide();
@@ -521,14 +529,18 @@ $(() => {
                 if (eventNum == 1) {
                     floor = "floor1";
                     room = "floor1Stair";
+                    BACK_IMG.attr('src', './imgs/floor1/1fEscalator.jpg');
+                    EVENT1.css({ 'left': '35%', 'top': '25%', 'width': '15%', 'height': '60%' });
+                    EVENT2.css({ 'left': '50%', 'top': '25%', 'width': '15%', 'height': '60%' });
                     EVENT.hide();
                     EVENT1.show();
                     EVENT2.show();
                     eventNum = 0;
                 }
             } else if (room == "B1Hall") {
+                BACK_IMG.css({ 'bottom': '0', 'width': '100%', 'left' : 'auto', 'transform': 'translate(0, 0)'});
                 BACK_IMG.attr('src', './imgs/B1/martHallway.jpg');
-                // EVENT1.css({ 'left': 0, 'top': 0 });
+                EVENT1.css({ 'left': '35%', 'top': '25%', 'width': '50%', 'height': '60%' });
                 ARROWS.show();
                 DOWN_ARROW.hide();
                 EVENT.hide();
@@ -580,8 +592,8 @@ $(() => {
                     eventBool = true;
                     eventNum = 0;
                     if (smallEventNum == 1) {
-                        if ($('.check > img').attr('alt') == '유성준침대') {
-                            BACK_IMG.attr('src', './imgs/B1/유성준 먹는.jpg');
+                        if ($('.check > img').attr('alt') == '유성준오리') {
+                            BACK_IMG.attr('src', './imgs/B1/kimHwang4-2.png');
                             itemAdd('이모');
                             SMALL_EVENT1.hide();
                         }
@@ -595,7 +607,7 @@ $(() => {
                     if (smallEventNum == 1) {
                         BACK_IMG.attr('src', './imgs/B1/yooSeongJun6.png');
                         SMALL_EVENT1.hide();
-                        itemAdd('유성준침대');
+                        itemAdd('유성준오리');
                     }
                 }
             }
