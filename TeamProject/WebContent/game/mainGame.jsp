@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="<%= request.getContextPath()%>/resources/css/style.css">
 </head>
 <body>
-    <div class="wrapper position-relative" style="height: 100vh; width: 100vw; overflow: hidden;">
+    <div class="wrapper position-relative" style="height: 100vh; width: 100vw; overflow: hidden; background-color: slategrey;">
         <!-- 배경 -->
         <img src="" class="back_img position-absolute" alt="">
          <!-- 이벤트 -->
