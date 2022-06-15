@@ -21,7 +21,7 @@ $(() => {
     const CHOICE2 = $('.choice2'); //선택지2
     const CHOICE3 = $('.choice3'); //선택지3
     let floor = "floor2"; //기본 설정(층)
-    let room = "toilet"; //기본 설정(방)
+    let room = "floor2Stair"; //기본 설정(방)
     let item = []; //아이템 
     let itemVal = []; //아이템 중복 제거 값
     let eventBool = false; //이벤트 중인지 방안인지 확인 용도
@@ -341,7 +341,8 @@ $(() => {
                 }
             } else if (room == "floor2Stair") {
                 BACK_IMG.attr('src', './imgs/floor2/2fEscalator.jpg');
-                // EVENT1.css({ 'left': 0, 'top': 0 });
+                EVENT1.css({ 'left': '50%', 'top': '25%', 'width': '15%', 'height': '60%' });
+                BACK_IMG.css({ 'bottom': 'auto', 'width': '40%', 'left' : '50%', 'transform': 'translate(-50%, 0)'});
                 ARROWS.hide();
                 RIGHT_ARROW.show();
                 EVENT.hide();
@@ -352,8 +353,8 @@ $(() => {
                     floor = "floor1";
                     room = "floor1Stair";
                     BACK_IMG.attr('src', './imgs/floor1/1fEscalator.jpg');
-                    // EVENT1.css({ 'left': 0, 'top': 0 });
-                    // EVENT2.css({ 'left': 0, 'top': 0 });
+                    EVENT1.css({ 'left': 0, 'top': 0 });
+                    EVENT1.css({ 'left': '50%', 'top': '25%', 'width': '15%', 'height': '60%' });
                     EVENT.hide();
                     EVENT1.show();
                     EVENT2.show();
