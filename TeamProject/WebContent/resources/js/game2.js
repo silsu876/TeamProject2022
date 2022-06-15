@@ -20,8 +20,8 @@ $(() => {
     const CHOICE1 = $('.choice1'); //선택지1
     const CHOICE2 = $('.choice2'); //선택지2
     const CHOICE3 = $('.choice3'); //선택지3
-    let floor = "floor2"; //기본 설정(층)
-    let room = "toilet"; //기본 설정(방)
+    let floor = "floor1"; //기본 설정(층)
+    let room = "theater"; //기본 설정(방)
     let item = []; //아이템 
     let itemVal = []; //아이템 중복 제거 값
     let eventBool = false; //이벤트 중인지 방안인지 확인 용도
@@ -31,10 +31,14 @@ $(() => {
     let answer = "";// 유저가 쓴 정답
     let numberAnswer = 1; // 답 번호
     let numberChoice = 1; // 선택지 번호
-    let mannequin = 0; //마네킹 첫번째 텍스트인지
-    let made = 0; //유성준 메이드 첫번째 텍스트인지
-    let gungye = 0; //궁예 첫번째 텍스트인지
-    let muyaho = 0; //무야호 첫번째 텍스트인지
+    let mannequin = 0; //마네킹 첫번째 인지
+    let made = 0; //유성준 메이드 첫번째 인지
+    let gungye = 0; //궁예 첫번째 인지
+    let muyaho = 0; //무야호 첫번째 인지
+    let gunyeung = 0; //박건영 첫번째 인지
+    let poster = 0; //포스터 첫번째 인지
+    let duck = 0; //유성준 오리 첫번째 인지
+    let kimHwang = 0; //김동건 황유화 첫번째 인지
 
     //클릭 이벤트1 이벤트
     EVENT1.click(function () {
@@ -546,40 +550,58 @@ $(() => {
                 SMALL_EVENT.hide();
 
                 if (eventNum == 1) { //이벤트1 클릭이벤트 / 박건영 귀신
+                    BACK_IMG.attr('src', './imgs/floor1/cinema2.png');
                     SMALL_EVENT1.css({ 'left': '40%', 'top': '0', 'width': '20%', 'height': '60%' });
                     BACK_IMG.css({ 'top': '-20%' });
                     DOWN_ARROW.hide();
                     EVENT.hide();
                     SMALL_EVENT1.show();
-                    BACK_IMG.attr('src', './imgs/floor1/cinema2.png');
+                    if(gunyeung == 1) {
+                        eventNum = 0;
+                        smallEventNum = 0;
+                        textAdd('이미 마트 열쇠를 얻었다')
+                        SMALL_EVENT.hide();
+                        DOWN_ARROW.show();
+                    }
                     if (smallEventNum == 1) {
+                        DOWN_ARROW.show();
                         BACK_IMG.attr('src', './imgs/floor1/cinema3.png');
                         if ($('.check > img').attr('alt') == '포스터') {
                             itemAdd('마트열쇠');
                             SMALL_EVENT1.hide();
-                            DOWN_ARROW.show();
                             textAdd('악 이게 뭐야')
                             textAdd('내 눈!!!!!!!')
                             textAdd('마트열쇠를 획득했다')
+                            gunyeung = 1;
                         } else {
                             textAdd('나는 세상에서 제일 강한 귀신이지')
-                            DOWN_ARROW.show();
+                            SMALL_EVENT.hide();
                         }
                         eventNum = 0;
+                        smallEventNum= 0;
                     }
                     eventBool = true;
                 } else if (eventNum == 2) { //이벤트2 클릭이벤트 / 엘사포스터
                     SMALL_EVENT1.css({ 'left': '53%', 'top': '0', 'width': '40%', 'height': '90%' });
                     EVENT.hide();
                     SMALL_EVENT1.show();
-                    BACK_IMG.attr('src', './imgs/floor1/b.png');
                     DOWN_ARROW.show();
+                    BACK_IMG.attr('src', './imgs/floor1/b.png');
+                    if(poster == 1) {
+                        eventNum = 0;
+                        smallEventNum = 0;
+                        textAdd('이미 포스터를 얻었다')
+                        SMALL_EVENT.hide();
+                        BACK_IMG.attr('src', './imgs/floor1/c.png');
+                    }
                     if (smallEventNum == 1) {
                         BACK_IMG.attr('src', './imgs/floor1/c.png');
                         itemAdd('포스터');
                         textAdd('포스터를 획득했다')
                         SMALL_EVENT1.hide();
                         eventNum = 0;
+                        smallEventNum = 0;
+                        poster = 1;
                     }
                     eventBool = true;
                 }
@@ -596,7 +618,7 @@ $(() => {
                 EVENT.hide();
                 EVENT1.show();
                 SMALL_EVENT.hide();
-                //이벤트1 클릭 이벤트
+                //이벤트1 클릭 이벤트 / 1층
                 if (eventNum == 1) {
                     floor = "floor1";
                     room = "floor1Stair";
@@ -617,7 +639,7 @@ $(() => {
                 EVENT.hide();
                 EVENT1.show();
                 SMALL_EVENT.hide();
-                //이벤트1 클릭 이벤트
+                //이벤트1 클릭 이벤트 / 마트
                 if (eventNum == 1) {
                     room = "mart";
                     BACK_IMG.attr('src', './imgs/B1/mart1.jpg');
@@ -637,7 +659,7 @@ $(() => {
                 EVENT.hide();
                 EVENT1.show();
                 SMALL_EVENT.hide();
-                //이벤트1 클릭 이벤트
+                //이벤트1 클릭 이벤트 / 탈출구
                 if (eventNum == 1) {
                     BACK_IMG.attr('src', './imgs/B1/escapeDoor2.png');
                     if ($('.check > img').attr('alt') == '이모') {
