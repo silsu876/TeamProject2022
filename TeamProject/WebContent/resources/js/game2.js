@@ -438,7 +438,7 @@ $(() => {
                     eventNum = 0;
                 }
             } else if (room == "bookStore") {
-                //   EVENT1.css({ 'left': 25%, 'top': 70% });
+                EVENT1.css({ 'left': '0', 'top': '20%', 'width': '40%', 'height': '60%' });
                 //   EVENT2.css({ 'left': 75%, 'top': 70% });
                 BACK_IMG.attr('src', './imgs/floor1/bookStore1.png');
                 EVENT.show();
@@ -814,13 +814,19 @@ $(() => {
         ITEMS.hide();
         floor = "ending";
         if (endingName == "die") {
+            textAdd('김아무개씨가 죽었다');
+            textAdd('죽음 엔딩');
             bgimg = "dieEnding.png";
             textAdd("bgimg", "turnEvent");
         } else if (endingName == "imo") {
+            textAdd('김아무개씨가 죽었다');
+            textAdd('죽음 엔딩');
             bgimg = "dieEnding.png";
             textAdd("bgimg", "turnEvent");
         } else if (endingName == "hospital") {
-            bgimg = "dieEnding.png";
+            textAdd('김아무개씨가 죽었다');
+            textAdd('죽음 엔딩');
+            bgimg = "hospital.png";
             textAdd("bgimg", "turnEvent");
         }
     }
