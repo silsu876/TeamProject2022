@@ -89,7 +89,7 @@ body::-webkit-scrollbar {
 						<h2 class="title2">게임</h2>
 						<div class="short_line"></div>
 						<p class="visual_text">
-							이 게임은 학교 프로젝트로 단순한 방탈출 게임입니다. <br> 여러 이스터에그도 찾아보세요!
+							이 게임은 아이템 창을 주로 쓰는 방탈출 게임입니다. <br> 무슨 아이템을 장착했는지 주의해주세요!
 						</p>
 					</div>
 					<img class="blackWolf position-absolute" src="./imgs/blackWolf.jpg" alt="blackWolf" />
