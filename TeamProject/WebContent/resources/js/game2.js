@@ -364,8 +364,6 @@ $(() => {
                 }
             }
 
-
-            //박씨 담당
         } else if (floor == "floor1") {
             if (room == "floor1Stair") {
                 BACK_IMG.css({ 'bottom': 'auto', 'width': '40%', 'left' : '50%', 'transform': 'translate(-50%, 0)'});
@@ -407,15 +405,23 @@ $(() => {
                 SMALL_EVENT.hide();
                 //이벤트1 클릭 이벤트
                 if (eventNum == 1) {
-                    room = "bookStore";
-                    BACK_IMG.attr('src', './imgs/floor1/bookStore1.png');
-                    EVENT1.css({ 'left': '60%', 'top': '25%', 'width': '15%', 'height': '35%' });
-                    EVENT2.css({ 'left': '0', 'top': '20%', 'width': '50%', 'height': '70%' });
-                    SMALL_EVENT.hide();
-                    EVENT.show();
-                    EVENT3.hide();
-                    ARROWS.hide();
-                    DOWN_ARROW.show();
+                    if ($('.check > img').attr('alt') == '도끼') {
+                        textAdd('서점이 열렸다');
+                        room = "bookStore";
+                        BACK_IMG.attr('src', './imgs/floor1/bookStore1.png');
+                        EVENT1.css({ 'left': '60%', 'top': '25%', 'width': '15%', 'height': '35%' });
+                        EVENT2.css({ 'left': '0', 'top': '20%', 'width': '50%', 'height': '70%' });
+                        SMALL_EVENT.hide();
+                        EVENT.show();
+                        EVENT3.hide();
+                        ARROWS.hide();
+                        DOWN_ARROW.show();
+                    } else {
+                        BACK_IMG.attr('src', './imgs/floor1/cloggedBookStore.png');
+                        SMALL_EVENT.hide();
+                        EVENT1.hide();
+                        textAdd('서점이 잠겨있다');
+                    }
                     eventNum = 0;
                 }
             } else if (room == "floor1Hall2") {
