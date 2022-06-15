@@ -109,15 +109,6 @@ $(() => {
             } else if (Object.keys(text[0]) == "event") {
                 if (text[0].event == "choice") {
                     CHOICE_BOX.fadeIn(200);
-                }
-                text.splice(0, 1);
-                nextChat();
-
-            } else if (Object.keys(text[0]) == "turnEvent") {
-                if (text[0].turnEvent == "answer") {
-                    answerText = true;
-                    ANSWER_BOX.show();
-                    TEXTBOX.find('h2').hide();
                 } else if (text[0].turnEvent == "bgimg") {
                     BACK_IMG.attr('src', `./imgs/${floor}/${bgimg}`);
                 } else if (text[0].turnEvent == "show") {
@@ -127,6 +118,14 @@ $(() => {
                 }
                 text.splice(0, 1);
                 nextChat();
+
+            } else if (Object.keys(text[0]) == "turnEvent") {
+                if (text[0].turnEvent == "answer") {
+                    answerText = true;
+                    ANSWER_BOX.show();
+                    TEXTBOX.find('h2').hide();
+                } 
+                text.splice(0, 1);
             }
         }
     }
@@ -169,7 +168,7 @@ $(() => {
                         }
                         eventNum = 0;
                         smallEventNum = 0;
-                        textAdd('show', 'turnEvent');
+                        textAdd('show', 'event');
                     }
                 } else if (eventNum == 2) { //이벤트2 클릭이벤트 /마네킹
                     DOWN_ARROW.hide();
@@ -184,7 +183,7 @@ $(() => {
                         textAdd('피팅룸 열쇠를 획득했다')
                         eventNum = 0;
                         smallEventNum = 0;
-                        textAdd('show', 'turnEvent');
+                        textAdd('show', 'event');
                     }
                 } else if (eventNum == 3) { //이벤트3 클릭이벤트 /옷
                     DOWN_ARROW.hide();
@@ -197,7 +196,7 @@ $(() => {
                         textAdd('히힛 속았징? 암것도 없지롱~')
                         eventNum = 0;
                         smallEventNum = 0;
-                        textAdd('show', 'turnEvent');
+                        textAdd('show', 'event');
                     }
                 }
             } else if (room == "toilet") {
@@ -228,7 +227,7 @@ $(() => {
                         textAdd('이런 배응망덕한!!');
                         textAdd('파랑휴지를 고르다니!!');
                         textAdd('죽어라!!');
-                        textAdd("bottom", "turnEvent");
+                        textAdd("bottom", "event");
                         ending('die');
                         eventNum = 0;
                         smallEventNum = 0;
@@ -239,7 +238,7 @@ $(() => {
                         textAdd('이런 배응망덕한!!');
                         textAdd('빨강휴지를 고르다니!!');
                         textAdd('죽어라!!');
-                        textAdd("bottom", "turnEvent");
+                        textAdd("bottom", "event");
                         ending('die');
                         eventNum = 0;
                         smallEventNum = 0;
@@ -249,11 +248,11 @@ $(() => {
                         SMALL_EVENT.hide();
                         textAdd('그럼그럼 역시 휴지는 흰휴지지');
                         textAdd('사실 이거 안줄거라네 ㅋ');
-                        textAdd("bottom", "turnEvent");
-                        textAdd("show", "turnEvent");
+                        textAdd("bottom", "event");
+                        textAdd("show", "event");
                         eventNum = 0;
                         smallEventNum = 0;
-                        textAdd('show', 'turnEvent');
+                        textAdd('show', 'event');
                     }
                 } else if (eventNum == 2) { //이벤트2 클릭이벤트 /  무야호
                     DOWN_ARROW.hide();
@@ -273,8 +272,8 @@ $(() => {
                         textAdd('오! 그렇군');
                         textAdd('잘가시게나');
                         textAdd('도끼를 획득했다');
-                        textAdd("bottom", "turnEvent");
-                        textAdd("show", "turnEvent");
+                        textAdd("bottom", "event");
+                        textAdd("show", "event");
                         itemAdd('도끼');
                         eventNum = 0;
                         smallEventNum = 0;
@@ -286,8 +285,8 @@ $(() => {
                         textAdd('까꿍~~!!');
                         textAdd('또 왔어요~~~');
                         textAdd('도망가지 말아요~~');
-                        textAdd("bottom", "turnEvent");
-                        textAdd("show", "turnEvent");
+                        textAdd("bottom", "event");
+                        textAdd("show", "event");
                         eventNum = 0;
                         smallEventNum = 0;
                     }
@@ -365,8 +364,6 @@ $(() => {
                 }
             }
 
-
-            //박씨 담당
         } else if (floor == "floor1") {
             if (room == "floor1Stair") {
                 BACK_IMG.css({ 'bottom': 'auto', 'width': '40%', 'left' : '50%', 'transform': 'translate(-50%, 0)'});
@@ -408,13 +405,23 @@ $(() => {
                 SMALL_EVENT.hide();
                 //이벤트1 클릭 이벤트
                 if (eventNum == 1) {
-                    room = "bookStore";
-                    BACK_IMG.attr('src', './imgs/floor1/bookStore1.png');
-                    SMALL_EVENT.hide();
-                    EVENT.show();
-                    EVENT3.hide();
-                    ARROWS.hide();
-                    DOWN_ARROW.show();
+                    if ($('.check > img').attr('alt') == '도끼') {
+                        textAdd('서점이 열렸다');
+                        room = "bookStore";
+                        BACK_IMG.attr('src', './imgs/floor1/bookStore1.png');
+                        EVENT1.css({ 'left': '60%', 'top': '25%', 'width': '15%', 'height': '35%' });
+                        EVENT2.css({ 'left': '0', 'top': '20%', 'width': '50%', 'height': '70%' });
+                        SMALL_EVENT.hide();
+                        EVENT.show();
+                        EVENT3.hide();
+                        ARROWS.hide();
+                        DOWN_ARROW.show();
+                    } else {
+                        BACK_IMG.attr('src', './imgs/floor1/cloggedBookStore.png');
+                        SMALL_EVENT.hide();
+                        EVENT1.hide();
+                        textAdd('서점이 잠겨있다');
+                    }
                     eventNum = 0;
                 }
             } else if (room == "floor1Hall2") {
@@ -438,8 +445,8 @@ $(() => {
                     eventNum = 0;
                 }
             } else if (room == "bookStore") {
-                EVENT1.css({ 'left': '0', 'top': '20%', 'width': '40%', 'height': '60%' });
-                //   EVENT2.css({ 'left': 75%, 'top': 70% });
+                EVENT1.css({ 'left': '60%', 'top': '25%', 'width': '15%', 'height': '35%' });
+                    EVENT2.css({ 'left': '0', 'top': '20%', 'width': '50%', 'height': '70%' });
                 BACK_IMG.attr('src', './imgs/floor1/bookStore1.png');
                 EVENT.show();
                 EVENT3.hide();
@@ -451,27 +458,35 @@ $(() => {
                     SMALL_EVENT1.hide();
                     BACK_IMG.attr('src', './imgs/floor1/bookStore2.png');
                     if (numberChoice >= 3) {
-                        textAdd('왜 나를 그렇게 까지 보고 싶어서 온거야?');
+                        textAdd('왜?? 내가 그렇게 까지 보고 싶어?? 아잉~~');
+                        DOWN_ARROW.show();
                     } else {
                         DOWN_ARROW.hide();
-                        CHOICE1.find('h2').text('여기다');
-                        CHOICE2.find('h2').text('여기다');
-                        CHOICE3.find('h2').text('여기다');
+                        CHOICE1.find('h2').text('뺨 때리기');
+                        CHOICE2.find('h2').text('내 아를 낳아도!!!!!');
+                        CHOICE3.find('h2').text('나도 좋아!!!');
                         textAdd('책을 넘기면서 그윽하게 쳐다보는 최서윤이 보인다')
                         textAdd("이제야 여길 보는구나? 나의 작은 아기 고양이")
+                        textAdd("계속 기다려왔다고!! 얼마만의 사람인지!!")
                         textAdd("choice", "event");
                     }
                     eventNum = 0;
                     eventBool = true;
                 } else if (eventNum == 2) { //이벤트2 클릭이벤트 /스핑크스
+                    BACK_IMG.css({ 'bottom': 'auto' });
                     EVENT.hide();
                     SMALL_EVENT1.hide();
                     BACK_IMG.attr('src', './imgs/floor1/maDongSeok1.png');
                     if (numberAnswer >= 4) {
                         textAdd('장사 더 안합니다');
+                        BACK_IMG.css({ 'bottom': '0' });
                     } else {
                         DOWN_ARROW.hide();
-                        textAdd('스핑크스 입니다')
+                        textAdd('어리석군 인간이여')
+                        textAdd('내가 어리석은 그대를 위해')
+                        textAdd('문제를 준비했다네')
+                        textAdd('첫번째는 쉽게 가겠어')
+                        textAdd('왕이 넘어지면?')
                         textAdd("answer", "turnEvent");
                     }
                     eventNum = 0;
@@ -643,40 +658,45 @@ $(() => {
         answer = $('.answer').val();
         if ($.trim(answer) == "") {
             alert("정답을 입력해주세요");
-        } else if (answer == "d" && numberAnswer == 1) {
+        } else if (answer == "킹콩" && numberAnswer == 1) {
             answerText = false;
             ANSWER_BOX.hide();
             TEXTBOX.find('h2').show();
-            textAdd('정답이다');
-            textAdd('다음문제는 ');
-            textAdd('금은 금인데 도둑고양이에게 가장 어울리는 금은?')//정답 야금야금
+            textAdd('칫 정답이다');
+            textAdd('다음문제는 쉽지 않을꺼야');
+            textAdd('금은 금인데 도둑고양이에게 가장 어울리는 금은?')
             numberAnswer++;
             $('.answer').val("");
             textAdd("answer", "turnEvent");
-        } else if (answer == "d" && numberAnswer == 2) {
+        } else if (answer == "야금야금" && numberAnswer == 2) {
             answerText = false;
             ANSWER_BOX.hide();
             TEXTBOX.find('h2').show();
-            textAdd('정답이다');
-            textAdd('다음문제는');
-            textAdd('왕이 넘어지면 뭐가될까?')//정답 킹콩
+            textAdd('흐음 정답이다');
+            textAdd('이번 문제는 진짜 어려울꺼야');
+            textAdd('헤어나올 수 없는 곳은?')
             numberAnswer++;
             $('.answer').val("");
             textAdd("answer", "turnEvent");
-        } else if (answer == "d" && numberAnswer == 3) {
+        } else if (answer == "대머리" && numberAnswer == 3) {
             answerText = false;
             ANSWER_BOX.hide();
             TEXTBOX.find('h2').show();
-            textAdd('정답이다');
+            textAdd('젠장 정답이다');
             textAdd('이제 열쇠를 주겠다');
             itemAdd('영화관열쇠');
+            BACK_IMG.css({ 'bottom': '0' });
             numberAnswer++;
-            textAdd("show", "turnEvent");
+            DOWN_ARROW.show();
+            textAdd("show", "event");
         } else {
             answerText = false;
             ANSWER_BOX.hide();
             TEXTBOX.find('h2').show();
-            textAdd('틀렸다');
+            BACK_IMG.css({ 'bottom': '0' });
+            textAdd('낄낄낄');
+            textAdd('그럴줄알았다');
+            textAdd('진실의 방으로');
             ending("die");
         }
     });
@@ -684,13 +704,16 @@ $(() => {
     CHOICE1.click(function () {
         CHOICE_BOX.fadeOut(0);
         if (numberChoice == 1) {
-            textAdd('어멋 틀렸어');
-            textAdd('죽어라 얍');
+            textAdd('날 때린여자는 너가 처음이야');
+            textAdd('심심한데 우리 뽑뽀나 할까??');
+            textAdd('움~~~~~~~~쪽!');
             ending("die");
         } else if (numberChoice == 2) {
-            textAdd('어멋 정답이야');
-            textAdd('이제 보내줄께');
-            textAdd("show", "turnEvent");
+            textAdd('이걸 받아주네 ㄷㄷ');
+            textAdd('와 찐광기다 ㄷㄷ');
+            textAdd('튀튀');
+            textAdd("show", "event");
+            DOWN_ARROW.show();
             numberChoice++;
         }
     });
@@ -698,16 +721,17 @@ $(() => {
     CHOICE2.click(function () {
         CHOICE_BOX.fadeOut(0);
         if (numberChoice == 1) {
-            CHOICE1.find('h2').text('여기다ㅇ');
-            CHOICE2.find('h2').text('여기다ㅇ');
-            CHOICE3.find('h2').text('여기다ㅇ');
-            textAdd('어멋 정답이야');
-            textAdd('다음 어쩌구');
+            CHOICE1.find('h2').text('좋아요♥');
+            CHOICE2.find('h2').text('좋아요~');
+            CHOICE3.find('h2').text('좋아요!!');
+            textAdd('어멋 도발적이야!!!');
+            textAdd('내 사랑을 받아줘 아잉♥');
             textAdd("choice", "event");
             numberChoice++;
         } else if (numberChoice == 2) {
-            textAdd('어멋 틀렸어');
-            textAdd('죽어라 얍');
+            textAdd('왤케 영혼이 없어?');
+            textAdd('또 나만 진심이였지');
+            textAdd('죽어랏!');
             ending("die");
         }
     });
@@ -715,12 +739,13 @@ $(() => {
     CHOICE3.click(function () {
         CHOICE_BOX.fadeOut(0);
         if (numberChoice == 1) {
-            textAdd('어멋 틀렸어');
-            textAdd('죽어라 얍');
+            textAdd('밀당 없는 여자 매력없어!!!');
+            textAdd('나는 싫어!!!');
             ending("die");
         } else if (numberChoice == 2) {
-            textAdd('어멋 틀렸어');
-            textAdd('죽어라 얍');
+            textAdd('나보다 발랄한 여자 매력없어!');
+            textAdd('내가 짱이란 말야');
+            textAdd('죽어랏!');
             ending("die");
         }
     });
@@ -817,17 +842,17 @@ $(() => {
             textAdd('김아무개씨가 죽었다');
             textAdd('죽음 엔딩');
             bgimg = "dieEnding.png";
-            textAdd("bgimg", "turnEvent");
+            textAdd("bgimg", "event");
         } else if (endingName == "imo") {
             textAdd('김아무개씨가 죽었다');
             textAdd('죽음 엔딩');
             bgimg = "dieEnding.png";
-            textAdd("bgimg", "turnEvent");
+            textAdd("bgimg", "event");
         } else if (endingName == "hospital") {
             textAdd('김아무개씨가 죽었다');
             textAdd('죽음 엔딩');
             bgimg = "hospital.png";
-            textAdd("bgimg", "turnEvent");
+            textAdd("bgimg", "event");
         }
     }
     //템창 나왔다가 들어갔다가 하는 함수들
