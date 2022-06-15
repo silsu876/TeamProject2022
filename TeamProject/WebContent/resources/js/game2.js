@@ -21,7 +21,7 @@ $(() => {
     const CHOICE2 = $('.choice2'); //선택지2
     const CHOICE3 = $('.choice3'); //선택지3
     let floor = "floor2"; //기본 설정(층)
-    let room = "clothingStore"; //기본 설정(방)
+    let room = "toilet"; //기본 설정(방)
     let item = []; //아이템 
     let itemVal = []; //아이템 중복 제거 값
     let eventBool = false; //이벤트 중인지 방안인지 확인 용도
@@ -31,7 +31,10 @@ $(() => {
     let answer = "";// 유저가 쓴 정답
     let numberAnswer = 1; // 답 번호
     let numberChoice = 1; // 선택지 번호
-    let g
+    let mannequin = 0; //마네킹 첫번째 텍스트인지
+    let made = 0; //유성준 메이드 첫번째 텍스트인지
+    let gungye = 0; //궁예 첫번째 텍스트인지
+    let muyaho = 0; //무야호 첫번째 텍스트인지
 
     //클릭 이벤트1 이벤트
     EVENT1.click(function () {
@@ -116,7 +119,7 @@ $(() => {
                     BACK_IMG.css({ 'bottom': '0' });
                 } else if (text[0].turnEvent == "show") {
                     DOWN_ARROW.show();
-                } 
+                }
                 text.splice(0, 1);
                 nextChat();
 
@@ -125,7 +128,7 @@ $(() => {
                     answerText = true;
                     ANSWER_BOX.show();
                     TEXTBOX.find('h2').hide();
-                } 
+                }
                 text.splice(0, 1);
             }
         }
@@ -154,19 +157,28 @@ $(() => {
                     SMALL_EVENT1.show();
                     SMALL_EVENT1.css({ 'left': '20%', 'top': '0', 'width': '40%', 'height': '80%' });
                     BACK_IMG.attr('src', './imgs/floor2/pettingRoom1.png');
+                    if(made == 1) {
+                        eventNum = 0;
+                        smallEventNum = 0;
+                        textAdd('이미 유성준을 얻었다')
+                        SMALL_EVENT.hide();
+                    }
                     if (smallEventNum == 1) {
+                        SMALL_EVENT1.hide();
 
                         if ($('.check > img').attr('alt') == '피팅룸열쇠') {
                             BACK_IMG.attr('src', './imgs/floor2/pettingRoom2.png');
                             itemAdd('유성준메이드');
-                            SMALL_EVENT1.hide();
                             textAdd("오하요 오니짱~ 여고생 성준이 와요♥ ");
                             textAdd("유성준을 획득했다");
+                            made = 1;
+                            eventNum = 0;
+                            smallEventNum = 0;
                         } else {
                             textAdd('피팅룸이 잠겨있다');
+                            eventNum = 0;
+                            smallEventNum = 0;
                         }
-                        eventNum = 0;
-                        smallEventNum = 0;
                     }
                     eventBool = true;
                 } else if (eventNum == 2) { //이벤트2 클릭이벤트 /마네킹
@@ -174,12 +186,20 @@ $(() => {
                     EVENT.hide();
                     SMALL_EVENT1.show();
                     BACK_IMG.attr('src', './imgs/floor2/mannequin.png');
+                    if (mannequin == 1) {
+                        eventNum = 0;
+                        smallEventNum = 0;
+                        textAdd('이미 피팅룸 열쇠를 얻었다')
+                        SMALL_EVENT.hide();
+                    }
                     if (smallEventNum == 1) {
                         itemAdd('피팅룸열쇠');
                         SMALL_EVENT1.hide();
                         textAdd('피팅룸 열쇠를 획득했다')
                         eventNum = 0;
                         smallEventNum = 0;
+                        mannequin = 1;
+
                     }
                     eventBool = true;
                 } else if (eventNum == 3) { //이벤트3 클릭이벤트 /옷
@@ -208,16 +228,25 @@ $(() => {
                 if (eventNum == 1) { //이벤트1 클릭이벤트 /궁예
                     DOWN_ARROW.hide();
                     BACK_IMG.css({ 'bottom': 'auto' });
-                    textAdd('누가 똥소리를 내었는가?');
-                    textAdd('나는 마음이 넓으니 휴지를 주겠다');
                     EVENT.hide();
                     SMALL_EVENT.show();
                     SMALL_EVENT1.css({ 'left': '29%', 'top': '50%', 'width': '5%', 'height': '13%' });
                     SMALL_EVENT2.css({ 'left': '57%', 'top': '55%', 'width': '6%', 'height': '13%' });
                     SMALL_EVENT3.css({ 'left': '80%', 'top': '47%', 'width': '20%', 'height': '50%' });
                     BACK_IMG.attr('src', './imgs/floor2/bathroom2.png');
+
+                    if (gungye == 0) {
+                        gungye = 1;
+                        textAdd('누가 똥소리를 내었는가?');
+                        textAdd('나는 마음이 넓으니 휴지를 주겠다');
+                    } else if (gungye == 2) {
+                        textAdd('왜 또오나?')
+                        SMALL_EVENT.hide();
+                        DOWN_ARROW.show();
+                        eventNum = 0;
+                        smallEventNum = 0;
+                    }
                     if (smallEventNum == 1) { //파랑휴지
-                        text.splice(0);
                         SMALL_EVENT.hide();
                         textAdd('이런 배응망덕한!!');
                         textAdd('파랑휴지를 고르다니!!');
@@ -228,7 +257,6 @@ $(() => {
                         smallEventNum = 0;
                     }
                     else if (smallEventNum == 2) {//빨강휴지
-                        text.splice(0);
                         SMALL_EVENT.hide();
                         textAdd('이런 배응망덕한!!');
                         textAdd('빨강휴지를 고르다니!!');
@@ -239,14 +267,14 @@ $(() => {
                         smallEventNum = 0;
                     }
                     else if (smallEventNum == 3) {//흰휴지
-                        text.splice(0);
                         SMALL_EVENT.hide();
                         textAdd('그럼그럼 역시 휴지는 흰휴지지');
                         textAdd('사실 이거 안줄거라네 ㅋ');
                         textAdd("bottom", "event");
-                        textAdd('show', 'event');
+                        DOWN_ARROW.show();
                         eventNum = 0;
                         smallEventNum = 0;
+                        gungye = 2;
                     }
                     eventBool = true;
                 } else if (eventNum == 2) { //이벤트2 클릭이벤트 /  무야호
@@ -255,12 +283,20 @@ $(() => {
                     EVENT.hide();
                     SMALL_EVENT.show();
                     SMALL_EVENT3.hide();
-                    eventBool = true;
-                    textAdd('거기 지나가던 당신');
-                    textAdd('어느 것이 당신의 것이지?');
                     SMALL_EVENT1.css({ 'left': '20%', 'top': '50%', 'width': '10%', 'height': '13%' });
                     SMALL_EVENT2.css({ 'left': '65%', 'top': '55%', 'width': '10%', 'height': '13%' });
                     BACK_IMG.attr('src', './imgs/floor2/bathroom3.png');
+                    if (muyaho == 0) {
+                        muyaho = 1;
+                        textAdd('거기 지나가던 당신');
+                        textAdd('어느 것이 당신의 것이지?');
+                    } else if (muyaho == 2) {
+                        textAdd('무야호~~')
+                        SMALL_EVENT.hide();
+                        DOWN_ARROW.show();
+                        eventNum = 0;
+                        smallEventNum = 0;
+                    }
                     if (smallEventNum == 1) { // 금
                         text.splice(0);
                         SMALL_EVENT.hide();
@@ -268,10 +304,11 @@ $(() => {
                         textAdd('잘가시게나');
                         textAdd('도끼를 획득했다');
                         textAdd("bottom", "event");
-                        textAdd("show", "event");
+                        DOWN_ARROW.show();
                         itemAdd('도끼');
                         eventNum = 0;
                         smallEventNum = 0;
+                        muyaho = 2;
                     }
                     else if (smallEventNum == 2) { //은
                         text.splice(0);
@@ -281,10 +318,12 @@ $(() => {
                         textAdd('또 왔어요~~~');
                         textAdd('도망가지 말아요~~');
                         textAdd("bottom", "event");
-                        textAdd("show", "event");
+                        DOWN_ARROW.show();
                         eventNum = 0;
                         smallEventNum = 0;
+                        muyaho = 2;
                     }
+                    eventBool = true;
                 }
             } else if (room == "floor2Hall") {
                 BACK_IMG.css({ 'bottom': '0', 'width': '100%', 'left': 'auto', 'transform': 'translate(0, 0)' });
