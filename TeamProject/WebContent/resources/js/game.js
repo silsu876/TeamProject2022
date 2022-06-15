@@ -544,12 +544,16 @@ $(() => {
                 EVENT1.css({ 'left': '35%', 'top': '25%', 'width': '50%', 'height': '60%' });
                 ARROWS.show();
                 DOWN_ARROW.hide();
+                textAdd('마트 입구가 보인다');
                 EVENT.hide();
                 EVENT1.show();
                 SMALL_EVENT.hide();
                 //이벤트1 클릭 이벤트
                 if (eventNum == 1) {
                     room = "mart";
+                    EVENT1.css({ 'left': '20%', 'top': '60%', 'width': '60%', 'height': '60%' });
+                    EVENT2.css({ 'left': '40%', 'top': '20%', 'width': '20%', 'height': '20%' });
+                    textAdd('여기에 숨겨진 곳이 있는듯 하다');
                     BACK_IMG.attr('src', './imgs/B1/mart1.jpg');
                     SMALL_EVENT.hide();
                     EVENT.show();
@@ -566,21 +570,25 @@ $(() => {
                 ARROWS.show();
                 RIGHT_ARROW.hide();
                 DOWN_ARROW.hide();
+                textAdd('탈출구가 보인다');
                 EVENT.hide();
                 EVENT1.show();
                 SMALL_EVENT.hide();
                 //이벤트1 클릭 이벤트
                 if (eventNum == 1) {
                     BACK_IMG.attr('src', './imgs/B1/escapeDoor2.png');
+                    textAdd('드디어 탈출?!');
                     if ($('.check > img').attr('alt') == '이모') {
+                        textAdd('니이모를 찾았다!!!!!!');
                         ending("imo");
                     } else {
                         ending("hospital");
+                        textAdd('아니 여기는 병원이잖아..?');
                     }
                 }
             } else if (room == "mart") {
-                //   EVENT1.css({ 'left': 0, 'top': 0 });
-                //   EVENT2.css({ 'left': 0, 'top': 0 });
+                EVENT1.css({ 'left': '20%', 'top': '60%', 'width': '60%', 'height': '60%' });
+                EVENT2.css({ 'left': '40%', 'top': '20%', 'width': '20%', 'height': '20%' });
                 BACK_IMG.attr('src', './imgs/B1/mart1.jpg');
                 EVENT.show();
                 EVENT3.hide();
@@ -602,6 +610,7 @@ $(() => {
                         }
                     }
                 } else if (eventNum == 2) { //이벤트2 클릭이벤트 / 유성준 침대
+                    SMALL_EVENT.css({ 'left': '25%', 'top': '8%', 'width': '53%', 'height': '35%' });
                     EVENT.hide();
                     SMALL_EVENT1.show();
                     BACK_IMG.attr('src', './imgs/B1/hidingYSJ.png');
@@ -609,6 +618,7 @@ $(() => {
                     eventNum = 0;
                     if (smallEventNum == 1) {
                         BACK_IMG.attr('src', './imgs/B1/yooSeongJun6.png');
+                        textAdd('자기야 왜 또 칭얼거려.');
                         SMALL_EVENT1.hide();
                         itemAdd('유성준오리');
                     }
@@ -814,14 +824,22 @@ $(() => {
         SMALL_EVENT.hide();
         ARROWS.hide();
         ITEMS.hide();
+        floor = "ending";
         if (endingName == "die") {
-            floor = "ending";
             bgimg = "dieEnding.png";
             textAdd("bgimg", "turnEvent");
+            textAdd('김아무개씨가 죽었다');
+            textAdd('죽음 엔딩');
         } else if (endingName == "imo") {
-
+            textAdd('김아무개씨가 드디어 탈출했다');
+            textAdd('니모 엔딩');
+            bgimg = "nemoEnding.png";
+            textAdd("bgimg", "turnEvent");
         } else if (endingName == "hospital") {
-
+            textAdd('김아무개씨가 정신을 차렸다');
+            textAdd('병원 엔딩');
+            textAdd("bgimg", "turnEvent");
+            bgimg = "hospital.png";
         }
     }
     //템창 나왔다가 들어갔다가 하는 함수들
