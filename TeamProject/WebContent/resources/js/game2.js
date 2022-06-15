@@ -399,8 +399,8 @@ $(() => {
                 }
             } else if (room == "floor1Hall") {
                 BACK_IMG.css({ 'bottom': '0', 'width': '100%', 'left' : 'auto', 'transform': 'translate(0, 0)'});
-                BACK_IMG.attr('src', './imgs/floor1/departmentStore.jpg');
-                // EVENT1.css({ 'left': 50%, 'top':70%});
+                BACK_IMG.attr('src', './imgs/floor1/bookStoreHallway.jpg');
+                EVENT1.css({ 'left': '15%', 'top': '20%', 'width': '50%', 'height': '60%' });
                 ARROWS.show();
                 DOWN_ARROW.hide();
                 EVENT.hide();
@@ -419,7 +419,7 @@ $(() => {
                 }
             } else if (room == "floor1Hall2") {
                 BACK_IMG.attr('src', './imgs/floor1/cinemaHallway.jpg');
-                // EVENT1.css({ 'left': 50%, 'top':70%});
+                EVENT1.css({ 'left': '30%', 'top': '20%', 'width': '50%', 'height': '60%' });
                 ARROWS.hide();
                 LEFT_ARROW.show();
                 EVENT.hide();
@@ -428,6 +428,7 @@ $(() => {
                 //이벤트1 클릭 이벤트
                 if (eventNum == 1) {
                     room = "theater";
+                    EVENT1.css({ 'left': '30%', 'top': '20%', 'width': '50%', 'height': '60%' });
                     BACK_IMG.attr('src', './imgs/floor1/cinema1.jpg');
                     ARROWS.hide();
                     DOWN_ARROW.show();
@@ -811,14 +812,16 @@ $(() => {
         SMALL_EVENT.hide();
         ARROWS.hide();
         ITEMS.hide();
+        floor = "ending";
         if (endingName == "die") {
-            floor = "ending";
             bgimg = "dieEnding.png";
             textAdd("bgimg", "turnEvent");
         } else if (endingName == "imo") {
-
+            bgimg = "dieEnding.png";
+            textAdd("bgimg", "turnEvent");
         } else if (endingName == "hospital") {
-
+            bgimg = "dieEnding.png";
+            textAdd("bgimg", "turnEvent");
         }
     }
     //템창 나왔다가 들어갔다가 하는 함수들
